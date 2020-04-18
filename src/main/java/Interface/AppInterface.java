@@ -10,6 +10,7 @@ import com.Vidarshan.sales.Sales;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -29,6 +30,7 @@ public class AppInterface extends javax.swing.JFrame {
         
         //Load home panel
         panelNavigator(this.home, "Home");
+        sideNavBtnEvents(this.jLabel1);
     }
 
     public void panelNavigator(JPanel panel, String name){
@@ -38,6 +40,18 @@ public class AppInterface extends javax.swing.JFrame {
         contentLayout.revalidate();
         this.navbar.setText(name);
     }
+    
+      public void sideNavBtnEvents(JLabel btn){
+        btn_Maintenance.setForeground(new Color(0xF4F4F4));
+        btn_Users.setForeground(new Color(0xF4F4F4));
+        btn_attendance.setForeground(new Color(0xF4F4F4));
+        btn_inventory.setForeground(new Color(0xF4F4F4));
+        btn_salse.setForeground(new Color(0xF4F4F4));
+        jLabel1.setForeground(new Color(0xF4F4F4));
+        btn.setForeground(new Color(0x2ECC71));
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -418,6 +432,7 @@ public class AppInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         Sales interface_Sales = new Sales();
         panelNavigator(interface_Sales, "Salse Management");
+        sideNavBtnEvents(this.btn_salse);
         
     }//GEN-LAST:event_btn_salseMouseClicked
 
@@ -425,26 +440,31 @@ public class AppInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         Inventory interface_Inventory = new Inventory();
         panelNavigator(interface_Inventory, "Inventory Management");
+        sideNavBtnEvents(this.btn_inventory);
     }//GEN-LAST:event_btn_inventoryMouseClicked
 
     private void btn_attendanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_attendanceMouseClicked
         // TODO add your handling code here:
         panelNavigator(this.attendance, "Attendance Management");
+        sideNavBtnEvents(this.btn_attendance);
     }//GEN-LAST:event_btn_attendanceMouseClicked
 
     private void btn_UsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UsersMouseClicked
         // TODO add your handling code here:
         panelNavigator(this.user, "User Management");
+        sideNavBtnEvents(this.btn_Users);
     }//GEN-LAST:event_btn_UsersMouseClicked
 
     private void btn_MaintenanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MaintenanceMouseClicked
         // TODO add your handling code here:
         panelNavigator(this.maintenance, "Maintenance");
+        sideNavBtnEvents(this.btn_Maintenance);
     }//GEN-LAST:event_btn_MaintenanceMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
         panelNavigator(this.home, "Home");
+        sideNavBtnEvents(this.jLabel1);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void btn_inventoryFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btn_inventoryFocusGained
