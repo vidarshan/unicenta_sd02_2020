@@ -6,6 +6,7 @@
 package Interface;
 
 import com.Savindu.inventory.Inventory;
+import com.Vidarshan.sales.Sales;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -399,7 +400,9 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void btn_salseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salseMouseClicked
         // TODO add your handling code here:
-        panelNavigator(this.salse, "Salse Management");
+        Sales interface_Sales = new Sales();
+        panelNavigator(interface_Sales, "Salse Management");
+        
     }//GEN-LAST:event_btn_salseMouseClicked
 
     private void btn_inventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventoryMouseClicked
