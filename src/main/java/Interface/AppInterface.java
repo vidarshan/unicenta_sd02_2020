@@ -128,9 +128,23 @@ public class AppInterface extends javax.swing.JFrame {
         btn_inventory.setForeground(new java.awt.Color(255, 255, 255));
         btn_inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/box24.png"))); // NOI18N
         btn_inventory.setText("Inventory");
+        btn_inventory.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                btn_inventoryFocusGained(evt);
+            }
+        });
         btn_inventory.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_inventoryMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_inventoryMouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_inventoryMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btn_inventoryMouseReleased(evt);
             }
         });
 
@@ -406,7 +420,6 @@ public class AppInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         Inventory interface_Inventory = new Inventory();
         panelNavigator(interface_Inventory, "Inventory Management");
-        this.btn_inventory.setForeground(new Color(0x2ECC71));
     }//GEN-LAST:event_btn_inventoryMouseClicked
 
     private void btn_attendanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_attendanceMouseClicked
@@ -428,6 +441,25 @@ public class AppInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         panelNavigator(this.home, "Home");
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void btn_inventoryFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btn_inventoryFocusGained
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_inventoryFocusGained
+
+    private void btn_inventoryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventoryMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_inventoryMousePressed
+
+    private void btn_inventoryMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventoryMouseReleased
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_inventoryMouseReleased
+
+    private void btn_inventoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventoryMouseEntered
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_inventoryMouseEntered
 
     /**
      * @param args the command line arguments
