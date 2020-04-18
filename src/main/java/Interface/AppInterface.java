@@ -66,8 +66,6 @@ public class AppInterface extends javax.swing.JFrame {
         contentLayout = new javax.swing.JLayeredPane();
         home = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        inventory = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
         salse = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         attendance = new javax.swing.JPanel();
@@ -87,6 +85,7 @@ public class AppInterface extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home24_1.png"))); // NOI18N
         jLabel1.setText("Home");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -97,7 +96,7 @@ public class AppInterface extends javax.swing.JFrame {
         btn_Users.setBackground(new java.awt.Color(255, 255, 255));
         btn_Users.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btn_Users.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Users.setIcon(new javax.swing.ImageIcon("C:\\Users\\Savindu\\Desktop\\Studies\\SLIIT\\Studies\\Curtin\\1st Semester\\HCI\\Project\\Git\\HCI_New\\unicenta_sd02_2020\\resources\\user36.png")); // NOI18N
+        btn_Users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user36_1.png"))); // NOI18N
         btn_Users.setText("Users");
         btn_Users.setToolTipText("");
         btn_Users.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -110,12 +109,13 @@ public class AppInterface extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logout32_1.png"))); // NOI18N
         jLabel3.setText("Logout");
 
         btn_salse.setBackground(new java.awt.Color(255, 255, 255));
         btn_salse.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btn_salse.setForeground(new java.awt.Color(255, 255, 255));
-        btn_salse.setIcon(new javax.swing.ImageIcon("C:\\Users\\Savindu\\Desktop\\Studies\\SLIIT\\Studies\\Curtin\\1st Semester\\HCI\\Project\\Git\\HCI_New\\unicenta_sd02_2020\\resources\\sales34.png")); // NOI18N
+        btn_salse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/sales34.png"))); // NOI18N
         btn_salse.setText("Sales");
         btn_salse.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -126,7 +126,7 @@ public class AppInterface extends javax.swing.JFrame {
         btn_inventory.setBackground(new java.awt.Color(255, 255, 255));
         btn_inventory.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btn_inventory.setForeground(new java.awt.Color(255, 255, 255));
-        btn_inventory.setIcon(new javax.swing.ImageIcon("C:\\Users\\Savindu\\Desktop\\Studies\\SLIIT\\Studies\\Curtin\\1st Semester\\HCI\\Project\\Git\\HCI_New\\unicenta_sd02_2020\\resources\\box24.png")); // NOI18N
+        btn_inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/box24.png"))); // NOI18N
         btn_inventory.setText("Inventory");
         btn_inventory.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -137,7 +137,7 @@ public class AppInterface extends javax.swing.JFrame {
         btn_Maintenance.setBackground(new java.awt.Color(255, 255, 255));
         btn_Maintenance.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btn_Maintenance.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Maintenance.setIcon(new javax.swing.ImageIcon("C:\\Users\\Savindu\\Desktop\\Studies\\SLIIT\\Studies\\Curtin\\1st Semester\\HCI\\Project\\Git\\HCI_New\\unicenta_sd02_2020\\resources\\maintenance36.png")); // NOI18N
+        btn_Maintenance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maintenance36_1.png"))); // NOI18N
         btn_Maintenance.setText("Maintenance");
         btn_Maintenance.setToolTipText("");
         btn_Maintenance.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -149,7 +149,7 @@ public class AppInterface extends javax.swing.JFrame {
         btn_attendance.setBackground(new java.awt.Color(255, 255, 255));
         btn_attendance.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btn_attendance.setForeground(new java.awt.Color(255, 255, 255));
-        btn_attendance.setIcon(new javax.swing.ImageIcon("C:\\Users\\Savindu\\Desktop\\Studies\\SLIIT\\Studies\\Curtin\\1st Semester\\HCI\\Project\\Git\\HCI_New\\unicenta_sd02_2020\\resources\\attendance36.png")); // NOI18N
+        btn_attendance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/attendance36_1.png"))); // NOI18N
         btn_attendance.setText("Attendance");
         btn_attendance.setToolTipText("");
         btn_attendance.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -275,30 +275,6 @@ public class AppInterface extends javax.swing.JFrame {
         );
 
         contentLayout.add(home, "card7");
-
-        inventory.setBackground(new java.awt.Color(28, 35, 51));
-
-        jLabel13.setForeground(new java.awt.Color(244, 244, 244));
-        jLabel13.setText("This is Inventory Use This Inventory panel as container of the content");
-
-        javax.swing.GroupLayout inventoryLayout = new javax.swing.GroupLayout(inventory);
-        inventory.setLayout(inventoryLayout);
-        inventoryLayout.setHorizontalGroup(
-            inventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inventoryLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
-        );
-        inventoryLayout.setVerticalGroup(
-            inventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inventoryLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
-        );
-
-        contentLayout.add(inventory, "card2");
 
         salse.setBackground(new java.awt.Color(0, 204, 204));
 
@@ -498,10 +474,8 @@ public class AppInterface extends javax.swing.JFrame {
     private javax.swing.JLabel btn_salse;
     private javax.swing.JLayeredPane contentLayout;
     private javax.swing.JPanel home;
-    private javax.swing.JPanel inventory;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
