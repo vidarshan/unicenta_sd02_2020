@@ -406,6 +406,7 @@ public class AppInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         Inventory interface_Inventory = new Inventory();
         panelNavigator(interface_Inventory, "Inventory Management");
+        this.btn_inventory.setForeground(new Color(0x2ECC71));
     }//GEN-LAST:event_btn_inventoryMouseClicked
 
     private void btn_attendanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_attendanceMouseClicked
