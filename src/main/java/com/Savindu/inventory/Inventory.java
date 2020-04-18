@@ -28,28 +28,18 @@ public class Inventory extends javax.swing.JPanel {
     private void initComponents() {
 
         inventory = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
 
         inventory.setBackground(new java.awt.Color(28, 35, 51));
-
-        jLabel13.setForeground(new java.awt.Color(244, 244, 244));
-        jLabel13.setText("This is Inventory Package Use This Inventory panel as container of the content");
 
         javax.swing.GroupLayout inventoryLayout = new javax.swing.GroupLayout(inventory);
         inventory.setLayout(inventoryLayout);
         inventoryLayout.setHorizontalGroup(
             inventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inventoryLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+            .addGap(0, 874, Short.MAX_VALUE)
         );
         inventoryLayout.setVerticalGroup(
             inventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inventoryLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
+            .addGap(0, 549, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -77,6 +67,5 @@ public class Inventory extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel inventory;
-    private javax.swing.JLabel jLabel13;
     // End of variables declaration//GEN-END:variables
 }
