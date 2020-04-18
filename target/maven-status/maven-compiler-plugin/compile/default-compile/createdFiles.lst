@@ -1,8 +1,28 @@
 Interface\AppInterface$5.class
 Interface\AppInterface$2.class
 Interface\AppInterface.class
+<<<<<<< Updated upstream
 Interface\AppInterface$1.class
 Interface\AppInterface$4.class
 Interface\AppInterface$7.class
 Interface\AppInterface$3.class
 Interface\AppInterface$6.class
+=======
+com\hci\login\Login$1.class
+Interface\AppInterface$1.class
+com\hci\inventory\Inventory.class
+com\hci\main\Sales$2.class
+com\hci\main\Sales.class
+com\hci\main\Sales$5.class
+Interface\AppInterface$4.class
+com\hci\maintenance\Maintenance.class
+Interface\AppInterface$7.class
+com\hci\inventory\Inventory$1.class
+com\hci\main\Sales$4.class
+com\hci\main\Sales$1.class
+Interface\AppInterface$3.class
+Interface\AppInterface$6.class
+com\hci\login\Login.class
+com\hci\main\Sales$3.class
+com\hci\maintenance\Maintenance$1.class
+>>>>>>> Stashed changes
