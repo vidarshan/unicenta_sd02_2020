@@ -172,9 +172,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\user36.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Users"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
@@ -212,9 +209,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\sales34.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Sales"/>
           </Properties>
           <Events>
@@ -233,9 +227,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\box24.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Inventory"/>
           </Properties>
@@ -256,9 +247,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\maintenance36.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Maintenance"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
@@ -278,9 +266,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\attendance36.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Attendance"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>

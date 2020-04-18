@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import com.Savindu.inventory.Inventory;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -427,7 +428,8 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void btn_inventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventoryMouseClicked
         // TODO add your handling code here:
-        panelNavigator(this.inventory, "Inventory Management");
+        Inventory interface_Inventory = new Inventory();
+        panelNavigator(interface_Inventory, "Inventory Management");
     }//GEN-LAST:event_btn_inventoryMouseClicked
 
     private void btn_attendanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_attendanceMouseClicked
