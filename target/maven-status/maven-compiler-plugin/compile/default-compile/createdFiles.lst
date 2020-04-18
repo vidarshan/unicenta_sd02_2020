@@ -1,2 +1,10 @@
-com\hci\sales\Sales$1.class
-com\hci\sales\Sales.class
+com\hci\login\Login$1.class
+com\hci\inventory\Inventory.class
+com\hci\main\Sales.class
+com\hci\maintenance\Maintenance.class
+com\hci\inventory\Inventory$1.class
+com\hci\main\Sales$1.class
+com\hci\login\Login.class
+com\hci\maintenance\Maintenance$1.class
+com\hci\users\Users.class
+com\hci\users\Users$1.class
