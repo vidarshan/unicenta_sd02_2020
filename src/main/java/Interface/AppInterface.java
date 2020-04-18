@@ -30,7 +30,9 @@ public class AppInterface extends javax.swing.JFrame {
     Attendance int_attendance = new Attendance();
     Sales interface_Sales = new Sales();
     Inventory interface_Inventory = new Inventory();
-    
+    user_home int_user = new user_home();
+    Maintenance int_maintenance = new Maintenance();
+     
     public AppInterface() {
         initComponents();
         //getContentPane().setBackground(new Color(0,51,51));
@@ -377,14 +379,14 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void btn_UsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UsersMouseClicked
         // TODO add your handling code here:
-        user_home int_user = new user_home();
+        
         panelNavigator(int_user, "User Management");
         sideNavBtnEvents(this.btn_Users);
     }//GEN-LAST:event_btn_UsersMouseClicked
 
     private void btn_MaintenanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MaintenanceMouseClicked
         // TODO add your handling code here:
-        Maintenance int_maintenance = new Maintenance();
+       
         panelNavigator(int_maintenance, "Maintenance");
         sideNavBtnEvents(this.btn_Maintenance);
     }//GEN-LAST:event_btn_MaintenanceMouseClicked

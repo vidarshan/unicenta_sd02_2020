@@ -1,25 +1,7 @@
 Interface\AppInterface$5.class
-<<<<<<< Updated upstream
-Interface\AppInterface$2.class
-com\Vidarshan\sales\Sales$1.class
-Interface\AppInterface.class
-com\Savindu\inventory\Inventory.class
-Interface\AppInterface$8.class
-com\Vidarshan\sales\Sales.class
-Interface\AppInterface$1.class
-Interface\AppInterface$4.class
-Interface\AppInterface$7.class
-Interface\AppInterface$3.class
-com\Kethaki\Users\AddCustomer.class
-com\Kethaki\Users\user_home.class
-com\Kethaki\Users\AddSupplier.class
-Interface\AppInterface$6.class
-com\Amasha\Maintenance\Maintenance.class
-com\Vidarshan\sales\Sales$2.class
-com\Kethaki\Users\user_home$1.class
-=======
 com\Savindu\inventory\Inventory$2.class
 Interface\AppInterface$2.class
+com\Vidarshan\sales\Sales$1.class
 Interface\AppInterface.class
 com\Savindu\inventory\Inventory.class
 com\Savindu\inventory\Inventory$5.class
@@ -32,9 +14,14 @@ Interface\AppInterface$4.class
 com\Savindu\inventory\Inventory$4.class
 Interface\AppInterface$7.class
 Interface\AppInterface$3.class
+com\Kethaki\Users\AddCustomer.class
+com\Kethaki\Users\user_home.class
+com\Kethaki\Users\AddSupplier.class
 Interface\AppInterface$6.class
 Interface\Home.class
+com\Amasha\Maintenance\Maintenance.class
 com\Savindu\inventory\Inventory$7.class
+com\Vidarshan\sales\Sales$2.class
 com\Savindu\inventory\Inventory$1.class
->>>>>>> Stashed changes
+com\Kethaki\Users\user_home$1.class
 com\Miyuru\attendance\Attendance.class
