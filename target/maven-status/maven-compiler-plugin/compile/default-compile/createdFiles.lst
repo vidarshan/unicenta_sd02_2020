@@ -9,7 +9,11 @@ Interface\AppInterface$1.class
 Interface\AppInterface$4.class
 Interface\AppInterface$7.class
 Interface\AppInterface$3.class
+com\Kethaki\Users\AddCustomer.class
+com\Kethaki\Users\user_home.class
+com\Kethaki\Users\AddSupplier.class
 Interface\AppInterface$6.class
 com\Amasha\Maintenance\Maintenance.class
 com\Vidarshan\sales\Sales$2.class
+com\Kethaki\Users\user_home$1.class
 com\Miyuru\attendance\Attendance.class

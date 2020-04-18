@@ -6,6 +6,7 @@
 package Interface;
 
 import com.Amasha.Maintenance.Maintenance;
+import com.Kethaki.Users.user_home;
 import com.Miyuru.attendance.Attendance;
 import com.Savindu.inventory.Inventory;
 import com.Vidarshan.sales.Sales;
@@ -454,7 +455,8 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void btn_UsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UsersMouseClicked
         // TODO add your handling code here:
-        panelNavigator(this.user, "User Management");
+        user_home int_user = new user_home();
+        panelNavigator(int_user, "User Management");
         sideNavBtnEvents(this.btn_Users);
     }//GEN-LAST:event_btn_UsersMouseClicked
 
