@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import com.Amasha.Maintenance.Maintenance;
 import com.Miyuru.attendance.Attendance;
 import com.Savindu.inventory.Inventory;
 import com.Vidarshan.sales.Sales;
@@ -459,7 +460,8 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void btn_MaintenanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MaintenanceMouseClicked
         // TODO add your handling code here:
-        panelNavigator(this.maintenance, "Maintenance");
+        Maintenance int_maintenance = new Maintenance();
+        panelNavigator(int_maintenance, "Maintenance");
         sideNavBtnEvents(this.btn_Maintenance);
     }//GEN-LAST:event_btn_MaintenanceMouseClicked
 

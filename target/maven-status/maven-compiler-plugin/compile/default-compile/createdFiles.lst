@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Interface\AppInterface$5.class
 Interface\AppInterface$2.class
 com\Vidarshan\sales\Sales$1.class
@@ -11,18 +10,6 @@ Interface\AppInterface$4.class
 Interface\AppInterface$7.class
 Interface\AppInterface$3.class
 Interface\AppInterface$6.class
+com\Amasha\Maintenance\Maintenance.class
 com\Vidarshan\sales\Sales$2.class
-=======
-Interface/AppInterface$3.class
-Interface/AppInterface.class
-Interface/AppInterface$7.class
-Interface/AppInterface$4.class
-com/Vidarshan/sales/Sales.class
-Interface/AppInterface$1.class
-Interface/AppInterface$5.class
-Interface/AppInterface$8.class
-Interface/AppInterface$2.class
-com/Savindu/inventory/Inventory.class
-com/Miyuru/attendance/Attendance.class
-Interface/AppInterface$6.class
->>>>>>> master
+com\Miyuru\attendance\Attendance.class
