@@ -12,6 +12,7 @@ import com.Savindu.inventory.Inventory;
 import com.Vidarshan.sales.Sales;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -25,17 +26,23 @@ public class AppInterface extends javax.swing.JFrame {
     /**
      * Creates new form Sales
      */
+    Home interface_home = new Home();
+    Attendance int_attendance = new Attendance();
+    Sales interface_Sales = new Sales();
+    Inventory interface_Inventory = new Inventory();
+    
     public AppInterface() {
         initComponents();
         //getContentPane().setBackground(new Color(0,51,51));
         getContentPane().setBackground(Color.WHITE);
-        setResizable(false);
+        //setResizable(false);
         
         //Load home panel
-        panelNavigator(this.home, "Home");
+        panelNavigator(interface_home, "Home");
         sideNavBtnEvents(this.jLabel1);
     }
 
+    
     public void panelNavigator(JPanel panel, String name){
         contentLayout.removeAll();
         contentLayout.add(panel);
@@ -82,12 +89,6 @@ public class AppInterface extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         navbar = new javax.swing.JLabel();
         contentLayout = new javax.swing.JLayeredPane();
-        home = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        salse = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        attendance = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         user = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         maintenance = new javax.swing.JPanel();
@@ -257,11 +258,11 @@ public class AppInterface extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(46, 46, 46));
+        jPanel2.setBackground(new java.awt.Color(55, 71, 79));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
         navbar.setBackground(new java.awt.Color(0, 51, 51));
-        navbar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        navbar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         navbar.setForeground(new java.awt.Color(255, 255, 255));
         navbar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         navbar.setText("SALES");
@@ -270,93 +271,15 @@ public class AppInterface extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+            .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
         contentLayout.setBackground(new java.awt.Color(28, 35, 51));
         contentLayout.setLayout(new java.awt.CardLayout());
-
-        home.setBackground(new java.awt.Color(28, 35, 51));
-
-        jLabel14.setBackground(new java.awt.Color(0, 51, 51));
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(244, 244, 244));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Welcom This is Home");
-
-        javax.swing.GroupLayout homeLayout = new javax.swing.GroupLayout(home);
-        home.setLayout(homeLayout);
-        homeLayout.setHorizontalGroup(
-            homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(homeLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
-        );
-        homeLayout.setVerticalGroup(
-            homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(homeLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(341, Short.MAX_VALUE))
-        );
-
-        contentLayout.add(home, "card7");
-
-        salse.setBackground(new java.awt.Color(0, 204, 204));
-
-        jLabel12.setForeground(new java.awt.Color(244, 244, 244));
-        jLabel12.setText("This is Salse Use This Salse panel as container of the content");
-
-        javax.swing.GroupLayout salseLayout = new javax.swing.GroupLayout(salse);
-        salse.setLayout(salseLayout);
-        salseLayout.setHorizontalGroup(
-            salseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(salseLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
-        );
-        salseLayout.setVerticalGroup(
-            salseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(salseLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
-        );
-
-        contentLayout.add(salse, "card3");
-
-        attendance.setBackground(new java.awt.Color(255, 102, 255));
-
-        jLabel5.setForeground(new java.awt.Color(244, 244, 244));
-        jLabel5.setText("This is Attendance Use This attendance panel as container of the content");
-
-        javax.swing.GroupLayout attendanceLayout = new javax.swing.GroupLayout(attendance);
-        attendance.setLayout(attendanceLayout);
-        attendanceLayout.setHorizontalGroup(
-            attendanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(attendanceLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
-        );
-        attendanceLayout.setVerticalGroup(
-            attendanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(attendanceLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
-        );
-
-        contentLayout.add(attendance, "card4");
 
         user.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -369,7 +292,7 @@ public class AppInterface extends javax.swing.JFrame {
             .addGroup(userLayout.createSequentialGroup()
                 .addGap(101, 101, 101)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
         userLayout.setVerticalGroup(
             userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,7 +316,7 @@ public class AppInterface extends javax.swing.JFrame {
             .addGroup(maintenanceLayout.createSequentialGroup()
                 .addGap(101, 101, 101)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
         maintenanceLayout.setVerticalGroup(
             maintenanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,16 +337,15 @@ public class AppInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(contentLayout)
-                        .addContainerGap())))
+                    .addComponent(contentLayout))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contentLayout)
                 .addContainerGap())
         );
@@ -433,7 +355,7 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void btn_salseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salseMouseClicked
         // TODO add your handling code here:
-        Sales interface_Sales = new Sales();
+        
         panelNavigator(interface_Sales, "Salse Management");
         sideNavBtnEvents(this.btn_salse);
         
@@ -441,14 +363,14 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void btn_inventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventoryMouseClicked
         // TODO add your handling code here:
-        Inventory interface_Inventory = new Inventory();
+        
         panelNavigator(interface_Inventory, "Inventory Management");
         sideNavBtnEvents(this.btn_inventory);
     }//GEN-LAST:event_btn_inventoryMouseClicked
 
     private void btn_attendanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_attendanceMouseClicked
         // TODO add your handling code here:
-        Attendance int_attendance = new Attendance();
+        
         panelNavigator(int_attendance, "Attendance Management");
         sideNavBtnEvents(this.btn_attendance);
     }//GEN-LAST:event_btn_attendanceMouseClicked
@@ -469,7 +391,7 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
-        panelNavigator(this.home, "Home");
+        panelNavigator(interface_home, "Home");
         sideNavBtnEvents(this.jLabel1);
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -530,19 +452,14 @@ public class AppInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel attendance;
     private javax.swing.JLabel btn_Maintenance;
     private javax.swing.JLabel btn_Users;
     private javax.swing.JLabel btn_attendance;
     private javax.swing.JLabel btn_inventory;
     private javax.swing.JLabel btn_salse;
     private javax.swing.JLayeredPane contentLayout;
-    private javax.swing.JPanel home;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -556,7 +473,6 @@ public class AppInterface extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JPanel maintenance;
     private javax.swing.JLabel navbar;
-    private javax.swing.JPanel salse;
     private javax.swing.JPanel user;
     // End of variables declaration//GEN-END:variables
 }
