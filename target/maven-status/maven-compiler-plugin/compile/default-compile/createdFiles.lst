@@ -2,11 +2,8 @@ Interface\AppInterface$5.class
 Interface\AppInterface$2.class
 Interface\AppInterface.class
 com\Savindu\inventory\Inventory.class
-<<<<<<< HEAD
-com\Vidarshan\sales\Sales.class
-=======
 Interface\AppInterface$8.class
->>>>>>> master
+com\Vidarshan\sales\Sales.class
 Interface\AppInterface$1.class
 Interface\AppInterface$4.class
 Interface\AppInterface$7.class

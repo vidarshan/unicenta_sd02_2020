@@ -240,10 +240,12 @@ public class AppInterface extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(46, 46, 46));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
         navbar.setBackground(new java.awt.Color(0, 51, 51));
         navbar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        navbar.setForeground(new java.awt.Color(255, 255, 255));
         navbar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         navbar.setText("SALES");
 
