@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import com.Miyuru.attendance.Attendance;
 import com.Savindu.inventory.Inventory;
 import com.Vidarshan.sales.Sales;
 import java.awt.Color;
@@ -445,7 +446,8 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void btn_attendanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_attendanceMouseClicked
         // TODO add your handling code here:
-        panelNavigator(this.attendance, "Attendance Management");
+        Attendance int_attendance = new Attendance();
+        panelNavigator(int_attendance, "Attendance Management");
         sideNavBtnEvents(this.btn_attendance);
     }//GEN-LAST:event_btn_attendanceMouseClicked
 
