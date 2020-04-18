@@ -155,14 +155,11 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-<<<<<<< Updated upstream:src/main/java/com/hci/login/Login.form
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/pos/images/home24.png"/>
-            </Property>
-=======
->>>>>>> Stashed changes:src/main/java/com/hci/sales/Sales.form
             <Property name="text" type="java.lang.String" value="Home"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="btn_Users">
           <Properties>
@@ -176,15 +173,14 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< Updated upstream:src/main/java/com/hci/login/Login.form
-              <Image iconType="3" name="/com/pos/images/user36.png"/>
-=======
               <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\user36.png"/>
->>>>>>> Stashed changes:src/main/java/com/hci/sales/Sales.form
             </Property>
             <Property name="text" type="java.lang.String" value="Users"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_UsersMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -217,11 +213,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< Updated upstream:src/main/java/com/hci/login/Login.form
-              <Image iconType="3" name="/com/pos/images/sales34.png"/>
-=======
               <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\sales34.png"/>
->>>>>>> Stashed changes:src/main/java/com/hci/sales/Sales.form
             </Property>
             <Property name="text" type="java.lang.String" value="Sales"/>
           </Properties>
@@ -243,14 +235,13 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< Updated upstream:src/main/java/com/hci/login/Login.form
-              <Image iconType="3" name="/com/pos/images/box24.png"/>
-=======
               <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\box24.png"/>
->>>>>>> Stashed changes:src/main/java/com/hci/sales/Sales.form
             </Property>
             <Property name="text" type="java.lang.String" value="Inventory"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_inventoryMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator4">
         </Component>
@@ -266,15 +257,14 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< Updated upstream:src/main/java/com/hci/login/Login.form
-              <Image iconType="3" name="/com/pos/images/maintenance36.png"/>
-=======
               <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\maintenance36.png"/>
->>>>>>> Stashed changes:src/main/java/com/hci/sales/Sales.form
             </Property>
             <Property name="text" type="java.lang.String" value="Maintenance"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_MaintenanceMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator5">
         </Component>
@@ -290,15 +280,14 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< Updated upstream:src/main/java/com/hci/login/Login.form
-              <Image iconType="3" name="/com/pos/images/attendance36.png"/>
-=======
               <Image iconType="2" name="C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\resources\attendance36.png"/>
->>>>>>> Stashed changes:src/main/java/com/hci/sales/Sales.form
             </Property>
             <Property name="text" type="java.lang.String" value="Attendance"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_attendanceMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator6">
         </Component>
@@ -318,19 +307,19 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel11" max="32767" attributes="0"/>
+                  <Component id="navbar" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jLabel11" alignment="0" pref="34" max="32767" attributes="0"/>
+              <Component id="navbar" alignment="0" pref="34" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel11">
+        <Component class="javax.swing.JLabel" name="navbar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="23" red="1c" type="rgb"/>
@@ -492,7 +481,7 @@
         <Container class="javax.swing.JPanel" name="attendance">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="23" red="1c" type="rgb"/>
+              <Color blue="ff" green="66" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>

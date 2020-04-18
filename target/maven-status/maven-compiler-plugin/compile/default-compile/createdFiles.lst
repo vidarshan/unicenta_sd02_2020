@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 com\hci\login\Login$1.class
 com\hci\inventory\Inventory.class
 com\hci\main\Sales.class
@@ -8,3 +9,16 @@ com\hci\login\Login.class
 com\hci\maintenance\Maintenance$1.class
 com\hci\users\Users.class
 com\hci\users\Users$1.class
+=======
+Interface\AppInterface$6.class
+Interface\AppInterface$3.class
+Interface\AppInterface$7.class
+com\hci\sales\Sales.class
+Interface\AppInterface$5.class
+Interface\AppInterface$1.class
+com\hci\sales\Sales$1.class
+com\hci\sales\Sales$2.class
+Interface\AppInterface$2.class
+Interface\AppInterface$4.class
+Interface\AppInterface.class
+>>>>>>> Stashed changes

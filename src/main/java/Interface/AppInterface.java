@@ -3,29 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hci.users;
+package Interface;
 
-import com.hci.main.*;
+import com.hci.sales.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
  * @author vidar
  */
-public class Users extends javax.swing.JFrame {
+public class AppInterface extends javax.swing.JFrame {
 
     /**
      * Creates new form Sales
      */
-    public Users() {
+    public AppInterface() {
         initComponents();
         //getContentPane().setBackground(new Color(0,51,51));
         getContentPane().setBackground(Color.WHITE);
         setResizable(false);
+        
+        //Load home panel
+        panelNavigator(this.home, "Home");
     }
 
+    public void panelNavigator(JPanel panel, String name){
+        contentLayout.removeAll();
+        contentLayout.add(panel);
+        contentLayout.repaint();
+        contentLayout.revalidate();
+        this.navbar.setText(name);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,7 +62,7 @@ public class Users extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
+        navbar = new javax.swing.JLabel();
         contentLayout = new javax.swing.JLayeredPane();
         home = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -76,18 +87,12 @@ public class Users extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-<<<<<<< Updated upstream:src/main/java/com/hci/users/Users.java
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/home24.png"))); // NOI18N
         jLabel1.setText("Home");
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/user36.png"))); // NOI18N
-        jLabel2.setText("Users");
-        jLabel2.setToolTipText("");
-=======
-        jLabel1.setText("Home");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         btn_Users.setBackground(new java.awt.Color(255, 255, 255));
         btn_Users.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -95,42 +100,16 @@ public class Users extends javax.swing.JFrame {
         btn_Users.setIcon(new javax.swing.ImageIcon("C:\\Users\\Savindu\\Desktop\\Studies\\SLIIT\\Studies\\Curtin\\1st Semester\\HCI\\Project\\Git\\HCI_New\\unicenta_sd02_2020\\resources\\user36.png")); // NOI18N
         btn_Users.setText("Users");
         btn_Users.setToolTipText("");
->>>>>>> Stashed changes:src/main/java/com/hci/sales/Sales.java
+        btn_Users.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_UsersMouseClicked(evt);
+            }
+        });
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-<<<<<<< Updated upstream:src/main/java/com/hci/users/Users.java
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/logout32.png"))); // NOI18N
-        jLabel3.setText("Logout");
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/sales34.png"))); // NOI18N
-        jLabel4.setText("Sales");
-
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/box24.png"))); // NOI18N
-        jLabel6.setText("Inventory");
-
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/maintenance36.png"))); // NOI18N
-        jLabel8.setText("Maintenance");
-        jLabel8.setToolTipText("");
-
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/attendance36.png"))); // NOI18N
-        jLabel10.setText("Attendance");
-        jLabel10.setToolTipText("");
-=======
         jLabel3.setText("Logout");
 
         btn_salse.setBackground(new java.awt.Color(255, 255, 255));
@@ -149,6 +128,11 @@ public class Users extends javax.swing.JFrame {
         btn_inventory.setForeground(new java.awt.Color(255, 255, 255));
         btn_inventory.setIcon(new javax.swing.ImageIcon("C:\\Users\\Savindu\\Desktop\\Studies\\SLIIT\\Studies\\Curtin\\1st Semester\\HCI\\Project\\Git\\HCI_New\\unicenta_sd02_2020\\resources\\box24.png")); // NOI18N
         btn_inventory.setText("Inventory");
+        btn_inventory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_inventoryMouseClicked(evt);
+            }
+        });
 
         btn_Maintenance.setBackground(new java.awt.Color(255, 255, 255));
         btn_Maintenance.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -156,6 +140,11 @@ public class Users extends javax.swing.JFrame {
         btn_Maintenance.setIcon(new javax.swing.ImageIcon("C:\\Users\\Savindu\\Desktop\\Studies\\SLIIT\\Studies\\Curtin\\1st Semester\\HCI\\Project\\Git\\HCI_New\\unicenta_sd02_2020\\resources\\maintenance36.png")); // NOI18N
         btn_Maintenance.setText("Maintenance");
         btn_Maintenance.setToolTipText("");
+        btn_Maintenance.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_MaintenanceMouseClicked(evt);
+            }
+        });
 
         btn_attendance.setBackground(new java.awt.Color(255, 255, 255));
         btn_attendance.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -163,7 +152,11 @@ public class Users extends javax.swing.JFrame {
         btn_attendance.setIcon(new javax.swing.ImageIcon("C:\\Users\\Savindu\\Desktop\\Studies\\SLIIT\\Studies\\Curtin\\1st Semester\\HCI\\Project\\Git\\HCI_New\\unicenta_sd02_2020\\resources\\attendance36.png")); // NOI18N
         btn_attendance.setText("Attendance");
         btn_attendance.setToolTipText("");
->>>>>>> Stashed changes:src/main/java/com/hci/sales/Sales.java
+        btn_attendance.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_attendanceMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -234,10 +227,10 @@ public class Users extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel11.setBackground(new java.awt.Color(28, 35, 51));
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("USERS");
+        navbar.setBackground(new java.awt.Color(28, 35, 51));
+        navbar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        navbar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        navbar.setText("SALES");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -245,12 +238,12 @@ public class Users extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+            .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
         );
 
         contentLayout.setBackground(new java.awt.Color(28, 35, 51));
@@ -331,7 +324,7 @@ public class Users extends javax.swing.JFrame {
 
         contentLayout.add(salse, "card3");
 
-        attendance.setBackground(new java.awt.Color(28, 35, 51));
+        attendance.setBackground(new java.awt.Color(255, 102, 255));
 
         jLabel5.setForeground(new java.awt.Color(244, 244, 244));
         jLabel5.setText("This is Attendance Use This attendance panel as container of the content");
@@ -430,8 +423,33 @@ public class Users extends javax.swing.JFrame {
 
     private void btn_salseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salseMouseClicked
         // TODO add your handling code here:
-        
+        panelNavigator(this.salse, "Salse Management");
     }//GEN-LAST:event_btn_salseMouseClicked
+
+    private void btn_inventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventoryMouseClicked
+        // TODO add your handling code here:
+        panelNavigator(this.inventory, "Inventory Management");
+    }//GEN-LAST:event_btn_inventoryMouseClicked
+
+    private void btn_attendanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_attendanceMouseClicked
+        // TODO add your handling code here:
+        panelNavigator(this.attendance, "Attendance Management");
+    }//GEN-LAST:event_btn_attendanceMouseClicked
+
+    private void btn_UsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UsersMouseClicked
+        // TODO add your handling code here:
+        panelNavigator(this.user, "User Management");
+    }//GEN-LAST:event_btn_UsersMouseClicked
+
+    private void btn_MaintenanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MaintenanceMouseClicked
+        // TODO add your handling code here:
+        panelNavigator(this.maintenance, "Maintenance");
+    }//GEN-LAST:event_btn_MaintenanceMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        panelNavigator(this.home, "Home");
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -450,21 +468,21 @@ public class Users extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Users.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Users.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Users.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Users.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Users().setVisible(true);
+                new AppInterface().setVisible(true);
                 
             }
         });
@@ -481,7 +499,6 @@ public class Users extends javax.swing.JFrame {
     private javax.swing.JPanel home;
     private javax.swing.JPanel inventory;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -499,6 +516,7 @@ public class Users extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JPanel maintenance;
+    private javax.swing.JLabel navbar;
     private javax.swing.JPanel salse;
     private javax.swing.JPanel user;
     // End of variables declaration//GEN-END:variables
