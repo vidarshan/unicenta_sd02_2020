@@ -20,7 +20,11 @@ public class Inventory extends javax.swing.JPanel {
      * Creates new form Inventory
      */
     
+<<<<<<< Updated upstream
     AppInterface ap = new AppInterface();
+=======
+    //AppInterface ap = new AppInterface();
+>>>>>>> Stashed changes
     
     public Inventory() {
         initComponents();
@@ -258,8 +262,13 @@ public class Inventory extends javax.swing.JPanel {
 
     private void btn_product_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_addMouseClicked
         // TODO add your handling code here:
+<<<<<<< Updated upstream
         AddProduct add_product = new AddProduct(ap, true);
         add_product.setVisible(true);
+=======
+       // AddProduct add_product = new AddProduct(ap, true);
+        //add_product.setVisible(true);
+>>>>>>> Stashed changes
     }//GEN-LAST:event_btn_product_addMouseClicked
 
 
