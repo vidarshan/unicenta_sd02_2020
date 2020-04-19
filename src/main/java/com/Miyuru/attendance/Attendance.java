@@ -152,7 +152,7 @@ public class Attendance extends javax.swing.JPanel {
         
     private void btn_leavesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_leavesMouseClicked
 
-        Leaves l = new Leaves();
+        Leaves_int l = new Leaves_int();
         panelNavigator(l);
 
     }//GEN-LAST:event_btn_leavesMouseClicked
