@@ -1,22 +1,3 @@
-<<<<<<< Updated upstream
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddCustomer.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\Interface\Home.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Leaves.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Breaks.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Miyuru\login\LogIn.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Categories.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\InventoryPanel.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Roles.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\DB\Sales\DatabaseConnection.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Maintenance.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Inventory.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Attendance.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\SalesModel.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\Interface\AppInterface.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\user_home.java
-C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddSupplier.java
-=======
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/login/LogIn.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/Home.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Vidarshan/sales/SalesModel.java
@@ -25,13 +6,14 @@ C:\hci_unicenta_2020-Ama-Thilakarathne\HCI_2020\unicenta_sd02_2020\src\main\java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/Attendance.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/Breaks.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Maintenance.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Users.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/AppInterface.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/user_home.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/Inventory.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Roles.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/Popup.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/Categories.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Vidarshan/sales/Sales.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/AddSupplier.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/InventoryPanel.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/Leaves.java
->>>>>>> Stashed changes
