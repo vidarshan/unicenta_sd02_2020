@@ -32,9 +32,9 @@ public class Attendance extends javax.swing.JPanel {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        btn_breaks = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        btn_leaves = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(28, 35, 51));
         setPreferredSize(new java.awt.Dimension(900, 480));
@@ -42,21 +42,21 @@ public class Attendance extends javax.swing.JPanel {
         jLayeredPane1.setLayout(new java.awt.CardLayout(100, 100));
 
         jPanel1.setBackground(new java.awt.Color(28, 35, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(204, 204, 204))); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(255, 193, 7));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         jPanel3.setForeground(new java.awt.Color(26, 188, 156));
 
-        jLabel2.setBackground(new java.awt.Color(28, 35, 51));
-        jLabel2.setFont(new java.awt.Font("Symbol", 0, 18)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/time-card100.png"))); // NOI18N
-        jLabel2.setText("Break");
-        jLabel2.setBounds(new java.awt.Rectangle(0, 10, 10, 0));
-        jLabel2.setIconTextGap(1);
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_breaks.setBackground(new java.awt.Color(28, 35, 51));
+        btn_breaks.setFont(new java.awt.Font("Symbol", 0, 18)); // NOI18N
+        btn_breaks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_breaks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/time-card100.png"))); // NOI18N
+        btn_breaks.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Breaks", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 18))); // NOI18N
+        btn_breaks.setBounds(new java.awt.Rectangle(0, 10, 10, 0));
+        btn_breaks.setIconTextGap(1);
+        btn_breaks.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                btn_breaksMouseClicked(evt);
             }
         });
 
@@ -66,26 +66,27 @@ public class Attendance extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                .addComponent(btn_breaks, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btn_breaks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 193, 7));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
-        jLabel1.setBackground(new java.awt.Color(28, 35, 51));
-        jLabel1.setFont(new java.awt.Font("Symbol", 0, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/leave-100.png"))); // NOI18N
-        jLabel1.setText("Leaves");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_leaves.setBackground(new java.awt.Color(28, 35, 51));
+        btn_leaves.setFont(new java.awt.Font("Symbol", 0, 18)); // NOI18N
+        btn_leaves.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_leaves.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-leave-100.png"))); // NOI18N
+        btn_leaves.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Leaves", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 18))); // NOI18N
+        btn_leaves.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                btn_leavesMouseClicked(evt);
             }
         });
 
@@ -95,14 +96,14 @@ public class Attendance extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                .addComponent(btn_leaves, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                .addComponent(btn_leaves, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -113,7 +114,7 @@ public class Attendance extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -149,28 +150,24 @@ public class Attendance extends javax.swing.JPanel {
         //this.navbar.setText(name);
     }
         
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        
-        //Leaves leave = new Leaves();
-        
-        Breaks b = new Breaks();
-        
-        panelNavigator(b);
-        
-        
-    }//GEN-LAST:event_jLabel1MouseClicked
+    private void btn_leavesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_leavesMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-        
-        Leaves l = new Leaves();
+        Leaves_int l = new Leaves_int();
         panelNavigator(l);
-    }//GEN-LAST:event_jLabel2MouseClicked
+
+    }//GEN-LAST:event_btn_leavesMouseClicked
+
+    private void btn_breaksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_breaksMouseClicked
+
+        Breaks b = new Breaks();
+        panelNavigator(b);
+      
+    }//GEN-LAST:event_btn_breaksMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel btn_breaks;
+    private javax.swing.JLabel btn_leaves;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
