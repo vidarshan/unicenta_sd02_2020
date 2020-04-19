@@ -27,60 +27,126 @@ public class user_home extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        btn_cus = new javax.swing.JButton();
-        btn_sup = new javax.swing.JButton();
+        externalUser = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jPanel1 = new javax.swing.JPanel();
+        addSupplier = new javax.swing.JLabel();
+        addCustomer = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
 
-        setBackground(new java.awt.Color(153, 153, 255));
+        setBackground(new java.awt.Color(55, 71, 79));
 
-        jLabel1.setText("User Home");
+        externalUser.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        externalUser.setForeground(new java.awt.Color(255, 255, 255));
+        externalUser.setText("External User Mainenance");
 
-        btn_cus.setText("ADD CUSTOMER");
-        btn_cus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cusActionPerformed(evt);
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+
+        addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/supplier_button.png"))); // NOI18N
+        addSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addSupplierMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addSupplierMouseExited(evt);
             }
         });
 
-        btn_sup.setText("ADD SUPPLIER");
+        addCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer_button.png"))); // NOI18N
+        addCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addCustomerMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addCustomerMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addCustomer)
+                            .addComponent(addSupplier))
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(48, Short.MAX_VALUE)
+                .addComponent(addCustomer)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addSupplier)
+                .addGap(73, 73, 73))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(externalUser, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_cus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_sup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(151, Short.MAX_VALUE))
+                        .addGap(220, 220, 220)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(btn_cus)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(externalUser, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_sup)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_cusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cusActionPerformed
+    private void addCustomerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCustomerMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_cusActionPerformed
+        addCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/updCus_button.png")));
+    }//GEN-LAST:event_addCustomerMouseEntered
+
+    private void addCustomerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCustomerMouseExited
+        // TODO add your handling code here:
+        addCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer_button.png")));
+    }//GEN-LAST:event_addCustomerMouseExited
+
+    private void addSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSupplierMouseEntered
+        // TODO add your handling code here:
+        addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/upd_button.png")));
+    }//GEN-LAST:event_addSupplierMouseEntered
+
+    private void addSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSupplierMouseExited
+        // TODO add your handling code here:
+        addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supplier_button.png")));
+    }//GEN-LAST:event_addSupplierMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_cus;
-    private javax.swing.JButton btn_sup;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel addCustomer;
+    private javax.swing.JLabel addSupplier;
+    private javax.swing.JLabel externalUser;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }

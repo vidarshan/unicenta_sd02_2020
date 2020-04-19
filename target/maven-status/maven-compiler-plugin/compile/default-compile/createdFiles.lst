@@ -7,6 +7,7 @@ Interface\AppInterface.class
 com\Savindu\inventory\Inventory.class
 com\Savindu\inventory\Inventory$5.class
 Interface\AppInterface$8.class
+com\Miyuru\attendance\Leaves.class
 com\Vidarshan\sales\Sales.class
 com\Amasha\Maintenance\Roles.class
 com\Savindu\inventory\InventoryPanel$1.class
@@ -24,6 +25,7 @@ com\Vidarshan\sales\Sales$2.class
 com\Savindu\inventory\Inventory$1.class
 com\Vidarshan\sales\Sales$9.class
 com\Kethaki\Users\user_home$1.class
+com\Kethaki\Users\user_home$2.class
 com\Savindu\inventory\Popup.class
 com\Miyuru\login\LogIn$3.class
 com\Amasha\Maintenance\Roles$1.class
@@ -33,6 +35,7 @@ com\Savindu\inventory\InventoryPanel.class
 Interface\AppInterface$1.class
 com\DB\Sales\DatabaseConnection.class
 com\Savindu\inventory\Categories$6.class
+com\Amasha\Maintenance\Users.class
 Interface\AppInterface$4.class
 com\Savindu\inventory\Inventory$4.class
 com\Savindu\inventory\InventoryPanel$2.class
@@ -44,4 +47,7 @@ Interface\AppInterface$6.class
 com\Vidarshan\sales\Sales$5.class
 com\Vidarshan\sales\SalesModel.class
 com\Amasha\Maintenance\Maintenance.class
+com\Savindu\inventory\Categories.class
+com\Amasha\Maintenance\Maintenance$1.class
+com\Miyuru\attendance\Breaks.class
 com\Miyuru\attendance\Attendance.class
