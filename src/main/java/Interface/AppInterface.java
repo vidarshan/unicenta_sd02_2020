@@ -39,7 +39,7 @@ public class AppInterface extends javax.swing.JFrame {
         initComponents();
         //getContentPane().setBackground(new Color(0,51,51));
         getContentPane().setBackground(Color.WHITE);
-        //setResizable(false);
+        setResizable(false);
         
         //Load home panel
         panelNavigator(interface_home, "Home");
@@ -271,7 +271,7 @@ public class AppInterface extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
         navbar.setBackground(new java.awt.Color(0, 51, 51));
-        navbar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        navbar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         navbar.setForeground(new java.awt.Color(255, 255, 255));
         navbar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         navbar.setText("SALES");
@@ -365,7 +365,7 @@ public class AppInterface extends javax.swing.JFrame {
     private void btn_salseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salseMouseClicked
         // TODO add your handling code here:
         
-        panelNavigator(interface_Sales, "Salse Management");
+        panelNavigator(interface_Sales, "Sales Management");
         sideNavBtnEvents(this.btn_salse);
         
     }//GEN-LAST:event_btn_salseMouseClicked
