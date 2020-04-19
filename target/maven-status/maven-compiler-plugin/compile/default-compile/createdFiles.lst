@@ -22,6 +22,9 @@ Interface\Home.class
 com\Amasha\Maintenance\Maintenance.class
 com\Savindu\inventory\Inventory$7.class
 com\Vidarshan\sales\Sales$2.class
+<<<<<<< Updated upstream
 com\Savindu\inventory\Inventory$1.class
 com\Kethaki\Users\user_home$1.class
+=======
+>>>>>>> Stashed changes
 com\Miyuru\attendance\Attendance.class
