@@ -1,13 +1,10 @@
-<<<<<<< Updated upstream
-E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Attendance.java
-E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Inventory.java
-E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\Interface\AppInterface.java
-E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
-E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Maintenance.java
-=======
-C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Inventory.java
-C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Attendance.java
-C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
-C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\Interface\AppInterface.java
-C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\Interface\Home.java
->>>>>>> Stashed changes
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/login/LogIn.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/Home.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/AddCustomer.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/user_home.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/Inventory.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/Attendance.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Vidarshan/sales/Sales.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Maintenance.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/AddSupplier.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/AppInterface.java
