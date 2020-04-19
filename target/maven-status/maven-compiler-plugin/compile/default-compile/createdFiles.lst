@@ -1,3 +1,4 @@
+com\Vidarshan\sales\Sales$4.class
 Interface\AppInterface$5.class
 com\Savindu\inventory\Inventory$2.class
 Interface\AppInterface$2.class
@@ -7,7 +8,10 @@ com\Savindu\inventory\Inventory.class
 com\Savindu\inventory\Inventory$5.class
 Interface\AppInterface$8.class
 com\Vidarshan\sales\Sales.class
+<<<<<<< Updated upstream
 com\Amasha\Maintenance\Roles.class
+=======
+>>>>>>> Stashed changes
 com\Miyuru\login\LogIn$1.class
 com\Miyuru\login\LogIn.class
 Interface\AppInterface$3.class
@@ -31,6 +35,7 @@ Interface\AppInterface$7.class
 com\Kethaki\Users\AddCustomer.class
 com\Kethaki\Users\AddSupplier.class
 Interface\AppInterface$6.class
+com\Vidarshan\sales\Sales$5.class
 com\Vidarshan\sales\SalesModel.class
 com\Amasha\Maintenance\Maintenance.class
 com\Miyuru\attendance\Attendance.class
