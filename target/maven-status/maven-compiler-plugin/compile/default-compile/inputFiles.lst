@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddCustomer.java
@@ -48,4 +49,32 @@ C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\Interface\A
 C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Attendance.java
 C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\SalesModel.java
 C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
+=======
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Attendance.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Inventory.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\user_home.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\Interface\AppInterface.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Maintenance.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddCustomer.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\Interface\Home.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Miyuru\login\LogIn.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddSupplier.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\DB\Sales\DatabaseConnection.java
+E:\HCI\UnicentaPOS new\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\SalesModel.java
+=======
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/login/LogIn.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/Home.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Vidarshan/sales/SalesModel.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/AddCustomer.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/DB/Sales/DatabaseConnection.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/Attendance.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Maintenance.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/AppInterface.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/user_home.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/Inventory.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Roles.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Vidarshan/sales/Sales.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/AddSupplier.java
+>>>>>>> master
 >>>>>>> master
