@@ -9,12 +9,12 @@ package com.Savindu.inventory;
  *
  * @author Savindu
  */
-public class AddProduct extends javax.swing.JPanel {
+public class AddCat extends javax.swing.JPanel {
 
     /**
-     * Creates new form NewJPanel
+     * Creates new form AddCat
      */
-    public AddProduct() {
+    public AddCat() {
         initComponents();
     }
 
@@ -54,8 +54,8 @@ public class AddProduct extends javax.swing.JPanel {
         Products.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Products.setForeground(new java.awt.Color(244, 244, 244));
         Products.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-box-36.png"))); // NOI18N
-        Products.setText("Add Product");
+        Products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-menu-36.png"))); // NOI18N
+        Products.setText("Add Category");
         Products.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ProductsMouseClicked(evt);

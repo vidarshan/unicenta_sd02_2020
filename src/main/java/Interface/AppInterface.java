@@ -6,7 +6,7 @@
 package Interface;
 
 import com.Amasha.Maintenance.Maintenance;
-import com.Kethaki.Users.user_home;
+import com.Kethaki.Users.UserHome;
 import com.Miyuru.attendance.Attendance;
 import com.Vidarshan.sales.Sales;
 import com.Miyuru.login.LogIn;
@@ -31,7 +31,7 @@ public class AppInterface extends javax.swing.JFrame {
     Attendance int_attendance = new Attendance();
     Sales interface_Sales = new Sales();
     InventoryPanel interface_Inventory = new InventoryPanel();
-    user_home int_user = new user_home();
+    UserHome int_user = new UserHome();
     Maintenance int_maintenance = new Maintenance();
     LogIn int_login = new LogIn();
      
