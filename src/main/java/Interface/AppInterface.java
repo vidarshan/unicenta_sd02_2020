@@ -10,6 +10,7 @@ import com.Kethaki.Users.user_home;
 import com.Miyuru.attendance.Attendance;
 import com.Vidarshan.sales.Sales;
 import com.Miyuru.login.LogIn;
+import com.Miyuru.login.loginPage;
 import com.Savindu.inventory.InventoryPanel;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -428,7 +429,12 @@ public class AppInterface extends javax.swing.JFrame {
 
     private void btn_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseClicked
         // TODO add your handling code here:
-        panelNavigator(int_login, "LogIn");
+        
+        loginPage i = new loginPage();
+        this.setVisible(false);
+        i.setVisible(true);
+        
+        //panelNavigator(int_login, "LogIn");
     }//GEN-LAST:event_btn_logoutMouseClicked
 
     /**
