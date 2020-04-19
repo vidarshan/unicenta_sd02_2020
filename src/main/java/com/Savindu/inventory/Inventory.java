@@ -8,7 +8,10 @@ package com.Savindu.inventory;
 import Interface.AppInterface;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -102,6 +105,9 @@ public class Inventory extends javax.swing.JPanel {
         btn_product_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-36.png"))); // NOI18N
         btn_product_edit.setText("Edit Product");
         btn_product_edit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_product_editMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_product_editMouseEntered(evt);
             }
@@ -265,6 +271,23 @@ public class Inventory extends javax.swing.JPanel {
         add_product.setVisible(true);
 
     }//GEN-LAST:event_btn_product_addMouseClicked
+
+    private void btn_product_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_editMouseClicked
+        // TODO add your handling code here:
+        int column = 0;
+        int row[] = tbl_Products.getSelectedRows();
+        
+            if(row.length == 1){
+            String value = tbl_Products.getModel().getValueAt(row[0], column).toString();
+            System.out.println("getSelectedRow = "+value);   
+            }else{
+                JOptionPane.showMessageDialog(null, "Please select a single row to Edit");
+            }
+            
+           // btn_product_edit.setIcon(new ImageIcon("C:/Users/Savindu/Downloads/icons8-save-close-36.png"));
+        
+        
+    }//GEN-LAST:event_btn_product_editMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
