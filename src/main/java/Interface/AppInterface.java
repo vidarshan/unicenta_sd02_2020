@@ -10,6 +10,7 @@ import com.Kethaki.Users.user_home;
 import com.Miyuru.attendance.Attendance;
 import com.Savindu.inventory.Inventory;
 import com.Vidarshan.sales.Sales;
+import com.Miyuru.login.LogIn;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -32,6 +33,7 @@ public class AppInterface extends javax.swing.JFrame {
     Inventory interface_Inventory = new Inventory();
     user_home int_user = new user_home();
     Maintenance int_maintenance = new Maintenance();
+    LogIn int_login = new LogIn();
      
     public AppInterface() {
         initComponents();
@@ -76,7 +78,7 @@ public class AppInterface extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btn_Users = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        btn_logout = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         btn_salse = new javax.swing.JLabel();
@@ -126,12 +128,17 @@ public class AppInterface extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logout32_1.png"))); // NOI18N
-        jLabel3.setText("Logout");
+        btn_logout.setBackground(new java.awt.Color(255, 255, 255));
+        btn_logout.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btn_logout.setForeground(new java.awt.Color(255, 255, 255));
+        btn_logout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logout32_1.png"))); // NOI18N
+        btn_logout.setText("Logout");
+        btn_logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_logoutMouseClicked(evt);
+            }
+        });
 
         btn_salse.setBackground(new java.awt.Color(255, 255, 255));
         btn_salse.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -223,7 +230,7 @@ public class AppInterface extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -256,7 +263,7 @@ public class AppInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -416,6 +423,11 @@ public class AppInterface extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_inventoryMouseEntered
 
+    private void btn_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseClicked
+        // TODO add your handling code here:
+        panelNavigator(int_login, "LogIn");
+    }//GEN-LAST:event_btn_logoutMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -458,10 +470,10 @@ public class AppInterface extends javax.swing.JFrame {
     private javax.swing.JLabel btn_Users;
     private javax.swing.JLabel btn_attendance;
     private javax.swing.JLabel btn_inventory;
+    private javax.swing.JLabel btn_logout;
     private javax.swing.JLabel btn_salse;
     private javax.swing.JLayeredPane contentLayout;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
