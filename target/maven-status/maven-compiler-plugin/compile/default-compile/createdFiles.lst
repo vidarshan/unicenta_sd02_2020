@@ -7,6 +7,7 @@ com\Savindu\inventory\Inventory.class
 com\Savindu\inventory\Inventory$5.class
 Interface\AppInterface$8.class
 com\Vidarshan\sales\Sales.class
+com\Amasha\Maintenance\Roles.class
 com\Miyuru\login\LogIn$1.class
 com\Miyuru\login\LogIn.class
 Interface\AppInterface$3.class
