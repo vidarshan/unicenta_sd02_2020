@@ -261,10 +261,8 @@ public class Inventory extends javax.swing.JPanel {
     private void btn_product_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_addMouseClicked
         // TODO add your handling code here:
 
-        
-
-       // AddProduct add_product = new AddProduct(ap, true);
-        //add_product.setVisible(true);
+        AddProduct add_product = new AddProduct();
+        add_product.setVisible(true);
 
     }//GEN-LAST:event_btn_product_addMouseClicked
 
