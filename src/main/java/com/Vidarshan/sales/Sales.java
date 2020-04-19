@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Sales extends javax.swing.JPanel {
 private Connection con;
-
+private int saleId;
     /**
      * Creates new form Sales
      */
@@ -60,7 +60,7 @@ private Connection con;
         jPanel7 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        update = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         View = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -244,6 +244,11 @@ private Connection con;
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/delete30.png"))); // NOI18N
         jLabel6.setText("Undo Sale");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -289,11 +294,16 @@ private Connection con;
 
         jPanel8.setBackground(new java.awt.Color(102, 102, 255));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/print30.png"))); // NOI18N
-        jLabel10.setText("Print");
+        update.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        update.setForeground(new java.awt.Color(255, 255, 255));
+        update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/print30.png"))); // NOI18N
+        update.setText("Update");
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -301,12 +311,12 @@ private Connection con;
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                .addComponent(update, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+            .addComponent(update, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
 
         View.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -339,13 +349,14 @@ private Connection con;
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(12, 12, 12)
                         .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -377,6 +388,11 @@ private Connection con;
                 "Sale ID", "Product Name", " Unit Price", "Quantity"
             }
         ));
+        salesTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salesTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(salesTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -465,12 +481,78 @@ private Connection con;
            total.setText("");
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void salesTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salesTableMouseClicked
+        // TODO add your handling code here:
+        try{
+          saleId = Integer.parseInt(salesTable.getValueAt(salesTable.getSelectedRow(), 0).toString());
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery("SELECT * FROM sales WHERE id = " + saleId);
+            if(rs.next()){
+                product_name.setText(rs.getString(2));
+                product_price.setText(rs.getString(3));
+                product_quantity.setText(rs.getInt(4)+"");
+                total.setText(rs.getString(5));
+                product_tax.setText(rs.getInt(6)+"");
+                product_commision.setText(rs.getString(7));
+            }
+            rs.close();
+            smt.close();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e);
+        }
+      
+    }//GEN-LAST:event_salesTableMouseClicked
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+        // TODO add your handling code here:
+        if(saleId != 0){
+            String productName = product_name.getText();
+            int productPrice = Integer.parseInt(product_price.getText());
+            int productQuantity = Integer.parseInt(product_quantity.getText());
+            int gross_price = productPrice * productQuantity;
+            int tax = Integer.parseInt(product_tax.getText());
+            int commision = Integer.parseInt(product_commision.getText());
+            int salesValue = gross_price + tax + commision;
+            try{
+                Statement smt = con.createStatement();
+                smt.execute("update sales set product_name='"+productName+"', product_price="+productPrice+", product_quantity="+productQuantity+", sales_value="+salesValue+", tax="+tax+", commision="+commision+" where id="+saleId);
+                JOptionPane.showMessageDialog(this, "Record Updated");
+                setSalesTableData();
+           product_name.setText("");
+           product_price.setText("");
+           product_quantity.setText("");
+           product_tax.setText("");
+           product_commision.setText("");
+           total.setText("");
+           saleId = 0;
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(this, "Cannot Update Record");
+            }
+            
+        }
+    }//GEN-LAST:event_updateMouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+        if(saleId != 0){
+            try{
+                Statement smt = con.createStatement();
+                smt.execute("delete from sales where id =" + saleId);
+                JOptionPane.showMessageDialog(this, "Sales Record Deleted");
+                setSalesTableData();
+                saleId = 0;
+            }catch(SQLException e){
+                JOptionPane.showMessageDialog(this, "Cannot Delete Record");
+            }
+            
+        }
+    }//GEN-LAST:event_jLabel6MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel View;
     private javax.swing.JLabel add;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -495,6 +577,7 @@ private Connection con;
     private javax.swing.JTextField product_tax;
     private javax.swing.JTable salesTable;
     private javax.swing.JTextField total;
+    private javax.swing.JLabel update;
     // End of variables declaration//GEN-END:variables
 
     private void setSalesTableData() {
