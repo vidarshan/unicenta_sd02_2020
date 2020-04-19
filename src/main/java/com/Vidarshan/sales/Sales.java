@@ -7,7 +7,17 @@ package com.Vidarshan.sales;
 
 import com.DB.Sales.DatabaseConnection;
 import java.sql.Connection;
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import java.text.DateFormat;
+import java.util.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,6 +28,16 @@ import javax.swing.table.DefaultTableModel;
 public class Sales extends javax.swing.JPanel {
 private Connection con;
 private int saleId;
+        String productName;
+        int productPrice;
+        int productQuantity;
+        int gross_price = productPrice * productQuantity;
+        int tax;
+        int commision;
+        int salesValue = gross_price + tax + commision;
+        
+        int saleString=salesValue;  
+        String s=Integer.toString(saleString);
     /**
      * Creates new form Sales
      */
@@ -26,6 +46,8 @@ private int saleId;
         DatabaseConnection dbc = DatabaseConnection.getDatabaseConnection();
         con = dbc.getConnection();
         setSalesTableData();
+        grandTotal.setEditable(false);
+        total.setEditable(false);
     }
 
     /**
@@ -70,11 +92,15 @@ private int saleId;
         salesTable = new javax.swing.JTable();
         jPanel12 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        grandTotal = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
+        End = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        clearsale = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        cal = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -448,7 +474,7 @@ private int saleId;
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Grand Total");
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        grandTotal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -458,7 +484,7 @@ private int saleId;
                 .addContainerGap()
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                .addComponent(grandTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -467,16 +493,21 @@ private int saleId;
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(grandTotal))
                 .addContainerGap())
         );
 
         jPanel14.setBackground(new java.awt.Color(255, 0, 51));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("End Sale");
+        End.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        End.setForeground(new java.awt.Color(255, 255, 255));
+        End.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        End.setText("End Sale");
+        End.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EndMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -484,12 +515,12 @@ private int saleId;
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(End, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(End, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
         );
 
         jPanel15.setBackground(new java.awt.Color(0, 153, 153));
@@ -509,7 +540,54 @@ private int saleId;
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        clearsale.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        clearsale.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clearsale.setText("Clear Sale");
+        clearsale.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearsaleMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(clearsale, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(clearsale, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel13.setBackground(new java.awt.Color(153, 153, 0));
+
+        cal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cal.setText("Calculator");
+        cal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cal, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -517,8 +595,8 @@ private int saleId;
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -534,8 +612,9 @@ private int saleId;
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -552,10 +631,15 @@ private int saleId;
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39))))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -587,7 +671,11 @@ private int saleId;
            smt.execute("INSERT INTO sales(product_name,product_price,product_quantity,sales_value,tax,commision) values('"+productName+"','"+productPrice+"','"+productQuantity+"','"+salesValue+"','"+tax+"','"+commision+"')");
            JOptionPane.showMessageDialog(this, "Record Submitted");
            setSalesTableData();
+           getGrandTotal();
            smt.close();
+           Statement smt2 = con.createStatement();
+           smt2.execute("INSERT INTO salesrecords(product_name,product_price,product_quantity,sales_value,tax,commision) values('"+productName+"','"+productPrice+"','"+productQuantity+"','"+salesValue+"','"+tax+"','"+commision+"')");
+           smt2.close();
 //           product_name.setText("");
 //           product_price.setText("");
 //           product_quantity.setText("");
@@ -601,9 +689,40 @@ private int saleId;
         
     }//GEN-LAST:event_addMouseClicked
 
+    private void getGrandTotal(){
+        
+        try{
+        Statement smt = con.createStatement();    
+        ResultSet valueResult = smt.executeQuery("SELECT SUM(sales_value) FROM sales");
+        int index = 1;
+        int value=0;
+        while (valueResult.next())
+            {
+                value = valueResult.getInt(index);
+                System.out.println(value);
+            }
+            String val = Integer.toString(value);
+            grandTotal.setText(val);
+        smt.close();
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Cannot calculate grand total");
+        }
+        
+    }
     private void ViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewMouseClicked
         // TODO add your handling code here:
         
+        productPrice = Integer.parseInt(product_price.getText());
+        productQuantity = Integer.parseInt(product_quantity.getText());
+        gross_price = productPrice * productQuantity;
+        tax = Integer.parseInt(product_tax.getText());
+        commision = Integer.parseInt(product_commision.getText());
+        salesValue = gross_price + tax + commision;
+        
+        saleString=salesValue;  
+        String s=Integer.toString(saleString);
+        total.setText(s);
     }//GEN-LAST:event_ViewMouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -660,6 +779,7 @@ private int saleId;
            product_commision.setText("");
            total.setText("");
            saleId = 0;
+           getGrandTotal();
             }catch(Exception e){
                 JOptionPane.showMessageDialog(this, "Cannot Update Record");
             }
@@ -676,6 +796,7 @@ private int saleId;
                 JOptionPane.showMessageDialog(this, "Sales Record Deleted");
                 setSalesTableData();
                 saleId = 0;
+                getGrandTotal();
             }catch(SQLException e){
                 JOptionPane.showMessageDialog(this, "Cannot Delete Record");
             }
@@ -687,14 +808,64 @@ private int saleId;
         // TODO add your handling code here:
     }//GEN-LAST:event_totalActionPerformed
 
+    private void EndMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EndMouseClicked
+        // TODO add your handling code here:
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");  
+        String strDate = formatter.format(date);  
+        System.out.println("Date Format with MM/dd/yyyy : "+strDate); 
+        String strTime = formatter.format(date);
+        formatter = new SimpleDateFormat("hh:mm:ss");  
+        strTime = formatter.format(date);  
+        String gt = grandTotal.getText();
+        try{
+           Statement smt = con.createStatement();
+           smt.execute("INSERT INTO salesbucket(date,time,grand_total) values('"+strDate+"','"+strTime+"','"+gt+"')");
+           JOptionPane.showMessageDialog(this, "Record Submitted");
+           setSalesTableData();
+           getGrandTotal();
+           smt.close();
+            
+        }catch(Exception e){
+             JOptionPane.showMessageDialog(this, "Cannot Finalize Sales Records" + e);
+        }
+    }//GEN-LAST:event_EndMouseClicked
+
+    private void clearsaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearsaleMouseClicked
+        // TODO add your handling code here:
+           
+         DefaultTableModel model = (DefaultTableModel) salesTable.getModel();
+        model.setRowCount(0);
+        try{
+           Statement smt = con.createStatement();
+           smt.execute("DELETE FROM sales");
+           JOptionPane.showMessageDialog(this, "Record Submitted");
+           setSalesTableData();
+           getGrandTotal();
+           smt.close();
+            
+        }catch(Exception e){
+             JOptionPane.showMessageDialog(this, "Cannot Finalize Sales Records" + e);
+        }
+    }//GEN-LAST:event_clearsaleMouseClicked
+
+    private void calMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calMouseClicked
+        // TODO add your handling code here:
+         Calculator calculator = new Calculator();
+        calculator.setVisible(true);
+    }//GEN-LAST:event_calMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel End;
     private javax.swing.JLabel View;
     private javax.swing.JLabel add;
+    private javax.swing.JLabel cal;
+    private javax.swing.JLabel clearsale;
+    private javax.swing.JTextField grandTotal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -705,8 +876,10 @@ private int saleId;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
@@ -718,7 +891,6 @@ private int saleId;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField product_commision;
     private javax.swing.JTextField product_name;
     private javax.swing.JTextField product_price;
@@ -760,6 +932,6 @@ private int saleId;
         }catch(Exception e){
             JOptionPane.showMessageDialog(this, e +" Retreiving Failed");
         }
-        
+
     }
 }
