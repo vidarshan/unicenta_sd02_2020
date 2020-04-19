@@ -47,6 +47,9 @@ com\Vidarshan\sales\Sales$5.class
 com\Vidarshan\sales\SalesModel.class
 com\Amasha\Maintenance\Maintenance.class
 com\Savindu\inventory\Categories.class
+<<<<<<< Updated upstream
 com\Amasha\Maintenance\Maintenance$1.class
 com\Miyuru\attendance\Breaks.class
+=======
+>>>>>>> Stashed changes
 com\Miyuru\attendance\Attendance.class
