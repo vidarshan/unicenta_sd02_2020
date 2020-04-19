@@ -7,6 +7,8 @@ package com.Miyuru.attendance;
 
 import com.DB.Sales.DatabaseConnection;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,6 +19,8 @@ import javax.swing.table.DefaultTableModel;
 public class Breaks extends javax.swing.JPanel {
 
     Connection con;
+    String emp_name;
+    String note;
     /**
      * Creates new form Breaks
      */
@@ -44,7 +48,7 @@ public class Breaks extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable = new javax.swing.JTable();
+        note_Table = new javax.swing.JTable();
         btn_Add = new javax.swing.JButton();
         btn = new javax.swing.JButton();
 
@@ -68,10 +72,10 @@ public class Breaks extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Note");
 
-        jTable.setBackground(new java.awt.Color(28, 35, 51));
-        jTable.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        jTable.setForeground(new java.awt.Color(255, 255, 255));
-        jTable.setModel(new javax.swing.table.DefaultTableModel(
+        note_Table.setBackground(new java.awt.Color(28, 35, 51));
+        note_Table.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        note_Table.setForeground(new java.awt.Color(255, 255, 255));
+        note_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -87,12 +91,12 @@ public class Breaks extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        note_Table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTableMouseClicked(evt);
+                note_TableMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jTable);
+        jScrollPane2.setViewportView(note_Table);
 
         btn_Add.setText("Add");
         btn_Add.addActionListener(new java.awt.event.ActionListener() {
@@ -170,33 +174,56 @@ public class Breaks extends javax.swing.JPanel {
     }//GEN-LAST:event_eNameActionPerformed
 
     private void btn_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AddActionPerformed
-        DefaultTableModel model = (DefaultTableModel)jTable.getModel();
         
-        model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
-        
+        emp_name = eName.getText();
+        note = txt_Note.getText();
         
         try{
+            Statement smt = con.createStatement();
+            smt.execute("INSERT INTO Emp_Breaks (Employee,Note) values('"+eName.getText()+"','"+txt_Note.getText()+"')");
+            JOptionPane.showMessageDialog(this, "Record Submitted");
+            setBreakTableData();
+            smt.close();
+            
+            /*
+            
+           Statement smt = con.createStatement();
+           smt.execute("INSERT INTO sales(product_name,product_price,product_quantity,sales_value,tax,commision) values('"+productName+"','"+productPrice+"','"+productQuantity+"','"+salesValue+"','"+tax+"','"+commision+"')");
+           JOptionPane.showMessageDialog(this, "Record Submitted");
+           setSalesTableData();
+           getGrandTotal();
+           smt.close();
+            
+            */
             
             
             
-        
         }catch(Exception e){
-            JOptionPane.showMessageDialog(this, e);
+            JOptionPane.showMessageDialog(this, " error adding data >>> "+e);
         }
+        
+      //  DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+        
+       // model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
+        
+        
+        
         
         
     }//GEN-LAST:event_btn_AddActionPerformed
 
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
-        // TODO add your handling code here:
+        // clear data to db
+        
+        
         eName.setText(null);
         txt_Note.setText(null);
     }//GEN-LAST:event_btnActionPerformed
 
-    private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
+    private void note_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_note_TableMouseClicked
         // TODO add your handling code here:
         //jTable.getRow
-    }//GEN-LAST:event_jTableMouseClicked
+    }//GEN-LAST:event_note_TableMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -209,7 +236,36 @@ public class Breaks extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTable jTable;
+    private javax.swing.JTable note_Table;
     private javax.swing.JTextArea txt_Note;
     // End of variables declaration//GEN-END:variables
+
+    private void setBreakTableData() {
+        
+        try{
+            int rows = 0;
+            int rowIndex = 0;
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery("SELECT * FROM sales");
+            if(rs.next()){
+                rs.last();
+                rows = rs.getRow();
+                rs.beforeFirst();
+            }
+            String[][] data = new String[rows][2];
+            while(rs.next()){
+                data[rowIndex][0]=rs.getInt(1)+"";
+                data[rowIndex][1]=rs.getString(2);      
+                rowIndex++;
+            }
+            String[] cols={"Employee","Note"};
+            DefaultTableModel model = new DefaultTableModel(data,cols);
+            note_Table.setModel(model);
+            rs.close();
+            smt.close();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e +" Retreiving Failed");
+        }
+
+    }
 }
