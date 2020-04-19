@@ -114,6 +114,7 @@ com\Savindu\inventory\Inventory.class
 com\Savindu\inventory\AddCat.class
 com\Vidarshan\sales\Calculator$14.class
 com\Savindu\inventory\Categories$4.class
+com\Amasha\Maintenance\Users$1.class
 com\Miyuru\login\loginPage.class
 com\Savindu\inventory\Inventory$5.class
 Interface\AppInterface$8.class
@@ -181,8 +182,10 @@ com\Miyuru\attendance\Leaves_int$3.class
 com\Savindu\inventory\Inventory$4.class
 com\Savindu\inventory\InventoryPanel$2.class
 Interface\AppInterface$7.class
+com\Amasha\Maintenance\Users$2.class
 com\Vidarshan\sales\Sales$6.class
 com\Vidarshan\sales\Calculator$15.class
+com\Amasha\Maintenance\Maintenance$2.class
 com\Kethaki\Users\AddCustomer.class
 com\Kethaki\Users\AddSupplier.class
 com\Savindu\inventory\AddProduct$1.class
