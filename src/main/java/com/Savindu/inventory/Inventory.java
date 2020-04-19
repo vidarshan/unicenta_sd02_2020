@@ -42,7 +42,6 @@ public class Inventory extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        btn_add_category = new javax.swing.JLabel();
         btn_product_add = new javax.swing.JLabel();
         btn_product_edit = new javax.swing.JLabel();
         btn_product_delete = new javax.swing.JLabel();
@@ -64,7 +63,7 @@ public class Inventory extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 172, Short.MAX_VALUE)
+            .addGap(0, 206, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,26 +71,6 @@ public class Inventory extends javax.swing.JPanel {
         );
 
         jPanel1.add(jPanel2);
-
-        btn_add_category.setBackground(new java.awt.Color(55, 71, 79));
-        btn_add_category.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_add_category.setForeground(new java.awt.Color(244, 244, 244));
-        btn_add_category.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-list-36.png"))); // NOI18N
-        btn_add_category.setText("New Category");
-        btn_add_category.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                btn_add_categoryFocusGained(evt);
-            }
-        });
-        btn_add_category.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_add_categoryMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_add_categoryMouseExited(evt);
-            }
-        });
-        jPanel1.add(btn_add_category);
 
         btn_product_add.setBackground(new java.awt.Color(55, 71, 79));
         btn_product_add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -165,7 +144,7 @@ public class Inventory extends javax.swing.JPanel {
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_product_search)
                 .addContainerGap())
@@ -234,20 +213,6 @@ public class Inventory extends javax.swing.JPanel {
         product_search.setText(null);
     }//GEN-LAST:event_product_searchActionPerformed
 
-    private void btn_add_categoryFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btn_add_categoryFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_add_categoryFocusGained
-
-    private void btn_add_categoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_add_categoryMouseEntered
-        // TODO add your handling code here:
-        btn_add_category.setForeground(new Color(0x2ECC71));
-    }//GEN-LAST:event_btn_add_categoryMouseEntered
-
-    private void btn_add_categoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_add_categoryMouseExited
-        // TODO add your handling code here:
-        btn_add_category.setForeground(new Color(0xf4f4f4));
-    }//GEN-LAST:event_btn_add_categoryMouseExited
-
     private void btn_product_addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_addMouseEntered
         // TODO add your handling code here:
         btn_product_add.setForeground(new Color(0x2ECC71));
@@ -286,7 +251,6 @@ public class Inventory extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btn_add_category;
     private javax.swing.JLabel btn_product_add;
     private javax.swing.JLabel btn_product_delete;
     private javax.swing.JLabel btn_product_edit;
