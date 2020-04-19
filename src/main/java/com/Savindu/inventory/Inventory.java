@@ -5,6 +5,7 @@
  */
 package com.Savindu.inventory;
 
+import Interface.AppInterface;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTable;
@@ -18,6 +19,11 @@ public class Inventory extends javax.swing.JPanel {
     /**
      * Creates new form Inventory
      */
+    
+
+    //AppInterface ap = new AppInterface();
+
+    
     public Inventory() {
         initComponents();
         customJTable(tbl_Products);
@@ -78,6 +84,9 @@ public class Inventory extends javax.swing.JPanel {
         btn_product_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-36.png"))); // NOI18N
         btn_product_add.setText("New Product");
         btn_product_add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_product_addMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_product_addMouseEntered(evt);
             }
@@ -248,6 +257,14 @@ public class Inventory extends javax.swing.JPanel {
         product_search.setText(null);
         
     }//GEN-LAST:event_product_searchMouseClicked
+
+    private void btn_product_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_addMouseClicked
+        // TODO add your handling code here:
+
+        AddProduct add_product = new AddProduct();
+        add_product.setVisible(true);
+
+    }//GEN-LAST:event_btn_product_addMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
