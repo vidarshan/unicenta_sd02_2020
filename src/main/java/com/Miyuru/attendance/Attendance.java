@@ -42,7 +42,6 @@ public class Attendance extends javax.swing.JPanel {
         jLayeredPane1.setLayout(new java.awt.CardLayout(100, 100));
 
         jPanel1.setBackground(new java.awt.Color(28, 35, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(204, 204, 204))); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(255, 193, 7));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -50,8 +49,9 @@ public class Attendance extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(28, 35, 51));
         jLabel2.setFont(new java.awt.Font("Symbol", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/time-card100.png"))); // NOI18N
-        jLabel2.setText("Break");
+        jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Breaks", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 18))); // NOI18N
         jLabel2.setBounds(new java.awt.Rectangle(0, 10, 10, 0));
         jLabel2.setIconTextGap(1);
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -81,8 +81,9 @@ public class Attendance extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(28, 35, 51));
         jLabel1.setFont(new java.awt.Font("Symbol", 0, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/leave-100.png"))); // NOI18N
-        jLabel1.setText("Leaves");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-leave-100.png"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Leaves", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 18))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -100,7 +101,7 @@ public class Attendance extends javax.swing.JPanel {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                 .addContainerGap())
@@ -113,7 +114,7 @@ public class Attendance extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
