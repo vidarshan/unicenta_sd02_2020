@@ -9,6 +9,7 @@ import com.DB.Sales.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,7 +25,7 @@ private Connection con;
         initComponents();
         DatabaseConnection dbc = DatabaseConnection.getDatabaseConnection();
         con = dbc.getConnection();
-        
+        setSalesTableData();
     }
 
     /**
@@ -436,6 +437,7 @@ private Connection con;
            Statement smt = con.createStatement();
            smt.execute("INSERT INTO sales(product_name,product_price,product_quantity,sales_value,tax,commision) values('"+productName+"','"+productPrice+"','"+productQuantity+"','"+salesValue+"','"+tax+"','"+commision+"')");
            JOptionPane.showMessageDialog(this, "Record Submitted");
+           smt.close();
 //           product_name.setText("");
 //           product_price.setText("");
 //           product_quantity.setText("");
@@ -494,4 +496,34 @@ private Connection con;
     private javax.swing.JTable salesTable;
     private javax.swing.JTextField total;
     // End of variables declaration//GEN-END:variables
+
+    private void setSalesTableData() {
+        try{
+            int rows = 0;
+            int rowIndex = 0;
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery("SELECT * FROM sales");
+            if(rs.next()){
+                rs.last();
+                rows = rs.getRow();
+                rs.beforeFirst();
+            }
+            String[][] data = new String[rows][4];
+            while(rs.next()){
+                data[rowIndex][0]=rs.getInt(1)+"";
+                data[rowIndex][1]=rs.getString(2);
+                data[rowIndex][2]=rs.getInt(3)+"";
+                data[rowIndex][3]=rs.getInt(4)+"";
+                rowIndex++;
+            }
+            String[] cols={"ID","PRODUCT","PRICE","QUANITY"};
+            DefaultTableModel model = new DefaultTableModel(data,cols);
+            salesTable.setModel(model);
+            rs.close();
+            smt.close();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Retreiving Failed");
+        }
+        
+    }
 }
