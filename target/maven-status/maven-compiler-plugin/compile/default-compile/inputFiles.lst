@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\SalesModel.java
 D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Roles.java
 D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddCustomer.java
@@ -11,3 +12,18 @@ D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\j
 D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
 D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Attendance.java
 D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\Interface\Home.java
+=======
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Maintenance.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Inventory.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Miyuru\login\LogIn.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\user_home.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddCustomer.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\Interface\AppInterface.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Attendance.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\SalesModel.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\Interface\Home.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddSupplier.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Roles.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\DB\Sales\DatabaseConnection.java
+C:\Amasha_Assignments\HCI_1_02_2020\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
+>>>>>>> master
