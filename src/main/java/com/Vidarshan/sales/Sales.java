@@ -374,7 +374,7 @@ private Connection con;
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Sale ID", "Product Name", " Unit Price", "Quantity"
             }
         ));
         jScrollPane1.setViewportView(salesTable);
@@ -508,21 +508,25 @@ private Connection con;
                 rows = rs.getRow();
                 rs.beforeFirst();
             }
-            String[][] data = new String[rows][4];
+            String[][] data = new String[rows][7];
             while(rs.next()){
                 data[rowIndex][0]=rs.getInt(1)+"";
                 data[rowIndex][1]=rs.getString(2);
-                data[rowIndex][2]=rs.getInt(3)+"";
+                data[rowIndex][2]=rs.getString(3);
                 data[rowIndex][3]=rs.getInt(4)+"";
+                data[rowIndex][4]=rs.getInt(6)+"";
+                data[rowIndex][5]=rs.getString(7);
+                data[rowIndex][6]=rs.getInt(5)+"";
+                
                 rowIndex++;
             }
-            String[] cols={"ID","PRODUCT","PRICE","QUANITY"};
+            String[] cols={"ID","PRODUCT","PRICE","QUANITY","TAX","COMMISSION","TOTAL"};
             DefaultTableModel model = new DefaultTableModel(data,cols);
             salesTable.setModel(model);
             rs.close();
             smt.close();
         }catch(Exception e){
-            JOptionPane.showMessageDialog(this, "Retreiving Failed");
+            JOptionPane.showMessageDialog(this, e +" Retreiving Failed");
         }
         
     }
