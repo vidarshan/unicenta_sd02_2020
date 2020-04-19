@@ -22,6 +22,7 @@ public class InventoryPanel extends javax.swing.JPanel {
     
     public InventoryPanel() {
         initComponents();
+        panelNavigator(cat, catPanel);
     }
 
     /**
@@ -48,7 +49,7 @@ public class InventoryPanel extends javax.swing.JPanel {
         Categories.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Categories.setForeground(new java.awt.Color(244, 244, 244));
         Categories.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Categories.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-list-36.png"))); // NOI18N
+        Categories.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-menu-36.png"))); // NOI18N
         Categories.setText("All Categories");
         Categories.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -132,7 +133,7 @@ public class InventoryPanel extends javax.swing.JPanel {
         jLayeredPane1.revalidate();
         catPanel.setBackground(new Color(0,51,51));
         productsPanel.setBackground(new Color(0,51,51));
-        button.setBackground(new Color(55,71,79));
+        button.setBackground(new Color(0x2ECC71));
     }
     
     private void CategoriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CategoriesMouseClicked
