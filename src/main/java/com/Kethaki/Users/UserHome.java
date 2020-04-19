@@ -49,6 +49,9 @@ public class UserHome extends javax.swing.JPanel {
 
         addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/supplier_button.png"))); // NOI18N
         addSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addSupplierMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 addSupplierMouseEntered(evt);
             }
@@ -130,7 +133,7 @@ public class UserHome extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 49, Short.MAX_VALUE))
+                .addGap(0, 200, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -144,15 +147,15 @@ public class UserHome extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 317, Short.MAX_VALUE)
+            .addGap(0, 811, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE))
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 811, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 221, Short.MAX_VALUE)
+            .addGap(0, 501, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE))
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -165,7 +168,7 @@ public class UserHome extends javax.swing.JPanel {
     }
     private void addSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSupplierMouseEntered
         // TODO add your handling code here:
-        addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/upd_button.png")));
+        addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/upd_button.png"))); 
     }//GEN-LAST:event_addSupplierMouseEntered
 
     private void addSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSupplierMouseExited
@@ -188,6 +191,12 @@ public class UserHome extends javax.swing.JPanel {
         // TODO add your handling code here:
         addCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer_button.png")));
     }//GEN-LAST:event_addCustomerMouseExited
+
+    private void addSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSupplierMouseClicked
+        // TODO add your handling code here:
+        AddSupplier add_sup = new AddSupplier();
+        panelNavigator(add_sup);
+    }//GEN-LAST:event_addSupplierMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

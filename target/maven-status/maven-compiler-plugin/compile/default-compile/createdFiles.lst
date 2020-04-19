@@ -112,7 +112,10 @@ com\Vidarshan\sales\Sales$1.class
 Interface\AppInterface.class
 com\Savindu\inventory\Inventory.class
 com\Savindu\inventory\AddCat.class
+<<<<<<< Updated upstream
 com\Vidarshan\sales\Calculator$14.class
+=======
+>>>>>>> Stashed changes
 com\Savindu\inventory\Categories$4.class
 com\Amasha\Maintenance\Users$1.class
 com\Miyuru\login\loginPage.class
@@ -145,7 +148,10 @@ com\Vidarshan\sales\Calculator$7.class
 com\Miyuru\attendance\Attendance$1.class
 Interface\AppInterface$9.class
 com\Savindu\inventory\AddCat$1.class
+<<<<<<< Updated upstream
 com\Vidarshan\sales\Calculator$1.class
+=======
+>>>>>>> Stashed changes
 com\Vidarshan\sales\Sales$2.class
 com\Savindu\inventory\Inventory$1.class
 com\Vidarshan\sales\Sales$9.class
