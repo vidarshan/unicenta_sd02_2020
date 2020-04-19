@@ -8,9 +8,9 @@ package Interface;
 import com.Amasha.Maintenance.Maintenance;
 import com.Kethaki.Users.user_home;
 import com.Miyuru.attendance.Attendance;
-import com.Savindu.inventory.Inventory;
 import com.Vidarshan.sales.Sales;
 import com.Miyuru.login.LogIn;
+import com.Savindu.inventory.InventoryPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -30,7 +30,7 @@ public class AppInterface extends javax.swing.JFrame {
     Home interface_home = new Home();
     Attendance int_attendance = new Attendance();
     Sales interface_Sales = new Sales();
-    Inventory interface_Inventory = new Inventory();
+    InventoryPanel interface_Inventory = new InventoryPanel();
     user_home int_user = new user_home();
     Maintenance int_maintenance = new Maintenance();
     LogIn int_login = new LogIn();
@@ -39,7 +39,7 @@ public class AppInterface extends javax.swing.JFrame {
         initComponents();
         //getContentPane().setBackground(new Color(0,51,51));
         getContentPane().setBackground(Color.WHITE);
-        //setResizable(false);
+        setResizable(false);
         
         //Load home panel
         panelNavigator(interface_home, "Home");
@@ -271,7 +271,7 @@ public class AppInterface extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
         navbar.setBackground(new java.awt.Color(0, 51, 51));
-        navbar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        navbar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         navbar.setForeground(new java.awt.Color(255, 255, 255));
         navbar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         navbar.setText("SALES");
@@ -365,7 +365,7 @@ public class AppInterface extends javax.swing.JFrame {
     private void btn_salseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salseMouseClicked
         // TODO add your handling code here:
         
-        panelNavigator(interface_Sales, "Salse Management");
+        panelNavigator(interface_Sales, "Sales Management");
         sideNavBtnEvents(this.btn_salse);
         
     }//GEN-LAST:event_btn_salseMouseClicked

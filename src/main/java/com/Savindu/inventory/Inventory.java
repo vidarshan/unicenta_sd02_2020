@@ -39,7 +39,6 @@ public class Inventory extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -56,7 +55,8 @@ public class Inventory extends javax.swing.JPanel {
         setBackground(new java.awt.Color(28, 35, 51));
 
         jPanel1.setBackground(new java.awt.Color(55, 71, 79));
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setPreferredSize(new java.awt.Dimension(1032, 120));
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel2.setBackground(new java.awt.Color(55, 71, 79));
 
@@ -221,11 +221,11 @@ public class Inventory extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(174, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
