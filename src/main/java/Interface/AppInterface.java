@@ -94,10 +94,6 @@ public class AppInterface extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         navbar = new javax.swing.JLabel();
         contentLayout = new javax.swing.JLayeredPane();
-        user = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        maintenance = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -293,53 +289,6 @@ public class AppInterface extends javax.swing.JFrame {
         contentLayout.setBackground(new java.awt.Color(28, 35, 51));
         contentLayout.setLayout(new java.awt.CardLayout());
 
-        user.setBackground(new java.awt.Color(204, 255, 255));
-
-        jLabel7.setText("This is User Use This User panel as container of the content");
-
-        javax.swing.GroupLayout userLayout = new javax.swing.GroupLayout(user);
-        user.setLayout(userLayout);
-        userLayout.setHorizontalGroup(
-            userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(userLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(227, Short.MAX_VALUE))
-        );
-        userLayout.setVerticalGroup(
-            userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(userLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
-        );
-
-        contentLayout.add(user, "card4");
-
-        maintenance.setBackground(new java.awt.Color(153, 153, 255));
-
-        jLabel9.setForeground(new java.awt.Color(244, 244, 244));
-        jLabel9.setText("This is Maintenance Use This Maintenance panel as container of the content");
-
-        javax.swing.GroupLayout maintenanceLayout = new javax.swing.GroupLayout(maintenance);
-        maintenance.setLayout(maintenanceLayout);
-        maintenanceLayout.setHorizontalGroup(
-            maintenanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(maintenanceLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(227, Short.MAX_VALUE))
-        );
-        maintenanceLayout.setVerticalGroup(
-            maintenanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(maintenanceLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
-        );
-
-        contentLayout.add(maintenance, "card4");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -477,8 +426,6 @@ public class AppInterface extends javax.swing.JFrame {
     private javax.swing.JLabel btn_salse;
     private javax.swing.JLayeredPane contentLayout;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
@@ -488,8 +435,6 @@ public class AppInterface extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JPanel maintenance;
     private javax.swing.JLabel navbar;
-    private javax.swing.JPanel user;
     // End of variables declaration//GEN-END:variables
 }

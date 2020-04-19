@@ -265,8 +265,6 @@ public class Categories extends javax.swing.JPanel {
 
     private void btn_add_categoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_add_categoryMouseClicked
         // TODO add your handling code here:
-        Popup pop = new Popup();
-        pop.setVisible(true);
     }//GEN-LAST:event_btn_add_categoryMouseClicked
 
 
