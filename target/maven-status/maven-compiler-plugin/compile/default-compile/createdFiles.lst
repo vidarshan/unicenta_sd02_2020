@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 com\Vidarshan\sales\Sales$4.class
 Interface\AppInterface$5.class
 com\Savindu\inventory\Inventory$2.class
@@ -10,7 +13,10 @@ com\Savindu\inventory\Inventory$5.class
 Interface\AppInterface$8.class
 com\Vidarshan\sales\Sales.class
 com\Amasha\Maintenance\Roles.class
+<<<<<<< Updated upstream
 com\Savindu\inventory\InventoryPanel$1.class
+=======
+>>>>>>> Stashed changes
 com\Miyuru\login\LogIn$1.class
 com\Miyuru\login\LogIn.class
 Interface\AppInterface$3.class
@@ -26,13 +32,19 @@ com\Kethaki\Users\user_home$1.class
 com\Miyuru\login\LogIn$3.class
 com\Amasha\Maintenance\Roles$1.class
 com\Savindu\inventory\Inventory$3.class
+<<<<<<< Updated upstream
 com\Savindu\inventory\InventoryPanel.class
+=======
+>>>>>>> Stashed changes
 Interface\AppInterface$1.class
 com\Savindu\inventory\Inventory$6.class
 com\DB\Sales\DatabaseConnection.class
 Interface\AppInterface$4.class
 com\Savindu\inventory\Inventory$4.class
+<<<<<<< Updated upstream
 com\Savindu\inventory\InventoryPanel$2.class
+=======
+>>>>>>> Stashed changes
 Interface\AppInterface$7.class
 com\Kethaki\Users\AddCustomer.class
 com\Kethaki\Users\AddSupplier.class
@@ -41,6 +53,7 @@ com\Vidarshan\sales\Sales$5.class
 com\Vidarshan\sales\SalesModel.class
 com\Amasha\Maintenance\Maintenance.class
 com\Miyuru\attendance\Attendance.class
+<<<<<<< Updated upstream
 =======
 Interface/AppInterface.class
 Interface/AppInterface$7.class
@@ -86,3 +99,5 @@ com/Savindu/inventory/Inventory$6.class
 com/Miyuru/login/LogIn$1.class
 com/Vidarshan/sales/Sales$8.class
 >>>>>>> master
+=======
+>>>>>>> Stashed changes

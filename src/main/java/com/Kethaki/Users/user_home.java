@@ -30,9 +30,9 @@ public class user_home extends javax.swing.JPanel {
         externalUser = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
+        addSupplier = new javax.swing.JLabel();
         addCustomer = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        addSupplier = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(55, 71, 79));
 
@@ -42,39 +42,54 @@ public class user_home extends javax.swing.JPanel {
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
 
-        addCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer_button.png"))); // NOI18N
-
-        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/supplier_button.png"))); // NOI18N
+        addSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addSupplierMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addSupplierMouseExited(evt);
+            }
+        });
+
+        addCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer_button.png"))); // NOI18N
+        addCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addCustomerMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addCustomerMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addComponent(addCustomer))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addComponent(addSupplier))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(150, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addCustomer)
+                            .addComponent(addSupplier))
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addComponent(addCustomer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addSupplier)
-                .addGap(47, 47, 47))
+                .addGap(73, 73, 73))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -88,22 +103,42 @@ public class user_home extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(externalUser, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addGap(220, 220, 220)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addComponent(externalUser, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addCustomerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCustomerMouseEntered
+        // TODO add your handling code here:
+        addCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/updCus_button.png")));
+    }//GEN-LAST:event_addCustomerMouseEntered
+
+    private void addCustomerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCustomerMouseExited
+        // TODO add your handling code here:
+        addCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/customer_button.png")));
+    }//GEN-LAST:event_addCustomerMouseExited
+
+    private void addSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSupplierMouseEntered
+        // TODO add your handling code here:
+        addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/upd_button.png")));
+    }//GEN-LAST:event_addSupplierMouseEntered
+
+    private void addSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSupplierMouseExited
+        // TODO add your handling code here:
+        addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supplier_button.png")));
+    }//GEN-LAST:event_addSupplierMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
