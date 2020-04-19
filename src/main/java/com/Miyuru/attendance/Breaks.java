@@ -5,6 +5,9 @@
  */
 package com.Miyuru.attendance;
 
+import com.DB.Sales.DatabaseConnection;
+import java.sql.Connection;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -13,11 +16,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Breaks extends javax.swing.JPanel {
 
+    Connection con;
     /**
      * Creates new form Breaks
      */
     public Breaks() {
         initComponents();
+        DatabaseConnection dbc = DatabaseConnection.getDatabaseConnection();
+        con = dbc.getConnection();
+        
     }
 
     /**
@@ -166,6 +173,18 @@ public class Breaks extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel)jTable.getModel();
         
         model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
+        
+        
+        try{
+            
+            
+            
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e);
+        }
+        
+        
     }//GEN-LAST:event_btn_AddActionPerformed
 
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
