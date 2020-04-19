@@ -10,6 +10,7 @@ com\Savindu\inventory\Inventory$3.class
 com\Vidarshan\sales\Sales.class
 Interface\AppInterface$1.class
 com\Savindu\inventory\Inventory$6.class
+com\DB\Sales\DatabaseConnection.class
 Interface\AppInterface$4.class
 com\Savindu\inventory\Inventory$4.class
 Interface\AppInterface$7.class
@@ -18,13 +19,11 @@ com\Kethaki\Users\AddCustomer.class
 com\Kethaki\Users\user_home.class
 com\Kethaki\Users\AddSupplier.class
 Interface\AppInterface$6.class
+com\Vidarshan\sales\SalesModel.class
 Interface\Home.class
 com\Amasha\Maintenance\Maintenance.class
 com\Savindu\inventory\Inventory$7.class
 com\Vidarshan\sales\Sales$2.class
-<<<<<<< Updated upstream
 com\Savindu\inventory\Inventory$1.class
 com\Kethaki\Users\user_home$1.class
-=======
->>>>>>> Stashed changes
 com\Miyuru\attendance\Attendance.class
