@@ -46,6 +46,7 @@ Interface/Home.class
 com/Savindu/inventory/Inventory$1.class
 com/Vidarshan/sales/Calculator$20.class
 com/Vidarshan/sales/SalesModel.class
+com/Miyuru/attendance/BreaksInterface$8.class
 com/Savindu/inventory/AddProduct$2.class
 com/Vidarshan/sales/Sales$7.class
 com/Vidarshan/sales/Calculator$15.class
@@ -59,6 +60,7 @@ com/Miyuru/login/LogIn$1.class
 com/Vidarshan/sales/Calculator$8.class
 com/Amasha/Maintenance/Users$6.class
 com/Vidarshan/sales/Sales$8.class
+com/Miyuru/attendance/BreaksInterface$7.class
 Interface/AppInterface.class
 com/Miyuru/login/loginPage$1.class
 com/Vidarshan/sales/Calculator.class
