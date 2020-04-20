@@ -24,7 +24,8 @@ public class Products {
     private String description;
 
     private Connection con;
-
+    private String INSERT_USERS_SQL = "INSERT INTO `products` (`name`, `barcode`, `category`, `description`, `img`) VALUES (?, ?, ?, ?, ?)";
+        
     public Products() {
         DatabaseConnection dbc = DatabaseConnection.getDatabaseConnection();
         con = dbc.getConnection();
@@ -76,8 +77,7 @@ public class Products {
     }
     
     public boolean save(Products product) throws SQLException{
-        String INSERT_USERS_SQL = "INSERT INTO `products` (`name`, `barcode`, `category`, `description`, `img`) VALUES (?, ?, ?, ?, ?)";
-        boolean state = false;
+            boolean state = false;
          
         try{
            // for(Products product : products){

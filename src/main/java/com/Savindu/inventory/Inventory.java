@@ -284,7 +284,7 @@ public class Inventory extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please select a single row to Edit");
             }
             
-           // btn_product_edit.setIcon(new ImageIcon("C:/Users/Savindu/Downloads/icons8-save-close-36.png"));
+           
         
         
     }//GEN-LAST:event_btn_product_editMouseClicked
