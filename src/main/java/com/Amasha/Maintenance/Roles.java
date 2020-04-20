@@ -220,6 +220,11 @@ public class Roles extends javax.swing.JPanel {
                 "Role", "Description"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -329,18 +334,25 @@ public class Roles extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-       if(jTable1.getSelectedRow()== -1){
-           if(jTable1.getRowCount()==0){
-               message.setText("Table is Empty !!");
-           }else{
-               message.setText("Please Select a Role!");
-           }
-       }else{
-           model.setValueAt(jTextField1.getText(), jTable1.getSelectedRow(), 0);
+      DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+      if(jTable1.getSelectedRow()== -1){
+          if(jTable1.getRowCount()== 0){
+              message.setText("Table is empty!");
+          }else{
+              message.setText("Please select a role !");
+          }
+      }else{
+          model.setValueAt(jTextField1.getText(), jTable1.getSelectedRow(), 0);
            model.setValueAt(jTextField2.getText(), jTable1.getSelectedRow(), 1);
-       }
+      }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        jTextField1.setText(model.getValueAt(jTable1.getSelectedRow(), 0).toString());
+        jTextField2.setText(model.getValueAt(jTable1.getSelectedRow(), 1).toString());
+        
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

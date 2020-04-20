@@ -256,6 +256,11 @@ public class Users extends javax.swing.JPanel {
                 "Name", "Role", "Card ID"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -378,6 +383,13 @@ public class Users extends javax.swing.JPanel {
             model2.setValueAt(jTextField4.getText(), jTable1.getSelectedRow(),2);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        DefaultTableModel model2 = (DefaultTableModel)jTable1.getModel();
+         jTextField1.setText(model2.getValueAt(jTable1.getSelectedRow(), 0).toString());
+          jComboBox1.setSelectedItem(model2.getValueAt(jTable1.getSelectedRow(),1).toString());
+           jTextField4.setText(model2.getValueAt(jTable1.getSelectedRow(), 2).toString());
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
