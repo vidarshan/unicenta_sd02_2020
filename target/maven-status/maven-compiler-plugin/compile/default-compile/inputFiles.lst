@@ -5,7 +5,6 @@
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/login/loginPage.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/AddCustomer.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/DB/Sales/DatabaseConnection.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/Leaves_int.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Vidarshan/sales/Calculator.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Maintenance.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/AddCat.java
@@ -14,6 +13,7 @@
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/AppInterface.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/BreaksInterface.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/AttendenceInterfave.java
+/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/LeavesInterface.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/Inventory.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Roles.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/Categories.java
