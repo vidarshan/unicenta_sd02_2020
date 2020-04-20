@@ -174,6 +174,8 @@ public class AttendenceInterfave extends javax.swing.JPanel {
     private void btn_breaksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_breaksActionPerformed
        // Users u = new Users();
       //  panelNavigator(u);
+        Breaks_int b = new Breaks_int();
+        panelNavigator(b);
     }//GEN-LAST:event_btn_breaksActionPerformed
 
 

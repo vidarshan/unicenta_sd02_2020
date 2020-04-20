@@ -252,7 +252,7 @@ public class Breaks_int extends javax.swing.JPanel {
     }//GEN-LAST:event_btnActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        Attendance a = new Attendance();
+        AttendenceInterfave a = new AttendenceInterfave();
         
         panelNavigator(a);
         
