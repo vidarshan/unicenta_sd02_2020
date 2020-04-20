@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -275,9 +276,9 @@ public class BreaksInterface extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, " error adding data >>> "+e);
         }
 
-        //  DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+          DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
 
-        // model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
+         model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
     }//GEN-LAST:event_btn_AddActionPerformed
 
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
