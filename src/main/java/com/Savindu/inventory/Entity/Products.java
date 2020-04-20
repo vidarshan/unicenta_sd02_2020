@@ -9,27 +9,42 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import com.DB.Sales.DatabaseConnection;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Savindu
  */
 public class Products {
-    
+
+  
+    private String id;
     private String barcode;
     private String name;
     private String category;
     private String img;
     private String description;
-
+    private String uploadedOn;
+    
+    
     private Connection con;
-    private String INSERT_USERS_SQL = "INSERT INTO `products` (`name`, `barcode`, `category`, `description`, `img`) VALUES (?, ?, ?, ?, ?)";
-        
+    private String INSERT_PRODUCTS_SQL = "INSERT INTO `products` (`name`, `barcode`, `category`, `description`, `img`) VALUES (?, ?, ?, ?, ?)";
+    private String SELECT_PRODUCTS_SQL = "SELECT `productID`, `name`, `barcode`, `category`, `description`, `img`, `uploadedOn` FROM `products`";  
     public Products() {
         DatabaseConnection dbc = DatabaseConnection.getDatabaseConnection();
         con = dbc.getConnection();
     }
+    
+      public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     
     public String getBarcode() {
         return barcode;
@@ -75,13 +90,21 @@ public class Products {
     public void setDesc(String desc) {
         this.description = desc;
     }
+
+    public String getUploadedOn() {
+        return uploadedOn;
+    }
+
+    public void setUploadedOn(String uploadedOn) {
+        this.uploadedOn = uploadedOn;
+    }
     
     public boolean save(Products product) throws SQLException{
             boolean state = false;
          
         try{
            // for(Products product : products){
-               PreparedStatement preparedStatement = con.prepareStatement(INSERT_USERS_SQL);
+               PreparedStatement preparedStatement = con.prepareStatement(INSERT_PRODUCTS_SQL);
         
                preparedStatement.setString(1, product.getName());          
                preparedStatement.setString(2, product.getBarcode()); 
@@ -104,5 +127,34 @@ public class Products {
         }
         
        return state;
+    }
+    
+    public ArrayList<Products> getProducts(){
+        ArrayList<Products> products = new ArrayList<>();
+        Products product;
+        ResultSet rs = null;
+        
+        try {
+            PreparedStatement preparedStatement = con.prepareStatement(SELECT_PRODUCTS_SQL);
+            System.out.println(preparedStatement);
+            rs = preparedStatement.executeQuery();
+            while(rs.next()){
+                product = new Products();
+                product.setId(rs.getString(1));
+                product.setName(rs.getString(2));
+                product.setBarcode(rs.getString(3));
+                product.setCategory(rs.getString(4));
+                product.setDesc(rs.getString(5));
+                product.setImg(rs.getString(6));
+                product.setUploadedOn(rs.getString(7));
+                
+                products.add(product);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Products.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return products;
     }
 }

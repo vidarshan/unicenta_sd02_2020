@@ -8,6 +8,7 @@ package com.Savindu.inventory;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 /**
@@ -24,7 +25,7 @@ public class Categories extends javax.swing.JPanel {
         customJTable(tbl_Cat);
     }
     
-       public void customJTable(JTable table){
+     public void customJTable(JTable table){
         table.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 20));
         table.getTableHeader().setOpaque(false);
         table.getTableHeader().setBackground(Color.BLACK);
@@ -57,7 +58,7 @@ public class Categories extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(55, 71, 79));
         jPanel1.setPreferredSize(new java.awt.Dimension(1032, 120));
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel2.setBackground(new java.awt.Color(55, 71, 79));
 
@@ -103,6 +104,9 @@ public class Categories extends javax.swing.JPanel {
         btn_cat_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-36.png"))); // NOI18N
         btn_cat_edit.setText("Edit Category");
         btn_cat_edit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_cat_editMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_cat_editMouseEntered(evt);
             }
@@ -202,19 +206,25 @@ public class Categories extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(328, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(164, 164, 164)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(165, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -269,6 +279,24 @@ public class Categories extends javax.swing.JPanel {
         addCat.setVisible(true);
         
     }//GEN-LAST:event_btn_add_categoryMouseClicked
+
+    private void btn_cat_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cat_editMouseClicked
+        // TODO add your handling code here:
+        int row[] = tbl_Cat.getSelectedRows();
+        String rowData[] = new String[5];
+            if(row.length == 1){
+                for(int i=0; i<5; i++){  
+                rowData[i] = tbl_Cat.getModel().getValueAt(row[0], i).toString();
+                System.out.println("getSelectedRow = "+rowData[i]); 
+                }  
+            }else{
+                JOptionPane.showMessageDialog(null, "Please select a single row to Edit");
+            }
+            
+          EditCategory edit_cat = new EditCategory();
+          edit_cat.setData(rowData[0], rowData[1]);
+          edit_cat.setVisible(true);
+    }//GEN-LAST:event_btn_cat_editMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
