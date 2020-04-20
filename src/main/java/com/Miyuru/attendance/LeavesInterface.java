@@ -286,9 +286,9 @@ public class LeavesInterface extends javax.swing.JPanel {
 //            JOptionPane.showMessageDialog(this, " error adding data >>> "+e);
 //        }
 //        
-//        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
-//
-//        model.addRow(new Object[]{emp_txt.getText(),start_txt.getText(),end_txt.getText(),note_txt.getTabSize()});
+        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+
+        model.addRow(new Object[]{emp_txt.getText(),start_txt.getText(),end_txt.getText(),note_txt.getTabSize()});
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void btn_newActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newActionPerformed
