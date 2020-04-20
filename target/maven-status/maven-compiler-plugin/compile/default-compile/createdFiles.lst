@@ -44,12 +44,22 @@ com\Vidarshan\sales\Calculator$14.class
 com\Savindu\inventory\Categories$4.class
 com\Savindu\inventory\Inventory$5.class
 Interface\AppInterface$8.class
+<<<<<<< Updated upstream
+=======
+com\Vidarshan\sales\Calculator$11.class
+>>>>>>> Stashed changes
 com\Vidarshan\sales\Sales.class
 com\Miyuru\attendance\Breaks$3.class
 com\Vidarshan\sales\Sales$12.class
 com\Amasha\Maintenance\Roles.class
 com\Savindu\inventory\InventoryPanel$1.class
 com\Miyuru\login\LogIn$1.class
+<<<<<<< Updated upstream
+=======
+com\Miyuru\login\loginPage$1.class
+com\Vidarshan\sales\Sales$7.class
+com\Miyuru\attendance\Leaves_int$2.class
+>>>>>>> Stashed changes
 com\Miyuru\login\LogIn.class
 com\Vidarshan\sales\Calculator$19.class
 com\Kethaki\Users\AddCustomer$3.class
@@ -71,13 +81,32 @@ com\Miyuru\login\LogIn$3.class
 com\Vidarshan\sales\Calculator$10.class
 com\Miyuru\attendance\Breaks$2.class
 com\Amasha\Maintenance\Roles$1.class
+<<<<<<< Updated upstream
+=======
+com\Miyuru\attendance\Breaks$5.class
+com\Miyuru\attendance\Leaves_int$1.class
+>>>>>>> Stashed changes
 com\Vidarshan\sales\Calculator$8.class
 com\Savindu\inventory\AddProduct.class
 com\Savindu\inventory\InventoryPanel.class
+<<<<<<< Updated upstream
 com\Kethaki\Users\AddCustomer$4.class
 com\Miyuru\attendance\Leaves_int.class
 com\Savindu\inventory\Categories$3.class
 Interface\AppInterface$4.class
+=======
+com\Kethaki\Users\UserHome$2.class
+Interface\AppInterface$1.class
+com\Vidarshan\sales\Calculator$3.class
+com\Miyuru\attendance\Leaves_int.class
+com\DB\Sales\DatabaseConnection.class
+com\Savindu\inventory\Categories$3.class
+com\Savindu\inventory\Categories$6.class
+com\Amasha\Maintenance\Users.class
+Interface\AppInterface$4.class
+com\Miyuru\attendance\Leaves_int$3.class
+com\Savindu\inventory\Inventory$4.class
+>>>>>>> Stashed changes
 com\Savindu\inventory\InventoryPanel$2.class
 Interface\AppInterface$7.class
 com\Amasha\Maintenance\Users$2.class
@@ -87,6 +116,14 @@ com\Kethaki\Users\AddSupplier.class
 com\Savindu\inventory\Categories$2.class
 com\Vidarshan\sales\Calculator.class
 Interface\AppInterface$6.class
+<<<<<<< Updated upstream
+=======
+com\Vidarshan\sales\Calculator$21.class
+com\Vidarshan\sales\Sales$5.class
+com\Miyuru\attendance\Leaves_int$4.class
+com\Vidarshan\sales\Calculator$16.class
+com\Vidarshan\sales\SalesModel.class
+>>>>>>> Stashed changes
 com\Savindu\inventory\Categories$1.class
 com\Amasha\Maintenance\Maintenance.class
 com\Savindu\inventory\Categories.class
