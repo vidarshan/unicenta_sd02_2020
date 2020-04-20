@@ -41,12 +41,26 @@ public class EditCategory extends javax.swing.JFrame {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        
+        this.setResizable(false);
     }
 
-    public void setData(String cat_ID, String cat_name){
+    public void setData(String cat_ID, String cat_name, String img){
         this.cat_ID.setText(cat_ID);
         this.cat_name.setText(cat_name);
+        this.imgLbl.setIcon(resizeImg(img));
+    }
+    
+      public ImageIcon resizeImg(String filePath){
+        BufferedImage img = null;
+            try {
+                img = ImageIO.read(new File(filePath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+            Image dimg = img.getScaledInstance(imgLbl.getWidth(), imgLbl.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon imageIcon = new ImageIcon(dimg);
+            return imageIcon;
     }
     
     public void createFileChooser(){

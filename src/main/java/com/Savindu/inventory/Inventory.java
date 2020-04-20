@@ -9,7 +9,12 @@ import Interface.AppInterface;
 import com.Savindu.inventory.Entity.Products;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -42,11 +47,10 @@ public class Inventory extends javax.swing.JPanel {
         table.getTableHeader().setOpaque(false);
         table.getTableHeader().setBackground(new Color(55,71,79));
         table.getTableHeader().setForeground(new Color(0,51,51));
-        table.setRowHeight(25);
+        table.setRowHeight(100);
     }
     
-     public void addProductsToTable()
-    {
+     public void addProductsToTable() {
         DefaultTableModel model = new DefaultTableModel(){
             @Override
             public Class<?> getColumnClass(int column) {
@@ -54,8 +58,6 @@ public class Inventory extends javax.swing.JPanel {
                 return Object.class;
             }
         };
-        
-        
         
         ArrayList<Products> list = new ArrayList<>();
         list = product.getProducts();
@@ -76,7 +78,7 @@ public class Inventory extends javax.swing.JPanel {
         for(int i = 0; i < list.size(); i++)
         {
             rowData[0] = list.get(i).getId();
-            rowData[1] = new ImageIcon(list.get(i).getImg());
+            rowData[1] = resizeImg(list.get(i).getImg());
             rowData[2] = list.get(i).getBarcode();
             rowData[3] = list.get(i).getName();
             rowData[4] = list.get(i).getCategory();
@@ -88,6 +90,22 @@ public class Inventory extends javax.swing.JPanel {
         tbl_Products.setModel(model);
     }
     
+      public ImageIcon resizeImg(String filePath){
+          ImageIcon imageIcon = null;
+        if(filePath != null){
+            BufferedImage img = null;
+            try {
+                img = ImageIO.read(new File(filePath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+            Image dimg = img.getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+            imageIcon = new ImageIcon(dimg);
+            
+        }
+        return imageIcon;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -239,7 +257,7 @@ public class Inventory extends javax.swing.JPanel {
         ));
         tbl_Products.setFocusable(false);
         tbl_Products.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tbl_Products.setRowHeight(25);
+        tbl_Products.setRowHeight(75);
         tbl_Products.setSelectionBackground(new java.awt.Color(28, 35, 51));
         tbl_Products.setShowVerticalLines(false);
         tbl_Products.getTableHeader().setReorderingAllowed(false);
