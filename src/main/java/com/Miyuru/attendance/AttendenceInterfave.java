@@ -166,7 +166,7 @@ public class AttendenceInterfave extends javax.swing.JPanel {
         //Roles r = new Roles();
         //panelNavigator(r);
         
-        Leaves_int l = new Leaves_int();
+        LeavesInterface l = new LeavesInterface();
         panelNavigator(l);
 
     }//GEN-LAST:event_btn_leavesActionPerformed
