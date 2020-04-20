@@ -5,6 +5,7 @@
  */
 package com.Amasha.Maintenance;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -334,8 +335,10 @@ public class Roles extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         if(!jTextField1.getText().trim().equals("")){
              model.addRow(new Object[] {jTextField1.getText(), jTextField2.getText()});
+              JOptionPane.showMessageDialog(this, "Data added successfully !");
         }else{
-            message.setText("Product name should not be left blank!");
+            
+             JOptionPane.showMessageDialog(this, "Name should not be left blank !");
         }
      
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -349,13 +352,14 @@ public class Roles extends javax.swing.JPanel {
       DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
       if(jTable1.getSelectedRow()== -1){
           if(jTable1.getRowCount()== 0){
-              message.setText("Table is empty!");
+              JOptionPane.showMessageDialog(this, "Table is empty !");
           }else{
-              message.setText("Please select a role !");
+              JOptionPane.showMessageDialog(this, "Please select a role !");
           }
       }else{
           model.setValueAt(jTextField1.getText(), jTable1.getSelectedRow(), 0);
            model.setValueAt(jTextField2.getText(), jTable1.getSelectedRow(), 1);
+            JOptionPane.showMessageDialog(this, "Data Edited Successfully !");
       }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -370,12 +374,13 @@ public class Roles extends javax.swing.JPanel {
        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
       if(jTable1.getSelectedRow()== -1){
           if(jTable1.getRowCount()== 0){
-              message.setText("Table is empty!");
+               JOptionPane.showMessageDialog(this, "Table is empty !");
           }else{
-              message.setText("Please select a role !");
+               JOptionPane.showMessageDialog(this, "Please select a role !");
           }
       }else{
           model.removeRow(jTable1.getSelectedRow());
+           JOptionPane.showMessageDialog(this, "Data deleted Successfully !");
       }
     }//GEN-LAST:event_jButton3ActionPerformed
 

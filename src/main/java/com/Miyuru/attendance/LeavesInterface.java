@@ -5,6 +5,10 @@
  */
 package com.Miyuru.attendance;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class LeavesInterface extends javax.swing.JPanel {
 
+    Connection con;
     /**
      * Creates new form LeavesInterface
      */
@@ -186,6 +191,7 @@ public class LeavesInterface extends javax.swing.JPanel {
         });
         jTable2.setColumnSelectionAllowed(true);
         jScrollPane3.setViewportView(jTable2);
+        jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         back_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/go_back32.png"))); // NOI18N
         back_btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -253,6 +259,33 @@ public class LeavesInterface extends javax.swing.JPanel {
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
         // TODO add your handling code here:
 
+        String start =start_txt.getText();
+        String end = end_txt.getText();
+        String empName = emp_txt.getText();
+        String note = note_txt.getText();
+        
+//        try{
+//            Statement smt = con.createStatement();
+//            smt.execute("INSERT INTO emp_leaves (emp_name,startDate,endDate,note) values('"+empName+"','"+start+"','"+end+"','"+note+"')");
+//            JOptionPane.showMessageDialog(this, "Record Submitted");
+//            setLeavesTableData();
+//            smt.close();
+//
+//            /*
+//
+//            Statement smt = con.createStatement();
+//            smt.execute("INSERT INTO sales(product_name,product_price,product_quantity,sales_value,tax,commision) values('"+productName+"','"+productPrice+"','"+productQuantity+"','"+salesValue+"','"+tax+"','"+commision+"')");
+//            JOptionPane.showMessageDialog(this, "Record Submitted");
+//            setSalesTableData();
+//            getGrandTotal();
+//            smt.close();
+//
+//            */
+//
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(this, " error adding data >>> "+e);
+//        }
+//        
         DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
 
         model.addRow(new Object[]{emp_txt.getText(),start_txt.getText(),end_txt.getText(),note_txt.getTabSize()});
@@ -296,4 +329,35 @@ public class LeavesInterface extends javax.swing.JPanel {
     private javax.swing.JTextArea note_txt;
     private javax.swing.JTextField start_txt;
     // End of variables declaration//GEN-END:variables
+
+    private void setLeavesTableData() {
+//        try{
+//            int rows = 0;
+//            int rowIndex = 0;
+//            Statement smt = con.createStatement();
+//            ResultSet rs = smt.executeQuery("SELECT * FROM emp_leaves");
+//            if(rs.next()){
+//                rs.last();
+//                rows = rs.getRow();
+//                rs.beforeFirst();
+//            }
+//            String[][] data = new String[rows][4];
+//            while(rs.next()){
+//                data[rowIndex][0]=rs.getString(1)+"";
+//                data[rowIndex][1]=rs.getString(2);
+//                data[rowIndex][2]=rs.getString(3);
+//                data[rowIndex][3]=rs.getString(4)+"";
+//                
+//                rowIndex++;
+//            }
+//            String[] cols={"Employee","Start Date","End Date","Notes"};
+//            DefaultTableModel model = new DefaultTableModel(data,cols);
+//            jTable2.setModel(model);
+//            rs.close();
+//            smt.close();
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(this, e +" Retreiving Failed");
+//        }
+
+    }
 }

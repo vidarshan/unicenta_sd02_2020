@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -51,7 +52,9 @@ public class BreaksInterface extends javax.swing.JPanel {
         note_Table = new javax.swing.JTable();
         btn_Add = new javax.swing.JButton();
         btn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_back = new javax.swing.JButton();
+        btn_edit = new javax.swing.JButton();
+        btn_delete = new javax.swing.JButton();
 
         breaksLayer.setLayout(new java.awt.CardLayout());
 
@@ -121,10 +124,24 @@ public class BreaksInterface extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Back");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_back.setText("Back");
+        btn_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                btn_backMouseClicked(evt);
+            }
+        });
+
+        btn_edit.setText("Edit");
+        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editActionPerformed(evt);
+            }
+        });
+
+        btn_delete.setText("Delete");
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deleteActionPerformed(evt);
             }
         });
 
@@ -153,6 +170,10 @@ public class BreaksInterface extends javax.swing.JPanel {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(btn_delete)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn_edit)
+                                        .addGap(18, 18, 18)
                                         .addComponent(btn)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btn_Add))
@@ -160,13 +181,13 @@ public class BreaksInterface extends javax.swing.JPanel {
                                 .addGap(421, 421, 421)))
                         .addGap(92, 92, 92))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btn_back)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton1)
+                .addComponent(btn_back)
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -186,7 +207,9 @@ public class BreaksInterface extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Add)
-                    .addComponent(btn))
+                    .addComponent(btn)
+                    .addComponent(btn_edit)
+                    .addComponent(btn_delete))
                 .addGap(45, 45, 45))
         );
 
@@ -275,9 +298,9 @@ public class BreaksInterface extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, " error adding data >>> "+e);
         }
 
-        //  DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+          DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
 
-        // model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
+         model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
     }//GEN-LAST:event_btn_AddActionPerformed
 
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
@@ -287,12 +310,45 @@ public class BreaksInterface extends javax.swing.JPanel {
         txt_Note.setText(null);
     }//GEN-LAST:event_btnActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void btn_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_backMouseClicked
         AttendenceInterfave a = new AttendenceInterfave();
 
         panelNavigator(a);
 
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_btn_backMouseClicked
+
+    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
+        DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+        
+        if(note_Table.getSelectedRow()== -1){
+          if(note_Table.getRowCount()== 0){
+              JOptionPane.showMessageDialog(this, "Table is empty !");
+          }else{
+              JOptionPane.showMessageDialog(this, "Please select a row !");
+          }
+      }else{
+          model.setValueAt(eName.getText(), note_Table.getSelectedRow(), 0);
+           model.setValueAt(txt_Note.getText(), note_Table.getSelectedRow(), 1);
+            JOptionPane.showMessageDialog(this, "Data Edited Successfully !");
+      }
+    }//GEN-LAST:event_btn_editActionPerformed
+
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+       DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+       
+        if (note_Table.getSelectedRow() == -1) {
+            if(note_Table.getRowCount()== 0){
+              JOptionPane.showMessageDialog(this, "Table is empty !");
+          }else{
+              JOptionPane.showMessageDialog(this, "Please select a row!");
+          }
+        }
+        else{
+            model.removeRow(note_Table.getSelectedRow());
+//            model.setValueAt(null, note_Table.getSelectedRow(), 0);
+//            model.setValueAt(null, note_Table.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_btn_deleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -300,8 +356,10 @@ public class BreaksInterface extends javax.swing.JPanel {
     private javax.swing.JLayeredPane breaksLayer;
     private javax.swing.JButton btn;
     private javax.swing.JButton btn_Add;
+    private javax.swing.JButton btn_back;
+    private javax.swing.JButton btn_delete;
+    private javax.swing.JButton btn_edit;
     private javax.swing.JTextField eName;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

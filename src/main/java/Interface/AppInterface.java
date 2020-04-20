@@ -48,6 +48,7 @@ public class AppInterface extends javax.swing.JFrame {
         sideNavBtnEvents(this.jLabel1);
         
       this.setExtendedState(this.MAXIMIZED_BOTH);
+      
     }
 
     
