@@ -24,11 +24,8 @@ com\Vidarshan\sales\Calculator$9.class
 com\Vidarshan\sales\Sales$21.class
 com\Miyuru\attendance\BreaksInterface$1.class
 com\Vidarshan\sales\Calculator$12.class
-<<<<<<< HEAD
 com\Savindu\inventory\Entity\Category.class
-=======
 com\Vidarshan\sales\Sales$28.class
->>>>>>> master
 com\Amasha\Maintenance\Users$6.class
 com\Vidarshan\sales\Sales$35.class
 com\Vidarshan\sales\Sales$22.class
@@ -73,12 +70,9 @@ com\Vidarshan\sales\Calculator$21.class
 com\Vidarshan\sales\Sales$5.class
 com\Vidarshan\sales\Calculator$16.class
 com\Vidarshan\sales\SalesModel.class
-<<<<<<< HEAD
-com\Savindu\inventory\AddCat$4.class
-=======
 com\Kethaki\Users\AddSupplier$7.class
+com\Savindu\inventory\AddCat$4.class
 com\Vidarshan\sales\Sales$26.class
->>>>>>> master
 com\Savindu\inventory\AddProduct$2.class
 com\Vidarshan\sales\Sales$31.class
 com\Vidarshan\sales\Sales$4.class
@@ -165,8 +159,5 @@ com\Savindu\inventory\Categories.class
 com\Amasha\Maintenance\Maintenance$1.class
 com\Miyuru\attendance\BreaksInterface$5.class
 com\Amasha\Maintenance\Roles$2.class
-<<<<<<< HEAD
-com\Savindu\inventory\SQLException.class
-=======
 com\Kethaki\Users\AddCustomer$5.class
->>>>>>> master
+com\Savindu\inventory\SQLException.class
