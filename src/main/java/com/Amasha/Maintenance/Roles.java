@@ -152,6 +152,11 @@ public class Roles extends javax.swing.JPanel {
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Delete_m.png"))); // NOI18N
         jButton3.setText("Delete ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -353,6 +358,19 @@ public class Roles extends javax.swing.JPanel {
         jTextField2.setText(model.getValueAt(jTable1.getSelectedRow(), 1).toString());
         
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+      if(jTable1.getSelectedRow()== -1){
+          if(jTable1.getRowCount()== 0){
+              message.setText("Table is empty!");
+          }else{
+              message.setText("Please select a role !");
+          }
+      }else{
+          model.removeRow(jTable1.getSelectedRow());
+      }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

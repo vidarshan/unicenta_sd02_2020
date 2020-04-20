@@ -191,6 +191,11 @@ public class Users extends javax.swing.JPanel {
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Delete_m.png"))); // NOI18N
         jButton3.setText("Delete");
         jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -390,6 +395,20 @@ public class Users extends javax.swing.JPanel {
           jComboBox1.setSelectedItem(model2.getValueAt(jTable1.getSelectedRow(),1).toString());
            jTextField4.setText(model2.getValueAt(jTable1.getSelectedRow(), 2).toString());
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        DefaultTableModel model2 = (DefaultTableModel)jTable1.getModel();
+      if(jTable1.getSelectedRow()== -1){
+          if(jTable1.getRowCount()== 0){
+              msg.setText("Table is empty!");
+          }else{
+              msg.setText("Please select a role !");
+          }
+      }else{
+          model2.removeRow(jTable1.getSelectedRow());
+      }
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
