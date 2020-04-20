@@ -5,8 +5,14 @@
  */
 package com.Savindu.inventory;
 
+import com.Savindu.inventory.Entity.Products;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +23,9 @@ public class AddProduct extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    Products product = new Products();
+    ArrayList<Products> productArr = new ArrayList<>();
+    
     public AddProduct() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -149,6 +158,11 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(244, 244, 244));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Save");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -252,6 +266,26 @@ public class AddProduct extends javax.swing.JFrame {
     private void ProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductsMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ProductsMouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        // TODO add your handling code here:
+        product.setName(this.name.getText());
+        product.setBarcode(this.barcode.getText());
+        product.setCategory(this.category.getText());
+        product.setDesc(this.desc.getText());
+        product.setImg(this.barcode.getText());
+        
+        productArr.add(product);
+        System.out.println(product.toString());
+        try {
+        boolean    res = product.save(product);
+        if(res){
+            JOptionPane.showMessageDialog(null, productArr.size()+" Product has Inserted Successfully!");
+        }
+        } catch (SQLException ex) {
+            Logger.getLogger(AddProduct.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jLabel9MouseClicked
 
     /**
      * @param args the command line arguments

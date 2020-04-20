@@ -1,47 +1,24 @@
-<<<<<<< HEAD
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/login/LogIn.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/Home.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Vidarshan/sales/SalesModel.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/login/loginPage.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/AddCustomer.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/DB/Sales/DatabaseConnection.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/Leaves_int.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/Attendance.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/attendance/Breaks.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Vidarshan/sales/Calculator.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Maintenance.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/AddCat.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/AddProduct.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Users.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/AppInterface.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/Inventory.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Amasha/Maintenance/Roles.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/Categories.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Vidarshan/sales/Sales.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/AddSupplier.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Kethaki/Users/UserHome.java
-/Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Savindu/inventory/InventoryPanel.java
-=======
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\AddCat.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Miyuru\login\LogIn.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Attendance.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\InventoryPanel.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Users.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddSupplier.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\SalesModel.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Categories.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\DB\Sales\DatabaseConnection.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Maintenance.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Roles.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Inventory.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\Interface\AppInterface.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\Interface\Home.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\UserHome.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Leaves_int.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Breaks.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Calculator.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Miyuru\login\loginPage.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\AddProduct.java
-C:\FINAL_REPO\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddCustomer.java
->>>>>>> master
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddCustomer.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\UserHome.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Breaks.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Maintenance.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Inventory.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Leaves_int.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Roles.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Entity\Products.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Entity\Categories.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddSupplier.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\Interface\AppInterface.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\AddProduct.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\SalesModel.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\AddCat.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\DB\Sales\DatabaseConnection.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Miyuru\login\loginPage.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\Attendance.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Calculator.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Miyuru\login\LogIn.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Users.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Categories.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\InventoryPanel.java
+C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\Interface\Home.java

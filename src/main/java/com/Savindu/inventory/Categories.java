@@ -267,6 +267,7 @@ public class Categories extends javax.swing.JPanel {
         // TODO add your handling code here:
         AddCat addCat = new AddCat();
         addCat.setVisible(true);
+        
     }//GEN-LAST:event_btn_add_categoryMouseClicked
 
 
