@@ -64,6 +64,7 @@ com\Miyuru\login\LogIn$1.class
 com\Miyuru\login\LogIn.class
 com\Vidarshan\sales\Calculator$6.class
 com\Vidarshan\sales\Calculator$19.class
+com\Kethaki\Users\AddCustomer$3.class
 Interface\AppInterface$3.class
 com\Miyuru\login\LogIn$2.class
 com\Vidarshan\sales\Calculator$2.class
@@ -87,6 +88,7 @@ com\Amasha\Maintenance\Roles$1.class
 com\Vidarshan\sales\Calculator$8.class
 com\Savindu\inventory\AddProduct.class
 com\Savindu\inventory\InventoryPanel.class
+com\Kethaki\Users\AddCustomer$4.class
 com\Miyuru\attendance\Leaves_int.class
 com\Savindu\inventory\Categories$3.class
 Interface\AppInterface$4.class
