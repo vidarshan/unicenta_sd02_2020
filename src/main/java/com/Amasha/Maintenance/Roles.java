@@ -142,6 +142,11 @@ public class Roles extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Edit_m.png"))); // NOI18N
         jButton2.setText("Edit Role");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(214, 49, 24));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -322,6 +327,20 @@ public class Roles extends javax.swing.JPanel {
         Maintenance m = new Maintenance();
         panelNavigator(m);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+       if(jTable1.getSelectedRow()== -1){
+           if(jTable1.getRowCount()==0){
+               message.setText("Table is Empty !!");
+           }else{
+               message.setText("Please Select a Role!");
+           }
+       }else{
+           model.setValueAt(jTextField1.getText(), jTable1.getSelectedRow(), 0);
+           model.setValueAt(jTextField2.getText(), jTable1.getSelectedRow(), 1);
+       }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

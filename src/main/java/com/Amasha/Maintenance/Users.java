@@ -180,6 +180,11 @@ public class Users extends javax.swing.JPanel {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Edit_m.png"))); // NOI18N
         jButton2.setText("Edit User");
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(214, 49, 24));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -358,6 +363,21 @@ public class Users extends javax.swing.JPanel {
         Maintenance m2 = new Maintenance();
         panelNavigator(m2);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        DefaultTableModel model2 = (DefaultTableModel)jTable1.getModel();
+        if(jTable1.getSelectedRow()== -1){
+            if(jTable1.getRowCount()==0){
+                msg.setText("Table is empty !");
+            }else{
+                msg.setText("Please select a user !");
+            }
+        }else{
+            model2.setValueAt(jTextField1.getText(), jTable1.getSelectedRow(),0);
+            model2.setValueAt(jComboBox1.getSelectedItem().toString(), jTable1.getSelectedRow(),1);
+            model2.setValueAt(jTextField4.getText(), jTable1.getSelectedRow(),2);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

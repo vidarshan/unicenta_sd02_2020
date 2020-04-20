@@ -7,6 +7,7 @@ com\Vidarshan\sales\Sales$1.class
 com\Savindu\inventory\AddCat.class
 com\Miyuru\login\loginPage.class
 com\Vidarshan\sales\Calculator$11.class
+com\Amasha\Maintenance\Roles$3.class
 com\Kethaki\Users\UserHome.class
 com\Miyuru\login\loginPage$1.class
 com\Vidarshan\sales\Sales$7.class
@@ -85,6 +86,7 @@ com\Vidarshan\sales\Calculator$10.class
 com\Miyuru\attendance\Breaks$2.class
 com\Amasha\Maintenance\Roles$1.class
 com\Vidarshan\sales\Calculator$8.class
+com\Amasha\Maintenance\Users$3.class
 com\Savindu\inventory\AddProduct.class
 com\Savindu\inventory\InventoryPanel.class
 com\Kethaki\Users\AddCustomer$4.class
