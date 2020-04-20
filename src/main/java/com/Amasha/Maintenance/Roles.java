@@ -307,7 +307,7 @@ public class Roles extends javax.swing.JPanel {
                 .addComponent(jLayeredPane1))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+//Add New Role Button
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         if(!jTextField1.getText().trim().equals("")){
