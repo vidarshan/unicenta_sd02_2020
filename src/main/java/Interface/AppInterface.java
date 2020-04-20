@@ -7,7 +7,8 @@ package Interface;
 
 import com.Amasha.Maintenance.Maintenance;
 import com.Kethaki.Users.UserHome;
-import com.Miyuru.attendance.Attendance;
+
+import com.Miyuru.attendance.AttendenceInterfave;
 import com.Vidarshan.sales.Sales;
 import com.Miyuru.login.LogIn;
 import com.Miyuru.login.loginPage;
@@ -29,7 +30,8 @@ public class AppInterface extends javax.swing.JFrame {
      * Creates new form Sales
      */
     Home interface_home = new Home();
-    Attendance int_attendance = new Attendance();
+    //Attendance int_attendance = new Attendance();
+    AttendenceInterfave int_attendance = new AttendenceInterfave();
     Sales interface_Sales = new Sales();
     InventoryPanel interface_Inventory = new InventoryPanel();
     UserHome int_user = new UserHome();
