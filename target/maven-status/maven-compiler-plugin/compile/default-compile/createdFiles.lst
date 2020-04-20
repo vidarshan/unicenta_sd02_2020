@@ -11,15 +11,23 @@ com\Vidarshan\sales\Calculator$11.class
 com\Vidarshan\sales\SalesNew.class
 com\Vidarshan\sales\Sales$27.class
 com\Kethaki\Users\UserHome.class
+<<<<<<< Updated upstream
 com\Miyuru\login\loginPage$1.class
+=======
+com\Kethaki\Users\AddSupplier$2.class
+>>>>>>> Stashed changes
 com\Vidarshan\sales\Sales$7.class
 com\Miyuru\attendance\Leaves_int$2.class
 com\Vidarshan\sales\Calculator$9.class
 com\Vidarshan\sales\Sales$21.class
 com\Miyuru\attendance\Attendance$2.class
 com\Vidarshan\sales\Calculator$12.class
+<<<<<<< Updated upstream
 com\Vidarshan\sales\Sales$28.class
 com\Vidarshan\sales\Sales$22.class
+=======
+com\Kethaki\Users\AddSupplier$3.class
+>>>>>>> Stashed changes
 com\Miyuru\attendance\Attendance$1.class
 com\Vidarshan\sales\Sales$2.class
 com\Savindu\inventory\Inventory$1.class
@@ -66,6 +74,7 @@ com\Savindu\inventory\Categories$4.class
 com\Vidarshan\sales\Sales$17.class
 com\Savindu\inventory\Inventory$5.class
 Interface\AppInterface$8.class
+com\Kethaki\Users\AddSupplier$5.class
 com\Vidarshan\sales\Sales.class
 com\Miyuru\attendance\Breaks$3.class
 com\Vidarshan\sales\Sales$12.class
@@ -76,7 +85,11 @@ com\Savindu\inventory\InventoryPanel$1.class
 com\Miyuru\login\LogIn$1.class
 com\Miyuru\login\LogIn.class
 com\Vidarshan\sales\Calculator$19.class
+<<<<<<< Updated upstream
 com\Vidarshan\sales\Sales$18.class
+=======
+com\Kethaki\Users\AddSupplier$4.class
+>>>>>>> Stashed changes
 com\Kethaki\Users\AddCustomer$3.class
 Interface\AppInterface$3.class
 com\Miyuru\login\LogIn$2.class
