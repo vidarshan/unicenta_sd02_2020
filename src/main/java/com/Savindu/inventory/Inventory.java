@@ -6,12 +6,21 @@
 package com.Savindu.inventory;
 
 import Interface.AppInterface;
+import com.Savindu.inventory.Entity.Products;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -25,20 +34,80 @@ public class Inventory extends javax.swing.JPanel {
     
 
     //AppInterface ap = new AppInterface();
-
-    
+    Products product = new Products();
+     ArrayList<String> filePathList = new ArrayList<>();
+     
     public Inventory() {
         initComponents();
         customJTable(tbl_Products);
+        addProductsToTable();
         //product_search.setVisible(false);
     }
     
     public void customJTable(JTable table){
         table.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 20));
         table.getTableHeader().setOpaque(false);
-        table.getTableHeader().setBackground(Color.BLACK);
+        table.getTableHeader().setBackground(new Color(55,71,79));
         table.getTableHeader().setForeground(new Color(0,51,51));
-        table.setRowHeight(25);
+        table.setRowHeight(100);
+    }
+    
+     public void addProductsToTable() {
+        DefaultTableModel model = new DefaultTableModel(){
+            @Override
+            public Class<?> getColumnClass(int column) {
+                if (column==1) return ImageIcon.class;
+                return Object.class;
+            }
+        };
+        
+        ArrayList<Products> list = new ArrayList<>();
+        list = product.getProducts();
+        
+        
+        Object rowData[] = new Object[7];
+        Object columns[] = new Object[7];
+        columns[0] = " ID";
+        columns[1] = " Img";
+        columns[2] = " Barcode";
+        columns[3] = " Name";
+        columns[4] = " Category";
+        columns[5] = " Description";
+        columns[6] = " Uploaded On";
+        
+        model.setColumnIdentifiers(columns);
+        
+        for(int i = 0; i < list.size(); i++)
+        {
+            rowData[0] = list.get(i).getId();
+            filePathList.add(list.get(i).getImg());
+            rowData[1] = resizeImg(list.get(i).getImg());
+            rowData[2] = list.get(i).getBarcode();
+            rowData[3] = list.get(i).getName();
+            rowData[4] = list.get(i).getCategory();
+            rowData[5] = list.get(i).getDesc();
+            rowData[6] = list.get(i).getUploadedOn();
+            model.addRow(rowData);
+        }
+         
+        tbl_Products.setModel(model);
+    }
+    
+      public ImageIcon resizeImg(String filePath){
+          ImageIcon imageIcon = null;
+        if(filePath != null){
+            BufferedImage img = null;
+            try {
+                img = ImageIO.read(new File(filePath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+            Image dimg = img.getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+            imageIcon = new ImageIcon(dimg);
+            
+        }
+        return imageIcon;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,6 +120,7 @@ public class Inventory extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        refresh = new javax.swing.JLabel();
         btn_product_add = new javax.swing.JLabel();
         btn_product_edit = new javax.swing.JLabel();
         btn_product_delete = new javax.swing.JLabel();
@@ -72,7 +142,7 @@ public class Inventory extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 206, Short.MAX_VALUE)
+            .addGap(0, 172, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,6 +150,24 @@ public class Inventory extends javax.swing.JPanel {
         );
 
         jPanel1.add(jPanel2);
+
+        refresh.setBackground(new java.awt.Color(55, 71, 79));
+        refresh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        refresh.setForeground(new java.awt.Color(244, 244, 244));
+        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-36.png"))); // NOI18N
+        refresh.setText("Reload");
+        refresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                refreshMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                refreshMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                refreshMouseExited(evt);
+            }
+        });
+        jPanel1.add(refresh);
 
         btn_product_add.setBackground(new java.awt.Color(55, 71, 79));
         btn_product_add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -123,6 +211,9 @@ public class Inventory extends javax.swing.JPanel {
         btn_product_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-bin-36.png"))); // NOI18N
         btn_product_delete.setText("Delete Product");
         btn_product_delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_product_deleteMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_product_deleteMouseEntered(evt);
             }
@@ -159,7 +250,7 @@ public class Inventory extends javax.swing.JPanel {
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_product_search)
                 .addContainerGap())
@@ -183,19 +274,15 @@ public class Inventory extends javax.swing.JPanel {
         tbl_Products.setForeground(new java.awt.Color(244, 244, 244));
         tbl_Products.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"ddf", "dfdf", "dfdf", "dfdf", "dfdf"},
-                {"dfdf", "dfdf", "dfdf", "fddf", "dfd"},
-                {"sdcfvgb", "fvgb", "gbhn", "vfgbth", "nvfgbh"},
-                {"fcvgbh", "vfgbth", "fvgbh", "vfgbh", "fvgbhbg"},
-                {"vfgbhn", "vgfbhn", "gvfbhn", "fgbhn", "dwewf"}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+
             }
         ));
         tbl_Products.setFocusable(false);
         tbl_Products.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tbl_Products.setRowHeight(25);
+        tbl_Products.setRowHeight(75);
         tbl_Products.setSelectionBackground(new java.awt.Color(28, 35, 51));
         tbl_Products.setShowVerticalLines(false);
         tbl_Products.getTableHeader().setReorderingAllowed(false);
@@ -218,8 +305,7 @@ public class Inventory extends javax.swing.JPanel {
                 .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -269,25 +355,75 @@ public class Inventory extends javax.swing.JPanel {
 
         AddProduct add_product = new AddProduct();
         add_product.setVisible(true);
-
     }//GEN-LAST:event_btn_product_addMouseClicked
 
     private void btn_product_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_editMouseClicked
         // TODO add your handling code here:
-        int column = 0;
-        int row[] = tbl_Products.getSelectedRows();
-        
+         int row[] = tbl_Products.getSelectedRows();
+         String rowData[] = new String[7];
             if(row.length == 1){
-            String value = tbl_Products.getModel().getValueAt(row[0], column).toString();
-            System.out.println("getSelectedRow = "+value);   
+                for(int i=0; i<7; i++){  
+                rowData[i] = tbl_Products.getModel().getValueAt(row[0], i).toString();
+                System.out.println("getSelectedRow = "+rowData[i]); 
+                }  
             }else{
                 JOptionPane.showMessageDialog(null, "Please select a single row to Edit");
             }
-            
-           // btn_product_edit.setIcon(new ImageIcon("C:/Users/Savindu/Downloads/icons8-save-close-36.png"));
+          EditProduct edit_prdt = new EditProduct();
+          //setData(String p_bar, String p_cat, String p_name, String img, String p_desc)
+          System.out.println("Arrays.toString(rowData): "+Arrays.toString(rowData));
+                  
+          edit_prdt.setData(rowData[0], rowData[2], rowData[4], rowData[3], filePathList.get(row[0]), rowData[5]);
+          edit_prdt.setVisible(true); 
+           
         
         
     }//GEN-LAST:event_btn_product_editMouseClicked
+
+    private void refreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseEntered
+        // TODO add your handling code here:
+        refresh.setForeground(new Color(0x2ECC71));
+    }//GEN-LAST:event_refreshMouseEntered
+
+    private void refreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseExited
+        // TODO add your handling code here:
+        refresh.setForeground(new Color(0xf4f4f4));
+    }//GEN-LAST:event_refreshMouseExited
+
+    private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
+        // TODO add your handling code here:
+        this.addProductsToTable();
+    }//GEN-LAST:event_refreshMouseClicked
+
+    private void btn_product_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_deleteMouseClicked
+        // TODO add your handling code here:
+        int row[] = tbl_Products.getSelectedRows();
+        ArrayList<String> rowData = new ArrayList<String>();
+        DefaultTableModel md = ((DefaultTableModel)tbl_Products.getModel());
+        System.out.println(row.length);
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete "+row.length+" Products?","Warning",dialogButton);
+        if(dialogResult == JOptionPane.YES_OPTION){
+            if(row.length > 0){
+                int j = 1;
+                for(int i=0; i < row.length; i++){    
+                rowData.add(tbl_Products.getModel().getValueAt(row[i], 0).toString());
+                        md.removeRow(row[i]);
+                        if(i < row.length-1){
+                          row[i+1] = row[i+1]-j; 
+                          j++;
+                        }
+                System.out.println("SelectedRow = "+row[i]);
+                System.out.println("getSelectedRow = "+rowData.get(i).toString());
+                }  
+                System.out.println(Arrays.toString(rowData.toArray()));
+                product.remove(rowData);
+            }else{
+                JOptionPane.showMessageDialog(null, "Please select products to Delete");
+            }
+        }
+            
+    }//GEN-LAST:event_btn_product_deleteMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -299,6 +435,7 @@ public class Inventory extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField product_search;
+    private javax.swing.JLabel refresh;
     private javax.swing.JPanel search;
     private javax.swing.JTable tbl_Products;
     // End of variables declaration//GEN-END:variables

@@ -131,8 +131,9 @@ public class Calculator extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(28, 35, 51));
         setLocation(new java.awt.Point(250, 500));
-        setPreferredSize(new java.awt.Dimension(580, 950));
+        setPreferredSize(new java.awt.Dimension(580, 920));
 
         ans.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ans.addActionListener(new java.awt.event.ActionListener() {

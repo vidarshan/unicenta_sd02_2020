@@ -55,6 +55,12 @@ public class InventoryPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CategoriesMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CategoriesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CategoriesMouseExited(evt);
+            }
         });
 
         javax.swing.GroupLayout catPanelLayout = new javax.swing.GroupLayout(catPanel);
@@ -86,6 +92,12 @@ public class InventoryPanel extends javax.swing.JPanel {
         Products.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ProductsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ProductsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ProductsMouseExited(evt);
             }
         });
 
@@ -138,13 +150,35 @@ public class InventoryPanel extends javax.swing.JPanel {
     
     private void CategoriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CategoriesMouseClicked
         // TODO add your handling code here:
+        Categories.setForeground(new Color(0xf4f4f4));
         panelNavigator(cat, catPanel);
     }//GEN-LAST:event_CategoriesMouseClicked
 
     private void ProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductsMouseClicked
         // TODO add your handling code here:
+        Products.setForeground(new Color(0xf4f4f4));
         panelNavigator(interface_Inventory, productsPanel);
     }//GEN-LAST:event_ProductsMouseClicked
+
+    private void CategoriesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CategoriesMouseEntered
+        // TODO add your handling code here:
+        Categories.setForeground(new Color(55,71,79));
+    }//GEN-LAST:event_CategoriesMouseEntered
+
+    private void ProductsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductsMouseEntered
+        // TODO add your handling code here:
+        Products.setForeground(new Color(55,71,79));
+    }//GEN-LAST:event_ProductsMouseEntered
+
+    private void ProductsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductsMouseExited
+        // TODO add your handling code here:
+        Products.setForeground(new Color(0xf4f4f4));
+    }//GEN-LAST:event_ProductsMouseExited
+
+    private void CategoriesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CategoriesMouseExited
+        // TODO add your handling code here:
+        Categories.setForeground(new Color(0xf4f4f4));
+    }//GEN-LAST:event_CategoriesMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
