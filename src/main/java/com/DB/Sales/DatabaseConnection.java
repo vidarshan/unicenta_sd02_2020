@@ -10,10 +10,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
 
-/**
- *
- * @author vidar
- */
+/*
+author @vidarshan adithya rathnayake - 20204837
+date 21-04-2020
+All credit for the relevant sources
+*/
 public class DatabaseConnection {
     
     private Connection con;
@@ -24,7 +25,8 @@ public class DatabaseConnection {
             System.out.println("***************************************************************************************************************************************");
             System.out.println("Driver Loaded");
             System.out.println("***************************************************************************************************************************************");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicentanew", "root", "");
+            //***********************************************Do not change this database name. Exceptions handled
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "");
         } catch (Exception ex) {
             System.out.println(ex);
         }
