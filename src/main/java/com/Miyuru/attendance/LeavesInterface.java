@@ -5,7 +5,9 @@
  */
 package com.Miyuru.attendance;
 
+import com.DB.Sales.DatabaseConnection;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -18,12 +20,18 @@ import javax.swing.table.DefaultTableModel;
  */
 public class LeavesInterface extends javax.swing.JPanel {
 
-    Connection con;
+    //Connection con;
+    private Connection con;
+    private String INSERT_SQL = "";
+    boolean state = false;
+    
     /**
      * Creates new form LeavesInterface
      */
     public LeavesInterface() {
         initComponents();
+        DatabaseConnection dbc = DatabaseConnection.getDatabaseConnection();
+        con = dbc.getConnection();
     }
 
     public void panelNavigator(JPanel panel){
@@ -264,6 +272,29 @@ public class LeavesInterface extends javax.swing.JPanel {
         String empName = emp_txt.getText();
         String note = note_txt.getText();
         
+        try{
+           // for(Products product : products){
+               PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO emp_leaves (emp_name,startDate,endDate,note) values(?,?,?,?)");
+        
+               preparedStatement.setString(1, empName);          
+               preparedStatement.setString(2, start);
+               preparedStatement.setString(3, end);
+               preparedStatement.setString(3, note);
+               
+               System.out.println(preparedStatement);
+               
+               int result = preparedStatement.executeUpdate();
+               
+               if(result > 0){
+                   state = true;
+               }else{
+                   state = false;
+               }
+               setLeavesTableData();
+            //}
+        }catch(Exception e){
+            System.out.println(e);
+        }
 //        try{
 //            Statement smt = con.createStatement();
 //            smt.execute("INSERT INTO emp_leaves (emp_name,startDate,endDate,note) values('"+empName+"','"+start+"','"+end+"','"+note+"')");
@@ -285,10 +316,10 @@ public class LeavesInterface extends javax.swing.JPanel {
 //        }catch(Exception e){
 //            JOptionPane.showMessageDialog(this, " error adding data >>> "+e);
 //        }
-//        
-        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
-
-        model.addRow(new Object[]{emp_txt.getText(),start_txt.getText(),end_txt.getText(),note_txt.getTabSize()});
+        
+//        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+//
+//        model.addRow(new Object[]{emp_txt.getText(),start_txt.getText(),end_txt.getText(),note_txt.getTabSize()});
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void btn_newActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newActionPerformed
@@ -331,33 +362,33 @@ public class LeavesInterface extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void setLeavesTableData() {
-//        try{
-//            int rows = 0;
-//            int rowIndex = 0;
-//            Statement smt = con.createStatement();
-//            ResultSet rs = smt.executeQuery("SELECT * FROM emp_leaves");
-//            if(rs.next()){
-//                rs.last();
-//                rows = rs.getRow();
-//                rs.beforeFirst();
-//            }
-//            String[][] data = new String[rows][4];
-//            while(rs.next()){
-//                data[rowIndex][0]=rs.getString(1)+"";
-//                data[rowIndex][1]=rs.getString(2);
-//                data[rowIndex][2]=rs.getString(3);
-//                data[rowIndex][3]=rs.getString(4)+"";
-//                
-//                rowIndex++;
-//            }
-//            String[] cols={"Employee","Start Date","End Date","Notes"};
-//            DefaultTableModel model = new DefaultTableModel(data,cols);
-//            jTable2.setModel(model);
-//            rs.close();
-//            smt.close();
-//        }catch(Exception e){
-//            JOptionPane.showMessageDialog(this, e +" Retreiving Failed");
-//        }
+        try{
+            int rows = 0;
+            int rowIndex = 0;
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery("SELECT * FROM emp_leaves");
+            if(rs.next()){
+                rs.last();
+                rows = rs.getRow();
+                rs.beforeFirst();
+            }
+            String[][] data = new String[rows][4];
+            while(rs.next()){
+                data[rowIndex][0]=rs.getString(1)+"";
+                data[rowIndex][1]=rs.getString(2);
+                data[rowIndex][2]=rs.getString(3);
+                data[rowIndex][3]=rs.getString(4)+"";
+                
+                rowIndex++;
+            }
+            String[] cols={"Employee","Start Date","End Date","Notes"};
+            DefaultTableModel model = new DefaultTableModel(data,cols);
+            jTable2.setModel(model);
+            rs.close();
+            smt.close();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e +" Retreiving Failed");
+        }
 
     }
 }
