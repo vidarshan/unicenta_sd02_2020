@@ -30,7 +30,6 @@ com\Vidarshan\sales\Calculator$12.class
 com\Savindu\inventory\Entity\Category.class
 com\Vidarshan\sales\Sales$28.class
 com\Amasha\Maintenance\Users$6.class
-com\Vidarshan\sales\Sales$35.class
 com\Vidarshan\sales\Sales$22.class
 com\Miyuru\attendance\LeavesInterface$3.class
 com\Vidarshan\sales\Sales$34.class
@@ -48,7 +47,6 @@ com\Vidarshan\sales\Sales$30.class
 com\Kethaki\Users\AddSupplier$6.class
 com\Vidarshan\sales\Sales$8.class
 com\Kethaki\Users\AddCustomer$1.class
-com\Vidarshan\sales\Sales$Gaps.class
 com\Miyuru\attendance\AttendenceInterfave$1.class
 com\Vidarshan\sales\Sales$19.class
 com\Vidarshan\sales\Calculator$5.class
@@ -77,7 +75,6 @@ com\Vidarshan\sales\Calculator$21.class
 com\Vidarshan\sales\Sales$5.class
 com\Savindu\inventory\Categories$8.class
 com\Vidarshan\sales\Calculator$16.class
-com\Vidarshan\sales\SalesModel.class
 com\Kethaki\Users\AddSupplier$7.class
 com\Savindu\inventory\AddCat$4.class
 com\Vidarshan\sales\Sales$26.class

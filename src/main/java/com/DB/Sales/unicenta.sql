@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2020 at 05:25 PM
+-- Generation Time: Apr 21, 2020 at 09:57 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -43,8 +43,8 @@ CREATE TABLE `sales` (
 --
 
 INSERT INTO `sales` (`id`, `product_name`, `product_price`, `product_quantity`, `sales_value`, `tax`, `commision`) VALUES
-(37, 'Test', '1000', 1, '1020', 10, '10'),
-(38, 'Test', '1100', 1, '1120', 10, '10');
+(9, 'Soap', '60', 1, '60', 0, '0'),
+(10, 'Pens', '10', 12, '122', 1, '1');
 
 -- --------------------------------------------------------
 
@@ -64,9 +64,10 @@ CREATE TABLE `salesbucket` (
 --
 
 INSERT INTO `salesbucket` (`id`, `date`, `time`, `grand_total`) VALUES
-(1, '04/19/2020', '07:35:40', 'javax.swing.JTextField[,112,7,173x41,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.synth.SynthBorder@221749c2,flags=288,maximumSize=,minimumSize=,preferredSize=,caretColor=,disabledTextColor=DerivedColor(color=142,143,145 parent=nimbusDisabledText offsets=0.0,0.0,0.0,0 pColor=142,143,145,editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=DerivedColor(color=255,255,255 parent=nimbusSelectedText offsets=0.0,0.0,0.0,0 pColor=255,255,255,selectionColor=DerivedColor(color=57,105,138 parent=nimbusSelectionBackground offsets=0.0,0.0,0.0,0 pColor=57,105,138,columns=0,columnWidth=0,command=,horizontalAlignment=LEADING]'),
-(2, '04/19/2020', '07:37:07', '79815'),
-(3, '04/19/2020', '08:47:25', '13620');
+(1, '04/21/2020', '01:20:19', '1430'),
+(2, '04/21/2020', '01:21:30', '525'),
+(3, '04/21/2020', '01:22:05', '300'),
+(4, '04/21/2020', '01:24:20', '656');
 
 -- --------------------------------------------------------
 
@@ -89,15 +90,16 @@ CREATE TABLE `salesrecords` (
 --
 
 INSERT INTO `salesrecords` (`id`, `product_name`, `product_price`, `product_quantity`, `sales_value`, `tax`, `commision`) VALUES
-(1, 'Test', '1000', 1, '1020', 10, '10'),
-(2, 'Test', '1000', 1, '1200', 100, '100'),
-(3, 'Test', '1000', 1, '1200', 100, '100'),
-(4, 'Test', '1000', 1, '1200', 100, '100'),
-(5, 'Test', '1000', 1, '1200', 100, '100'),
-(6, 'Test', '1000', 1, '1200', 100, '100'),
-(7, 'Shoes', '10000', 1, '10020', 10, '10'),
-(8, 'Test', '1000', 1, '1020', 10, '10'),
-(9, 'Test', '1000', 1, '1020', 10, '10');
+(1, 'Milk', '100', 12, '1200', 0, '0'),
+(2, 'Sugar 1kg', '220', 1, '230', 10, '0'),
+(3, 'Book 120', '200', 2, '404', 2, '2'),
+(4, 'Pen', '10', 12, '121', 0, '1'),
+(5, 'Coffee', '100', 3, '300', 0, '0'),
+(6, 'Tea 100g', '200', 1, '214', 12, '2'),
+(7, 'Soap', '60', 4, '242', 1, '1'),
+(8, 'Tissue pack', '20', 10, '200', 0, '0'),
+(9, 'Soap', '60', 1, '60', 0, '0'),
+(10, 'Pens', '10', 12, '122', 1, '1');
 
 --
 -- Indexes for dumped tables
@@ -129,19 +131,19 @@ ALTER TABLE `salesrecords`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `salesbucket`
 --
 ALTER TABLE `salesbucket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `salesrecords`
 --
 ALTER TABLE `salesrecords`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
