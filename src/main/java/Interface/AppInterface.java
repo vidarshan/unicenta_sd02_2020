@@ -58,10 +58,10 @@ public class AppInterface extends javax.swing.JFrame {
         sideNavBtnEvents(this.jLabel1);
         
         try {
-//            URL resource = this.getClass().getResource("/appIcon.png");
-//            BufferedImage image = ImageIO.read(resource);
-//            this.setIconImage(image);
-            this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/appIcon.png")));
+            URL resource = this.getClass().getResource("/appIcon.png");
+            BufferedImage image = ImageIO.read(resource);
+            this.setIconImage(image);
+           // this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/appIcon.png")));
             this.setTitle("Unicenta");
         } catch (Exception ex) {
             Logger.getLogger(AppInterface.class.getName()).log(Level.SEVERE, null, ex);

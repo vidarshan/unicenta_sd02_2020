@@ -8,6 +8,11 @@ package com.Miyuru.login;
 import Interface.AppInterface;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -22,9 +27,16 @@ public class SignIn extends javax.swing.JFrame {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/appIcon.png")));
-        this.setTitle("Unicenta POS");
+        try {
+            URL resource = this.getClass().getResource("/appIcon.png");
+            BufferedImage image = ImageIO.read(resource);
+            this.setIconImage(image);
+           // this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/appIcon.png")));
+            this.setTitle("Unicenta");
+        } catch (Exception ex) {
+            Logger.getLogger(AppInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**
