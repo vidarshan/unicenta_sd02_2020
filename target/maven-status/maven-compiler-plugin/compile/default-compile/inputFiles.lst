@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/com/Miyuru/login/LogIn.java
 /Users/miyuru_cg/git/Projects/GitHub/HCI/unicenta_sd02_2020/src/main/java/Interface/Home.java
@@ -50,3 +51,32 @@ C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\G
 C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\LeavesInterface.java
 C:\Users\Savindu\Desktop\Studies\SLIIT\Studies\Curtin\1st Semester\HCI\Project\Git\HCI_New\unicenta_sd02_2020\src\main\java\Interface\Home.java
 >>>>>>> master
+=======
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Miyuru\login\loginPage.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Users.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\UserHome.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\SQLException.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddSupplier.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\AddProduct.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\BreaksInterface.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\LeavesInterface.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Inventory.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\Interface\AppInterface.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\EditCategory.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Miyuru\attendance\AttendenceInterfave.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Categories.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\SalesNew.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\AddCat.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Roles.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Entity\Category.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Kethaki\Users\AddCustomer.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\DB\Sales\DatabaseConnection.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Calculator.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\Entity\Products.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Amasha\Maintenance\Maintenance.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\EditProduct.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Miyuru\login\LogIn.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Vidarshan\sales\Sales.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\com\Savindu\inventory\InventoryPanel.java
+D:\Curtin\Human Computer Interfaces\POS\New folder\unicenta_sd02_2020\src\main\java\Interface\Home.java
+>>>>>>> Stashed changes
