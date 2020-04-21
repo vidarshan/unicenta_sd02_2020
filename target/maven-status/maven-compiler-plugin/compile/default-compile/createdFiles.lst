@@ -35,6 +35,7 @@ com\Vidarshan\sales\Sales$22.class
 com\Miyuru\attendance\LeavesInterface$3.class
 com\Vidarshan\sales\Sales$34.class
 com\Kethaki\Users\AddSupplier$3.class
+com\Savindu\inventory\Inventory$7.class
 com\Vidarshan\sales\Sales$2.class
 com\Savindu\inventory\Inventory$1.class
 com\Savindu\inventory\AddProduct$5.class
@@ -74,6 +75,7 @@ com\Savindu\inventory\AddProduct$1.class
 com\Vidarshan\sales\Sales$25.class
 com\Vidarshan\sales\Calculator$21.class
 com\Vidarshan\sales\Sales$5.class
+com\Savindu\inventory\Categories$8.class
 com\Vidarshan\sales\Calculator$16.class
 com\Vidarshan\sales\SalesModel.class
 com\Kethaki\Users\AddSupplier$7.class
@@ -152,6 +154,7 @@ com\Miyuru\attendance\BreaksInterface$4.class
 com\Miyuru\attendance\LeavesInterface$2.class
 com\Vidarshan\sales\Sales$16.class
 com\Savindu\inventory\Categories$3.class
+com\Savindu\inventory\EditProduct$6.class
 Interface\AppInterface$4.class
 com\Savindu\inventory\InventoryPanel$2.class
 Interface\AppInterface$7.class

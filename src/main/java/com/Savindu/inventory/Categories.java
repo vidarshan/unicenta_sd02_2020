@@ -13,9 +13,13 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -111,6 +115,7 @@ public class Categories extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        refresh = new javax.swing.JLabel();
         btn_add_category = new javax.swing.JLabel();
         btn_cat_edit = new javax.swing.JLabel();
         btn_cat_delete = new javax.swing.JLabel();
@@ -133,7 +138,7 @@ public class Categories extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 177, Short.MAX_VALUE)
+            .addGap(0, 167, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,6 +146,24 @@ public class Categories extends javax.swing.JPanel {
         );
 
         jPanel1.add(jPanel2);
+
+        refresh.setBackground(new java.awt.Color(55, 71, 79));
+        refresh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        refresh.setForeground(new java.awt.Color(244, 244, 244));
+        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-36.png"))); // NOI18N
+        refresh.setText("Reload");
+        refresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                refreshMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                refreshMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                refreshMouseExited(evt);
+            }
+        });
+        jPanel1.add(refresh);
 
         btn_add_category.setBackground(new java.awt.Color(55, 71, 79));
         btn_add_category.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -189,6 +212,9 @@ public class Categories extends javax.swing.JPanel {
         btn_cat_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-bin-36.png"))); // NOI18N
         btn_cat_delete.setText("Remove Category");
         btn_cat_delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_cat_deleteMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_cat_deleteMouseEntered(evt);
             }
@@ -225,7 +251,7 @@ public class Categories extends javax.swing.JPanel {
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_product_search)
                 .addContainerGap())
@@ -273,7 +299,7 @@ public class Categories extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1002, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -360,9 +386,53 @@ public class Categories extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please select a single row to Edit");
             }
           EditCategory edit_cat = new EditCategory();
-          edit_cat.setData(rowData[1], rowData[3], filePathList.get(row[0]));
+          edit_cat.setData(rowData[0], rowData[1], rowData[3], filePathList.get(row[0]));
           edit_cat.setVisible(true);
     }//GEN-LAST:event_btn_cat_editMouseClicked
+
+    private void btn_cat_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cat_deleteMouseClicked
+        // TODO add your handling code here:
+        int row[] = tbl_Cat.getSelectedRows();
+        ArrayList<String> rowData = new ArrayList<String>();
+        DefaultTableModel md = ((DefaultTableModel)tbl_Cat.getModel());
+        System.out.println(row.length);
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete "+row.length+" Category?","Warning",dialogButton);
+        if(dialogResult == JOptionPane.YES_OPTION){
+            if(row.length > 0){
+                int j = 1;
+                for(int i=0; i < row.length; i++){    
+                rowData.add(tbl_Cat.getModel().getValueAt(row[i], 0).toString());
+                        md.removeRow(row[i]);
+                        if(i < row.length-1){
+                          row[i+1] = row[i+1]-j; 
+                          j++;
+                        }
+                System.out.println("SelectedRow = "+row[i]);
+                System.out.println("getSelectedRow = "+rowData.get(i).toString());
+                }  
+                System.out.println(Arrays.toString(rowData.toArray()));
+                cat.remove(rowData);
+            }else{
+                JOptionPane.showMessageDialog(null, "Please select products to Delete");
+            }
+        }
+    }//GEN-LAST:event_btn_cat_deleteMouseClicked
+
+    private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
+        // TODO add your handling code here:
+        this.addCategoriesToTable();
+    }//GEN-LAST:event_refreshMouseClicked
+
+    private void refreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseEntered
+        // TODO add your handling code here:
+        refresh.setForeground(new Color(0x2ECC71));
+    }//GEN-LAST:event_refreshMouseEntered
+
+    private void refreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseExited
+        // TODO add your handling code here:
+        refresh.setForeground(new Color(0xf4f4f4));
+    }//GEN-LAST:event_refreshMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -374,6 +444,7 @@ public class Categories extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField product_search;
+    private javax.swing.JLabel refresh;
     private javax.swing.JPanel search;
     private javax.swing.JTable tbl_Cat;
     // End of variables declaration//GEN-END:variables

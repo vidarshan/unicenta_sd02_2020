@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  */
 public class Category {
 
-    private int id;
+    private String id;
     private String catID;
     private String name;
     private String img;
@@ -32,12 +32,19 @@ public class Category {
     }
 
     public void setImg(String img) {
-        this.img = img;
+        if(img != null){
+            this.img = img; 
+        }else{
+            this.img = "Categories\\image-not-found.png";
+        }
     }
     
     private Connection con;
     private String INSERT_SQL = "INSERT INTO `categories`(`cat_ID`, `cat_Name`, `cat_img`) VALUES (?, ?, ?)";
     private String SELCT_QUERY = "SELECT `id`, `cat_ID`, `cat_Name`, `cat_img`, `uploadedOn` FROM `categories`";
+    private String UPDATE_SQL = "UPDATE `categories` SET `cat_ID`= ?,`cat_Name`= ?,`cat_img`= ? WHERE `id` = ?";
+    private String DELETE_SQL = "DELETE FROM `categories` WHERE `id` = ?";
+    
      public Category() {
          DatabaseConnection dbc = DatabaseConnection.getDatabaseConnection();
          con = dbc.getConnection();
@@ -59,11 +66,11 @@ public class Category {
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -121,7 +128,7 @@ public class Category {
             rs = preparedStatement.executeQuery();
             while(rs.next()){
                 category = new Category();
-                category.setId(rs.getInt(1));
+                category.setId(rs.getString(1));
                 category.setCatID(rs.getString(2));
                 category.setName(rs.getString(3));
                 category.setImg(rs.getString(4));
@@ -137,4 +144,60 @@ public class Category {
         return categories;
     }
     
+   public boolean update(Category category) throws SQLException{
+        boolean state = false;
+         
+        try{
+           // for(Products product : products){
+               PreparedStatement preparedStatement = con.prepareStatement(UPDATE_SQL);
+        
+               preparedStatement.setString(1, category.getCatID());          
+               preparedStatement.setString(2, category.getName());
+               preparedStatement.setString(3, category.getImg());
+               preparedStatement.setString(4, category.getId());
+               
+               System.out.println(preparedStatement);
+               
+               int result = preparedStatement.executeUpdate();
+               
+               if(result > 0){
+                   state = true;
+               }else{
+                   state = false;
+               }
+            //}
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        
+       return state;
+    }
+
+    public boolean remove(ArrayList<String> category) {
+         boolean state = false;
+         int result = 0;
+        try{
+           // for(Products product : products){
+               PreparedStatement preparedStatement = con.prepareStatement(DELETE_SQL);
+        
+               for(int i=0; i<category.size(); i++){
+                 preparedStatement.setString(1, category.get(i).toString());
+                 System.out.println(preparedStatement);
+               
+                 result  = preparedStatement.executeUpdate();  
+               }
+               
+               
+               if(result > 0){
+                   state = true;
+               }else{
+                   state = false;
+               }
+            //}
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        
+        return state;
+        }
 }

@@ -30,8 +30,12 @@ public class Products {
     
     
     private Connection con;
+    
     private String INSERT_PRODUCTS_SQL = "INSERT INTO `products` (`name`, `barcode`, `category`, `description`, `img`) VALUES (?, ?, ?, ?, ?)";
     private String SELECT_PRODUCTS_SQL = "SELECT `productID`, `name`, `barcode`, `category`, `description`, `img`, `uploadedOn` FROM `products`";  
+    private String UPDATE_PRODUCTS_SQL = "UPDATE `products` SET `name`= ?,`barcode`= ?,`category`= ?,`description`= ?,`img`= ? WHERE `productID`= ?";
+    private String DELETE_PRODUCTS_SQL = "DELETE FROM `products` WHERE `productID` = ?";
+    
     public Products() {
         DatabaseConnection dbc = DatabaseConnection.getDatabaseConnection();
         con = dbc.getConnection();
@@ -80,7 +84,11 @@ public class Products {
     }
 
     public void setImg(String img) {
-        this.img = img;
+        if(img != null){
+            this.img = img; 
+        }else{
+            this.img = "Products\\image-not-found.png";
+        }
     }
 
     public String getDesc() {
@@ -156,5 +164,61 @@ public class Products {
         
         
         return products;
+    }
+    
+    public boolean update(Products product){
+        boolean state = false;
+        try{
+           // for(Products product : products){
+               PreparedStatement preparedStatement = con.prepareStatement(UPDATE_PRODUCTS_SQL);
+        
+               preparedStatement.setString(1, product.getName());          
+               preparedStatement.setString(2, product.getBarcode()); 
+               preparedStatement.setString(3, product.getCategory()); 
+               preparedStatement.setString(4, product.getDesc()); 
+               preparedStatement.setString(5, product.getImg()); 
+               preparedStatement.setString(6, product.getId());
+               System.out.println(preparedStatement);
+               
+               int result = preparedStatement.executeUpdate();
+               
+               if(result > 0){
+                   state = true;
+               }else{
+                   state = false;
+               }
+            //}
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return state;
+    }
+    
+    public boolean remove(ArrayList<String> products){
+        boolean state = false;
+         int result = 0;
+        try{
+           // for(Products product : products){
+               PreparedStatement preparedStatement = con.prepareStatement(DELETE_PRODUCTS_SQL);
+        
+               for(int i=0; i<products.size(); i++){
+                 preparedStatement.setString(1, products.get(i).toString());
+                 System.out.println(preparedStatement);
+               
+                 result  = preparedStatement.executeUpdate();  
+               }
+               
+               
+               if(result > 0){
+                   state = true;
+               }else{
+                   state = false;
+               }
+            //}
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        
+        return state;
     }
 }

@@ -36,6 +36,8 @@ public class EditCategory extends javax.swing.JFrame {
      */
     Category category = new Category();
     String filePath = null;
+    String id = null;
+    String imgpath = null;
     
     public EditCategory() {
         initComponents();
@@ -44,10 +46,14 @@ public class EditCategory extends javax.swing.JFrame {
         this.setResizable(false);
     }
 
-    public void setData(String cat_ID, String cat_name, String img){
+    public void setData(String id, String cat_ID, String cat_name, String img){
+        this.id = id;
         this.cat_ID.setText(cat_ID);
         this.cat_name.setText(cat_name);
-        this.imgLbl.setIcon(resizeImg(img));
+        this.imgpath = img;
+        if(img != null){ 
+            this.imgLbl.setIcon(resizeImg(img));
+        }
     }
     
       public ImageIcon resizeImg(String filePath){
@@ -364,16 +370,24 @@ public class EditCategory extends javax.swing.JFrame {
 
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
         // TODO add your handling code here:
+        category.setId(id);
         category.setCatID(this.cat_ID.getText());
         category.setName(this.cat_name.getText());
-        category.setImg(this.filePath);
+        
+        if(filePath != null){
+         category.setImg(this.filePath);   
+        }else{
+         category.setImg(this.imgpath);   
+        }
+        
         
         if(this.cat_ID.getText() != null && this.cat_name.getText() != null){
          boolean    res;
         try {
-            res = category.save(category);
+            res = category.update(category);
             if(res){
-            JOptionPane.showMessageDialog(null, "New Category has Inserted Successfully!");
+            JOptionPane.showMessageDialog(null, "Category has Updated Successfully!");
+            this.setVisible(false);
         }
         } catch (SQLException ex) {
             Logger.getLogger(EditCategory.class.getName()).log(Level.SEVERE, null, ex);
@@ -381,12 +395,6 @@ public class EditCategory extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Please Insert Category Details");
         }
-        
-        
-        this.cat_ID.setText(null);
-        this.cat_name.setText(null);
-        this.imgLbl.setIcon(null);
-        
         
     }//GEN-LAST:event_btn_saveActionPerformed
 
