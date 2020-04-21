@@ -24,7 +24,6 @@ com\Miyuru\attendance\BreaksInterface$1.class
 com\Vidarshan\sales\Calculator$12.class
 com\Vidarshan\sales\Sales$28.class
 com\Amasha\Maintenance\Users$6.class
-com\Vidarshan\sales\Sales$35.class
 com\Vidarshan\sales\Sales$22.class
 com\Miyuru\attendance\LeavesInterface$3.class
 com\Vidarshan\sales\Sales$34.class
@@ -64,7 +63,6 @@ com\Vidarshan\sales\Sales$25.class
 com\Vidarshan\sales\Calculator$21.class
 com\Vidarshan\sales\Sales$5.class
 com\Vidarshan\sales\Calculator$16.class
-com\Vidarshan\sales\SalesModel.class
 com\Kethaki\Users\AddSupplier$7.class
 com\Vidarshan\sales\Sales$26.class
 com\Savindu\inventory\AddProduct$2.class
