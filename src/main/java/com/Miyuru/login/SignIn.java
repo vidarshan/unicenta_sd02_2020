@@ -13,16 +13,18 @@ import java.awt.Toolkit;
  *
  * @author miyuru_cg
  */
-public class LogIn extends javax.swing.JPanel {
+public class SignIn extends javax.swing.JFrame {
 
     /**
-     * Creates new form LogIn
+     * Creates new form SignIn
      */
-    public LogIn() {
+    public SignIn() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/appIcon.png")));
+        this.setTitle("Unicenta");
     }
 
     /**
@@ -46,7 +48,7 @@ public class LogIn extends javax.swing.JPanel {
         btn_close = new javax.swing.JLabel();
         msg = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(927, 549));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(28, 35, 51));
 
@@ -91,10 +93,12 @@ public class LogIn extends javax.swing.JPanel {
 
         txt_usr.setBackground(new java.awt.Color(204, 204, 204));
         txt_usr.setFont(new java.awt.Font("Apple SD Gothic Neo", 1, 18)); // NOI18N
+        txt_usr.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_usr.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
         txt_pwd.setBackground(new java.awt.Color(204, 204, 204));
         txt_pwd.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        txt_pwd.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_pwd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         txt_pwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,7 +169,7 @@ public class LogIn extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(167, 167, 167)
                         .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 217, Short.MAX_VALUE))))
+                        .addGap(0, 95, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,13 +187,13 @@ public class LogIn extends javax.swing.JPanel {
                 .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -204,38 +208,72 @@ public class LogIn extends javax.swing.JPanel {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+        // TODO add your handling code here:
+        String usName = txt_usr.getText();
+        String pwd = txt_pwd.getText();
+
+        if (usName.equals("Admin") && pwd.equals("123")) {
+            msg.setText("Successfull");
+
+            AppInterface app_int = new AppInterface();
+
+            this.setVisible(false);
+            app_int.setVisible(true);
+
+        }
+        else{
+            msg.setText("failed");
+        }
+
+    }//GEN-LAST:event_btn_loginActionPerformed
 
     private void txt_pwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pwdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_pwdActionPerformed
 
     private void btn_closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_closeMouseClicked
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_btn_closeMouseClicked
 
-    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        // TODO add your handling code here:
-        String usName = txt_usr.getText();
-        String pwd = txt_pwd.getText();
-        
-        
-        
-        if (usName.equals("Admin") && pwd.equals("123")) {
-            msg.setText("Successfull");
-            
-            AppInterface app_int = new AppInterface();
-            
-            this.setVisible(false);
-            app_int.setVisible(true);
-            
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(SignIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(SignIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(SignIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(SignIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        else{
-            msg.setText("failed");
-        }
-        
-    }//GEN-LAST:event_btn_loginActionPerformed
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new SignIn().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btn_close;
@@ -250,5 +288,4 @@ public class LogIn extends javax.swing.JPanel {
     private javax.swing.JPasswordField txt_pwd;
     private javax.swing.JTextField txt_usr;
     // End of variables declaration//GEN-END:variables
-
 }

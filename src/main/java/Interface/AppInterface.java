@@ -11,11 +11,21 @@ import com.Kethaki.Users.UserHome;
 import com.Miyuru.attendance.AttendenceInterfave;
 import com.Vidarshan.sales.Sales;
 import com.Miyuru.login.LogIn;
-import com.Miyuru.login.loginPage;
+import com.Miyuru.login.SignIn;
 import com.Savindu.inventory.InventoryPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -47,11 +57,21 @@ public class AppInterface extends javax.swing.JFrame {
         panelNavigator(interface_home, "Home");
         sideNavBtnEvents(this.jLabel1);
         
+        try {
+//            URL resource = this.getClass().getResource("/appIcon.png");
+//            BufferedImage image = ImageIO.read(resource);
+//            this.setIconImage(image);
+            this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/appIcon.png")));
+            this.setTitle("Unicenta");
+        } catch (Exception ex) {
+            Logger.getLogger(AppInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
       this.setExtendedState(this.MAXIMIZED_BOTH);
       
     }
 
-    
+
     public void panelNavigator(JPanel panel, String name){
         contentLayout.removeAll();
         contentLayout.add(panel);
@@ -382,7 +402,7 @@ public class AppInterface extends javax.swing.JFrame {
     private void btn_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseClicked
         // TODO add your handling code here:
         
-        loginPage i = new loginPage();
+        SignIn i = new SignIn();
         this.setVisible(false);
         i.setVisible(true);
         
