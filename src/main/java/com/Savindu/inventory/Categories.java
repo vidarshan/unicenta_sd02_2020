@@ -59,7 +59,7 @@ public class Categories extends javax.swing.JPanel {
                 return Object.class;
             }
         };
-
+        model.setRowCount(0);
         ArrayList<Category> list = new ArrayList<>();
         list = cat.getProducts();
         
@@ -421,6 +421,7 @@ public class Categories extends javax.swing.JPanel {
 
     private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
         // TODO add your handling code here:
+        
         this.addCategoriesToTable();
     }//GEN-LAST:event_refreshMouseClicked
 
