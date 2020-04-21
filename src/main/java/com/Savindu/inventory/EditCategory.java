@@ -29,7 +29,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author Savindu
  */
-public class AddCat extends javax.swing.JFrame {
+public class EditCategory extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
@@ -37,12 +37,32 @@ public class AddCat extends javax.swing.JFrame {
     Category category = new Category();
     String filePath = null;
     
-    public AddCat() {
+    public EditCategory() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setResizable(false);
     }
 
+    public void setData(String cat_ID, String cat_name, String img){
+        this.cat_ID.setText(cat_ID);
+        this.cat_name.setText(cat_name);
+        this.imgLbl.setIcon(resizeImg(img));
+    }
+    
+      public ImageIcon resizeImg(String filePath){
+        BufferedImage img = null;
+            try {
+                img = ImageIO.read(new File(filePath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+            Image dimg = img.getScaledInstance(imgLbl.getWidth(), imgLbl.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon imageIcon = new ImageIcon(dimg);
+            return imageIcon;
+    }
+    
     public void createFileChooser(){
         JFileChooser fileChooser = new JFileChooser();
         
@@ -129,8 +149,8 @@ public class AddCat extends javax.swing.JFrame {
         Products.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Products.setForeground(new java.awt.Color(244, 244, 244));
         Products.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-menu-36.png"))); // NOI18N
-        Products.setText("Add Category");
+        Products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-property-36.png"))); // NOI18N
+        Products.setText("Edit Category");
         Products.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ProductsMouseClicked(evt);
@@ -356,7 +376,7 @@ public class AddCat extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "New Category has Inserted Successfully!");
         }
         } catch (SQLException ex) {
-            Logger.getLogger(AddCat.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditCategory.class.getName()).log(Level.SEVERE, null, ex);
         }   
         }else{
             JOptionPane.showMessageDialog(null, "Please Insert Category Details");
@@ -392,21 +412,23 @@ public class AddCat extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddCat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditCategory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddCat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditCategory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddCat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditCategory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddCat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditCategory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddCat().setVisible(true);
+                new EditCategory().setVisible(true);
             }
         });
     }

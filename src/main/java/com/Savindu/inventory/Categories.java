@@ -5,33 +5,101 @@
  */
 package com.Savindu.inventory;
 
+import com.Savindu.inventory.Entity.Category;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Savindu
  */
+
 public class Categories extends javax.swing.JPanel {
 
     /**
      * Creates new form Categories
      */
+    
+    Category cat = new Category();
+    ArrayList<String> filePathList = new ArrayList<>();
+    
     public Categories() {
         initComponents();
         customJTable(tbl_Cat);
+        addCategoriesToTable();
     }
     
-       public void customJTable(JTable table){
+     public void customJTable(JTable table){
         table.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 20));
         table.getTableHeader().setOpaque(false);
         table.getTableHeader().setBackground(Color.BLACK);
         table.getTableHeader().setForeground(new Color(0,51,51));
-        table.setRowHeight(25);
     }
 
+     public void addCategoriesToTable() {
+        DefaultTableModel model = new DefaultTableModel(){
+            @Override
+            public Class<?> getColumnClass(int column) {
+                if (column==2) return ImageIcon.class;
+                return Object.class;
+            }
+        };
+
+        ArrayList<Category> list = new ArrayList<>();
+        list = cat.getProducts();
+        
+        Object rowData[] = new Object[5];
+        Object columns[] = new Object[5];
+        columns[0] = " ID";
+        columns[1] = " Cat_ID";
+        columns[2] = " Img";
+        columns[3] = " Name";
+        columns[4] = " Uploaded On";
+        
+        model.setColumnIdentifiers(columns);
+        
+        for(int i = 0; i < list.size(); i++)
+        {
+            rowData[0] = list.get(i).getId();
+            rowData[1] = list.get(i).getCatID();
+            filePathList.add(list.get(i).getImg());
+            rowData[2] = resizeImg(list.get(i).getImg());
+            rowData[3] = list.get(i).getName();
+            rowData[4] = list.get(i).getUpload();
+            model.addRow(rowData);
+        }
+         
+        tbl_Cat.setModel(model);
+    }
+     
+    public ImageIcon resizeImg(String filePath){
+          ImageIcon imageIcon = null;
+        if(filePath != null){
+            BufferedImage img = null;
+            try {
+                img = ImageIO.read(new File(filePath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+            Image dimg = img.getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+            imageIcon = new ImageIcon(dimg);
+            
+        }
+        return imageIcon;
+    }
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,7 +125,7 @@ public class Categories extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(55, 71, 79));
         jPanel1.setPreferredSize(new java.awt.Dimension(1032, 120));
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel2.setBackground(new java.awt.Color(55, 71, 79));
 
@@ -103,6 +171,9 @@ public class Categories extends javax.swing.JPanel {
         btn_cat_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-36.png"))); // NOI18N
         btn_cat_edit.setText("Edit Category");
         btn_cat_edit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_cat_editMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_cat_editMouseEntered(evt);
             }
@@ -190,7 +261,7 @@ public class Categories extends javax.swing.JPanel {
         ));
         tbl_Cat.setFocusable(false);
         tbl_Cat.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tbl_Cat.setRowHeight(25);
+        tbl_Cat.setRowHeight(75);
         tbl_Cat.setSelectionBackground(new java.awt.Color(28, 35, 51));
         tbl_Cat.setShowVerticalLines(false);
         tbl_Cat.getTableHeader().setReorderingAllowed(false);
@@ -202,19 +273,25 @@ public class Categories extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(348, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(164, 164, 164)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -267,7 +344,25 @@ public class Categories extends javax.swing.JPanel {
         // TODO add your handling code here:
         AddCat addCat = new AddCat();
         addCat.setVisible(true);
+        
     }//GEN-LAST:event_btn_add_categoryMouseClicked
+
+    private void btn_cat_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cat_editMouseClicked
+        // TODO add your handling code here:
+        int row[] = tbl_Cat.getSelectedRows();
+        String rowData[] = new String[5];
+            if(row.length == 1){
+                for(int i=0; i<5; i++){  
+                rowData[i] = tbl_Cat.getModel().getValueAt(row[0], i).toString();
+                System.out.println("getSelectedRow = "+rowData[i]); 
+                }  
+            }else{
+                JOptionPane.showMessageDialog(null, "Please select a single row to Edit");
+            }
+          EditCategory edit_cat = new EditCategory();
+          edit_cat.setData(rowData[1], rowData[3], filePathList.get(row[0]));
+          edit_cat.setVisible(true);
+    }//GEN-LAST:event_btn_cat_editMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -30,7 +30,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author Savindu
  */
-public class AddProduct extends javax.swing.JFrame {
+public class EditProduct extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
@@ -40,7 +40,7 @@ public class AddProduct extends javax.swing.JFrame {
     
     String filePath = null;
     
-    public AddProduct() {
+    public EditProduct() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
@@ -97,6 +97,19 @@ public class AddProduct extends javax.swing.JFrame {
         } 
     }
     
+    public ImageIcon resizeImg(){
+        BufferedImage img = null;
+            try {
+                img = ImageIO.read(new File(filePath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+            Image dimg = img.getScaledInstance(imgLbl.getWidth(), imgLbl.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon imageIcon = new ImageIcon(dimg);
+            return imageIcon;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -140,8 +153,8 @@ public class AddProduct extends javax.swing.JFrame {
         Products.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Products.setForeground(new java.awt.Color(244, 244, 244));
         Products.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-box-36.png"))); // NOI18N
-        Products.setText("Add Product");
+        Products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-property-36.png"))); // NOI18N
+        Products.setText("Edit Product");
         Products.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ProductsMouseClicked(evt);
@@ -272,7 +285,7 @@ public class AddProduct extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,7 +369,7 @@ public class AddProduct extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(75, 75, 75)))
                 .addComponent(imgBrowse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
