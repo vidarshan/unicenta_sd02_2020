@@ -24,7 +24,7 @@ public class SignIn extends javax.swing.JFrame {
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/appIcon.png")));
-        this.setTitle("Unicenta");
+        this.setTitle("Unicenta POS");
     }
 
     /**
