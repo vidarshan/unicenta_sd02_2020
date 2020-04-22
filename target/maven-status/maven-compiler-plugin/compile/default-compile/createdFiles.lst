@@ -108,6 +108,7 @@ com\Miyuru\login\SignIn$4.class
 com\Miyuru\login\LogIn.class
 com\Miyuru\attendance\BreaksInterface$8.class
 com\Vidarshan\sales\Calculator$6.class
+com\Kethaki\Users\AddCustomer$7.class
 com\Vidarshan\sales\Calculator$19.class
 com\Vidarshan\sales\Sales$18.class
 com\Kethaki\Users\AddSupplier$4.class
@@ -126,6 +127,7 @@ com\Amasha\Maintenance\Users$5.class
 Interface\Home.class
 com\Amasha\Maintenance\Roles$5.class
 com\Vidarshan\sales\Calculator$7.class
+com\Kethaki\Users\AddCustomer$8.class
 Interface\AppInterface$9.class
 com\Kethaki\Users\AddCustomer$2.class
 com\Savindu\inventory\AddCat$1.class
@@ -143,6 +145,7 @@ com\Amasha\Maintenance\Roles$4.class
 com\Amasha\Maintenance\Roles$1.class
 com\Vidarshan\sales\Sales$20.class
 com\Vidarshan\sales\Calculator$8.class
+com\Kethaki\Users\AddCustomer$6.class
 com\Amasha\Maintenance\Users$3.class
 com\Miyuru\attendance\BreaksInterface$7.class
 com\Savindu\inventory\AddProduct.class

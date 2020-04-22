@@ -77,7 +77,7 @@
             <Container class="javax.swing.JPanel" name="jPanel1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                  <Color blue="33" green="23" red="1c" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -153,7 +153,6 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/com/pos/images/add_eusers_u50px.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel2"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel1">

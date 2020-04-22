@@ -45,7 +45,7 @@ public class UserHome extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(55, 71, 79));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(28, 35, 51));
 
         addSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/supplier_button.png"))); // NOI18N
         addSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -74,7 +74,6 @@ public class UserHome extends javax.swing.JPanel {
         });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/add_eusers_u50px.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
