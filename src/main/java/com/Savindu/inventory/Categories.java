@@ -49,6 +49,8 @@ public class Categories extends javax.swing.JPanel {
         table.getTableHeader().setOpaque(false);
         table.getTableHeader().setBackground(Color.BLACK);
         table.getTableHeader().setForeground(new Color(0,51,51));
+        table.requestFocusInWindow();
+        table.setFocusable(true);
     }
 
      public void addCategoriesToTable() {
