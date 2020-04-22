@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,7 +26,7 @@ public class Category {
     private String name;
     private String img;
     private String upload;
-    
+    private static ArrayList<String> categoriesList = new ArrayList<>();
     
     public String getImg() {
         return img;
@@ -117,7 +118,7 @@ public class Category {
        return state;
     }
    
-   public ArrayList<Category> getProducts(){
+   public ArrayList<Category> getCategories(){
         ArrayList<Category> categories = new ArrayList<>();
         Category category;
         ResultSet rs = null;
@@ -131,9 +132,10 @@ public class Category {
                 category.setId(rs.getString(1));
                 category.setCatID(rs.getString(2));
                 category.setName(rs.getString(3));
+                this.setCategories(rs.getString(3));
                 category.setImg(rs.getString(4));
                 category.setUpload(rs.getString(5));
-                System.out.println(category.toString());
+                //System.out.println(category.toString());
                 categories.add(category);
             }
         } catch (SQLException ex) {
@@ -173,6 +175,16 @@ public class Category {
        return state;
     }
 
+    public void setCategories(String name){
+        this.categoriesList.add(name);
+    } 
+    
+    public ArrayList<String> getCategoriesList(){
+        LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>(this.categoriesList);
+        ArrayList<String> withoutDuplicates = new ArrayList<>(linkedHashSet);
+        return withoutDuplicates;
+    }
+    
     public boolean remove(ArrayList<String> category) {
          boolean state = false;
          int result = 0;

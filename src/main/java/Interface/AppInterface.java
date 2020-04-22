@@ -12,7 +12,7 @@ import com.Miyuru.attendance.AttendenceInterfave;
 import com.Vidarshan.sales.Sales;
 import com.Miyuru.login.LogIn;
 import com.Miyuru.login.SignIn;
-import com.Savindu.inventory.InventoryPanel;
+import com.Savindu.inventory.Views.InventoryPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;

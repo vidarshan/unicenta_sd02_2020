@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.Savindu.inventory;
+package com.Savindu.inventory.Views;
 
 import com.Savindu.inventory.Entity.Products;
 import java.awt.Dimension;
@@ -148,12 +148,13 @@ public class EditProduct extends javax.swing.JFrame {
         category = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         btn_save = new javax.swing.JButton();
-        desc = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         imgLbl = new javax.swing.JLabel();
         imgBrowse = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        desc = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -270,18 +271,6 @@ public class EditProduct extends javax.swing.JFrame {
             .addComponent(btn_save, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
         );
 
-        desc.setBackground(new java.awt.Color(28, 35, 51));
-        desc.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        desc.setForeground(new java.awt.Color(244, 244, 244));
-        desc.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        desc.setBorder(null);
-        desc.setMinimumSize(new java.awt.Dimension(1, 30));
-        desc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                descActionPerformed(evt);
-            }
-        });
-
         jPanel4.setBackground(new java.awt.Color(28, 35, 51));
         jPanel4.setMaximumSize(null);
 
@@ -326,6 +315,14 @@ public class EditProduct extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(244, 244, 244));
         jLabel5.setText("Product Image");
 
+        desc.setBackground(new java.awt.Color(28, 35, 51));
+        desc.setColumns(5);
+        desc.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        desc.setForeground(new java.awt.Color(244, 244, 244));
+        desc.setRows(5);
+        desc.setBorder(null);
+        jScrollPane1.setViewportView(desc);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -346,7 +343,7 @@ public class EditProduct extends javax.swing.JFrame {
                     .addComponent(barcode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
                     .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(category, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(desc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -359,29 +356,25 @@ public class EditProduct extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                        .addGap(42, 42, 42)
-                        .addComponent(category, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                        .addGap(42, 42, 42))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(42, 42, 42)
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(desc, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                            .addComponent(jLabel4))
-                        .addGap(27, 27, 27)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addGap(122, 122, 122)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)))
-                .addComponent(imgBrowse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                        .addGap(42, 42, 42)
+                        .addComponent(category, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(imgBrowse)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)))
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -403,7 +396,7 @@ public class EditProduct extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -423,10 +416,6 @@ public class EditProduct extends javax.swing.JFrame {
     private void ProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductsMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ProductsMouseClicked
-
-    private void descActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_descActionPerformed
 
     private void imgBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgBrowseActionPerformed
         // TODO add your handling code here:
@@ -503,7 +492,7 @@ public class EditProduct extends javax.swing.JFrame {
     private javax.swing.JTextField barcode;
     private javax.swing.JButton btn_save;
     private javax.swing.JTextField category;
-    private javax.swing.JTextField desc;
+    private javax.swing.JTextArea desc;
     private javax.swing.JButton imgBrowse;
     private javax.swing.JLabel imgLbl;
     private javax.swing.JFileChooser jFileChooser1;
@@ -518,6 +507,7 @@ public class EditProduct extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField name;
     private javax.swing.JPanel productsPanel;
     // End of variables declaration//GEN-END:variables

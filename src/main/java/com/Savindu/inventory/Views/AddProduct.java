@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.Savindu.inventory;
+package com.Savindu.inventory.Views;
 
 import Interface.AppInterface;
+import com.Savindu.inventory.Entity.Category;
 import com.Savindu.inventory.Entity.Products;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -39,6 +40,7 @@ public class AddProduct extends javax.swing.JFrame {
      */
     Products product = new Products();
     ArrayList<Products> productArr = new ArrayList<>();
+    Category catList = new Category();
     
     String filePath = null;
     
@@ -47,9 +49,20 @@ public class AddProduct extends javax.swing.JFrame {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         this.setResizable(false);
+        this.setCategoriesDropDown();
        // imgBrowse.setVisible(false);
     }
 
+    public void setCategoriesDropDown(){
+        
+        ArrayList<String> list = catList.getCategoriesList();
+        for(int i=0; i<list.size(); i++){
+          this.categories.addItem(list.get(i)); 
+            System.out.println("catList["+i+"] = "+list.get(i));
+        }
+        
+    }
+    
     public void createFileChooser(){
         JFileChooser fileChooser = new JFileChooser();
         
@@ -120,15 +133,16 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
-        category = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         btn_save = new javax.swing.JButton();
-        desc = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         imgLbl = new javax.swing.JLabel();
         imgBrowse = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        categories = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        desc = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -208,13 +222,6 @@ public class AddProduct extends javax.swing.JFrame {
         name.setMinimumSize(new java.awt.Dimension(1, 30));
         name.setPreferredSize(new java.awt.Dimension(1, 30));
 
-        category.setBackground(new java.awt.Color(28, 35, 51));
-        category.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        category.setForeground(new java.awt.Color(244, 244, 244));
-        category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        category.setBorder(null);
-        category.setMinimumSize(new java.awt.Dimension(1, 30));
-
         jPanel5.setBackground(new java.awt.Color(46, 204, 113));
 
         btn_save.setBackground(new java.awt.Color(0, 153, 153));
@@ -239,18 +246,6 @@ public class AddProduct extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btn_save, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
         );
-
-        desc.setBackground(new java.awt.Color(28, 35, 51));
-        desc.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        desc.setForeground(new java.awt.Color(244, 244, 244));
-        desc.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        desc.setBorder(null);
-        desc.setMinimumSize(new java.awt.Dimension(1, 30));
-        desc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                descActionPerformed(evt);
-            }
-        });
 
         jPanel4.setBackground(new java.awt.Color(28, 35, 51));
         jPanel4.setMaximumSize(null);
@@ -296,11 +291,26 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(244, 244, 244));
         jLabel5.setText("Product Image");
 
+        categories.setBackground(new java.awt.Color(28, 35, 51));
+        categories.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        categories.setForeground(new java.awt.Color(244, 244, 244));
+
+        desc.setBackground(new java.awt.Color(28, 35, 51));
+        desc.setColumns(5);
+        desc.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        desc.setForeground(new java.awt.Color(244, 244, 244));
+        desc.setRows(5);
+        desc.setBorder(null);
+        jScrollPane1.setViewportView(desc);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,48 +322,52 @@ public class AddProduct extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(imgBrowse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(barcode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
-                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(category, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(desc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imgBrowse, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(barcode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                        .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(categories, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(barcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(categories, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(barcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(category, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                            .addComponent(jLabel3))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(desc, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                            .addComponent(jLabel4))
-                        .addGap(27, 27, 27)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)))
-                .addComponent(imgBrowse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(imgBrowse)
+                        .addGap(29, 29, 29)))
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -396,10 +410,6 @@ public class AddProduct extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ProductsMouseClicked
 
-    private void descActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_descActionPerformed
-
     private void imgBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgBrowseActionPerformed
         // TODO add your handling code here:
         this.createFileChooser();
@@ -409,29 +419,29 @@ public class AddProduct extends javax.swing.JFrame {
         // TODO add your handling code here:
         product.setName(this.name.getText());
         product.setBarcode(this.barcode.getText());
-        product.setCategory(this.category.getText());
+        product.setCategory(String.valueOf(this.categories.getSelectedItem()));
         product.setDesc(this.desc.getText());
         product.setImg(this.filePath);
-        
-        if(this.name.getText() != null && this.barcode.getText() != null && this.category.getText() != null && this.desc.getText() != null){
-          try {
-        boolean    res = product.save(product);
-        if(res){
-            JOptionPane.showMessageDialog(null, "New Product has Inserted Successfully!");
-        }
-        } catch (SQLException ex) {
-            Logger.getLogger(AddProduct.class.getName()).log(Level.SEVERE, null, ex);
-        }  
+
+        if(this.name.getText() != null && this.barcode.getText() != null && String.valueOf(this.categories.getSelectedItem()) != null && this.desc.getText() != null){
+            try {
+                boolean    res = product.save(product);
+                if(res){
+                    JOptionPane.showMessageDialog(null, "New Product has Inserted Successfully!");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(AddProduct.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }else{
             JOptionPane.showMessageDialog(null, "Please Insert Product Details");
         }
-        
+
         this.barcode.setText(null);
         this.name.setText(null);
-        this.category.setText(null);
+        this.setCategoriesDropDown();
         this.desc.setText(null);
         this.imgLbl.setIcon(null);
-        
+
         //app.dispose();
     }//GEN-LAST:event_btn_saveActionPerformed
 
@@ -475,8 +485,8 @@ public class AddProduct extends javax.swing.JFrame {
     private javax.swing.JLabel Products;
     private javax.swing.JTextField barcode;
     private javax.swing.JButton btn_save;
-    private javax.swing.JTextField category;
-    private javax.swing.JTextField desc;
+    private javax.swing.JComboBox<String> categories;
+    private javax.swing.JTextArea desc;
     private javax.swing.JButton imgBrowse;
     private javax.swing.JLabel imgLbl;
     private javax.swing.JFileChooser jFileChooser1;
@@ -491,6 +501,7 @@ public class AddProduct extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField name;
     private javax.swing.JPanel productsPanel;
     // End of variables declaration//GEN-END:variables
