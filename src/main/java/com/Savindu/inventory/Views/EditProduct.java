@@ -5,6 +5,7 @@
  */
 package com.Savindu.inventory.Views;
 
+import com.Savindu.inventory.Entity.Category;
 import com.Savindu.inventory.Entity.Products;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -40,6 +41,7 @@ public class EditProduct extends javax.swing.JFrame {
     String pID = null;
     String filePath = null;
     private String imgpath;
+    Category catList = new Category();
     
     public EditProduct() {
         initComponents();
@@ -49,6 +51,17 @@ public class EditProduct extends javax.swing.JFrame {
        // imgBrowse.setVisible(false);
     }
 
+      public void setCategoriesDropDown(String cat){
+        
+        ArrayList<String> list = catList.getCategoriesList();
+        for(int i=0; i<list.size(); i++){
+          this.categories.addItem(list.get(i)); 
+            System.out.println("catList["+i+"] = "+list.get(i));
+        }
+        
+        this.categories.getModel().setSelectedItem(cat);
+    }
+      
     public void createFileChooser(){
         JFileChooser fileChooser = new JFileChooser();
         
@@ -102,7 +115,7 @@ public class EditProduct extends javax.swing.JFrame {
         this.pID = id;
         this.barcode.setText(p_bar);
         this.name.setText(p_name);
-        this.category.setText(p_cat);
+        this.setCategoriesDropDown(p_cat);
         this.desc.setText(p_desc);
         this.imgpath = img;
         if(img != null){ 
@@ -145,7 +158,6 @@ public class EditProduct extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
-        category = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         btn_save = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -155,6 +167,7 @@ public class EditProduct extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         desc = new javax.swing.JTextArea();
+        categories = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -233,13 +246,6 @@ public class EditProduct extends javax.swing.JFrame {
         name.setBorder(null);
         name.setMinimumSize(new java.awt.Dimension(1, 30));
         name.setPreferredSize(new java.awt.Dimension(1, 30));
-
-        category.setBackground(new java.awt.Color(28, 35, 51));
-        category.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        category.setForeground(new java.awt.Color(244, 244, 244));
-        category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        category.setBorder(null);
-        category.setMinimumSize(new java.awt.Dimension(1, 30));
 
         jPanel5.setBackground(new java.awt.Color(46, 204, 113));
 
@@ -323,6 +329,10 @@ public class EditProduct extends javax.swing.JFrame {
         desc.setBorder(null);
         jScrollPane1.setViewportView(desc);
 
+        categories.setBackground(new java.awt.Color(28, 35, 51));
+        categories.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        categories.setForeground(new java.awt.Color(244, 244, 244));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -342,8 +352,8 @@ public class EditProduct extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(barcode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
                     .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(category, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(categories, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -357,18 +367,18 @@ public class EditProduct extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel3)
-                        .addGap(89, 89, 89)
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(categories, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(85, 85, 85)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                        .addGap(42, 42, 42)
-                        .addComponent(category, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
+                        .addGap(93, 93, 93)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,7 +437,7 @@ public class EditProduct extends javax.swing.JFrame {
         product.setId(pID);
         product.setName(this.name.getText());
         product.setBarcode(this.barcode.getText());
-        product.setCategory(this.category.getText());
+        product.setCategory(String.valueOf(this.categories.getSelectedItem()));
         product.setDesc(this.desc.getText());
         if(filePath != null){
          product.setImg(this.filePath);   
@@ -435,7 +445,7 @@ public class EditProduct extends javax.swing.JFrame {
          product.setImg(this.imgpath);   
         }
         
-        if(this.name.getText() != null && this.barcode.getText() != null && this.category.getText() != null && this.desc.getText() != null){
+        if(this.name.getText() != null && this.barcode.getText() != null && this.categories.getSelectedItem() != null && this.desc.getText() != null){
             boolean    res = product.update(product);
             if(res){
                 JOptionPane.showMessageDialog(null, "Product has Uploaded Successfully!");
@@ -491,7 +501,7 @@ public class EditProduct extends javax.swing.JFrame {
     private javax.swing.JLabel Products;
     private javax.swing.JTextField barcode;
     private javax.swing.JButton btn_save;
-    private javax.swing.JTextField category;
+    private javax.swing.JComboBox<String> categories;
     private javax.swing.JTextArea desc;
     private javax.swing.JButton imgBrowse;
     private javax.swing.JLabel imgLbl;

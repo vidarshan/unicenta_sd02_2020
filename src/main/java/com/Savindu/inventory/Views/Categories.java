@@ -22,7 +22,11 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -42,6 +46,25 @@ public class Categories extends javax.swing.JPanel {
         initComponents();
         customJTable(tbl_Cat);
         addCategoriesToTable();
+        
+        DocumentListener documentListener = new DocumentListener() {
+            public void changedUpdate(DocumentEvent documentEvent) {
+                search(product_search.getText());
+            }
+            public void insertUpdate(DocumentEvent documentEvent) {
+                search(product_search.getText());
+            }
+            public void removeUpdate(DocumentEvent documentEvent) {
+                search(product_search.getText());
+            }
+        };
+        
+      product_search.getDocument().addDocumentListener(documentListener);
+      
+      if(product_search.getText() == null){
+          product_search.setText("Search");
+      }
+      
     }
     
      public void customJTable(JTable table){
@@ -62,6 +85,10 @@ public class Categories extends javax.swing.JPanel {
         model.setRowCount(0);
         ArrayList<Category> list = new ArrayList<>();
         list = cat.getCategories();
+        
+         if(filePathList.size() > 0){
+            filePathList.clear();
+        }
         
         Object rowData[] = new Object[5];
         Object columns[] = new Object[5];
@@ -110,6 +137,13 @@ public class Categories extends javax.swing.JPanel {
         }
         return imageIcon;
     }
+    
+    public void search(String str){
+        DefaultTableModel md = ((DefaultTableModel)tbl_Cat.getModel());
+        TableRowSorter sorter = new TableRowSorter<>(md);
+        tbl_Cat.setRowSorter(sorter);
+        sorter.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+      }
      
     /**
      * This method is called from within the constructor to initialize the form.
@@ -128,7 +162,6 @@ public class Categories extends javax.swing.JPanel {
         btn_cat_delete = new javax.swing.JLabel();
         search = new javax.swing.JPanel();
         product_search = new javax.swing.JTextField();
-        btn_product_search = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_Cat = new javax.swing.JTable();
 
@@ -233,11 +266,12 @@ public class Categories extends javax.swing.JPanel {
 
         search.setBackground(new java.awt.Color(55, 71, 79));
 
-        product_search.setBackground(new java.awt.Color(55, 71, 79));
-        product_search.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        product_search.setBackground(new java.awt.Color(28, 35, 51));
+        product_search.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
         product_search.setForeground(new java.awt.Color(244, 244, 244));
         product_search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         product_search.setText("Search");
+        product_search.setBorder(null);
         product_search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 product_searchMouseClicked(evt);
@@ -249,9 +283,6 @@ public class Categories extends javax.swing.JPanel {
             }
         });
 
-        btn_product_search.setBackground(new java.awt.Color(55, 71, 79));
-        btn_product_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-search-36.png"))); // NOI18N
-
         javax.swing.GroupLayout searchLayout = new javax.swing.GroupLayout(search);
         search.setLayout(searchLayout);
         searchLayout.setHorizontalGroup(
@@ -259,20 +290,14 @@ public class Categories extends javax.swing.JPanel {
             .addGroup(searchLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_product_search)
-                .addContainerGap())
+                .addGap(50, 50, 50))
         );
         searchLayout.setVerticalGroup(
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_product_search, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(searchLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(product_search, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(product_search, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jPanel1.add(search);
@@ -421,6 +446,10 @@ public class Categories extends javax.swing.JPanel {
                 }  
                 System.out.println(Arrays.toString(rowData.toArray()));
                 cat.remove(rowData);
+                md.setRowCount(0);
+                if(md.getRowCount() == 0){ 
+                    this.addCategoriesToTable();
+                }
             }else{
                 JOptionPane.showMessageDialog(null, "Please select products to Delete");
             }
@@ -429,8 +458,11 @@ public class Categories extends javax.swing.JPanel {
 
     private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
         // TODO add your handling code here:
-        
-        this.addCategoriesToTable();
+        DefaultTableModel md = ((DefaultTableModel)tbl_Cat.getModel());
+        md.setRowCount(0);
+        if(md.getRowCount() == 0){ 
+            this.addCategoriesToTable();
+        }
     }//GEN-LAST:event_refreshMouseClicked
 
     private void refreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseEntered
@@ -448,7 +480,6 @@ public class Categories extends javax.swing.JPanel {
     private javax.swing.JLabel btn_add_category;
     private javax.swing.JLabel btn_cat_delete;
     private javax.swing.JLabel btn_cat_edit;
-    private javax.swing.JLabel btn_product_search;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

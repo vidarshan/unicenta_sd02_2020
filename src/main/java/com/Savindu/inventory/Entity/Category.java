@@ -123,6 +123,10 @@ public class Category {
         Category category;
         ResultSet rs = null;
         
+        if(categoriesList.size() > 0){
+            categoriesList.clear();
+        }
+        
         try {
             PreparedStatement preparedStatement = con.prepareStatement(SELCT_QUERY);
             System.out.println(preparedStatement);
@@ -180,9 +184,7 @@ public class Category {
     } 
     
     public ArrayList<String> getCategoriesList(){
-        LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>(this.categoriesList);
-        ArrayList<String> withoutDuplicates = new ArrayList<>(linkedHashSet);
-        return withoutDuplicates;
+        return this.categoriesList;
     }
     
     public boolean remove(ArrayList<String> category) {

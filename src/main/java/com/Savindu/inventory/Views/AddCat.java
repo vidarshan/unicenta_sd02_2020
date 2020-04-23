@@ -354,6 +354,10 @@ public class AddCat extends javax.swing.JFrame {
             res = category.save(category);
             if(res){
             JOptionPane.showMessageDialog(null, "New Category has Inserted Successfully!");
+            this.cat_ID.setText(null);
+            this.cat_name.setText(null);
+            this.imgLbl.setIcon(null);
+            this.setVisible(false);
         }
         } catch (SQLException ex) {
             Logger.getLogger(AddCat.class.getName()).log(Level.SEVERE, null, ex);
@@ -361,13 +365,7 @@ public class AddCat extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Please Insert Category Details");
         }
-        
-        
-        this.cat_ID.setText(null);
-        this.cat_name.setText(null);
-        this.imgLbl.setIcon(null);
-        
-        
+   
     }//GEN-LAST:event_btn_saveActionPerformed
 
     private void imgBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgBrowseActionPerformed

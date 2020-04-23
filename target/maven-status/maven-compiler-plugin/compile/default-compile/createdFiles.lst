@@ -28,6 +28,7 @@ com\Savindu\inventory\Entity\Category.class
 com\Savindu\inventory\Views\InventoryPanel$2.class
 com\Vidarshan\sales\Sales$28.class
 com\Amasha\Maintenance\Users$6.class
+com\Savindu\inventory\Views\Inventory$8.class
 com\Savindu\inventory\Views\AddProduct$2.class
 com\Vidarshan\sales\Sales$22.class
 com\Miyuru\attendance\LeavesInterface$3.class
@@ -36,6 +37,7 @@ com\Kethaki\Users\AddSupplier$3.class
 com\Savindu\inventory\Views\Inventory$2.class
 com\Savindu\inventory\Views\Categories$1.class
 com\Vidarshan\sales\Sales$2.class
+com\Savindu\inventory\Views\Inventory$9.class
 com\Savindu\inventory\Views\Inventory.class
 com\Savindu\inventory\Views\AddCat$2.class
 com\Vidarshan\sales\Calculator$20.class
@@ -60,6 +62,7 @@ com\Savindu\inventory\Views\EditCategory$3.class
 com\Vidarshan\sales\Calculator$3.class
 com\Savindu\inventory\Views\Inventory$7.class
 com\DB\Sales\DatabaseConnection.class
+com\Savindu\inventory\Views\Inventory$10.class
 com\Amasha\Maintenance\Users.class
 com\Savindu\inventory\Views\Inventory$5.class
 com\Vidarshan\sales\Sales$6.class
@@ -159,6 +162,7 @@ com\Vidarshan\sales\Sales$16.class
 com\Savindu\inventory\Views\EditProduct.class
 Interface\AppInterface$4.class
 com\Miyuru\login\SignIn$2.class
+com\Savindu\inventory\Views\Categories$9.class
 Interface\AppInterface$7.class
 com\Amasha\Maintenance\Users$2.class
 com\Savindu\inventory\Views\EditProduct$3.class

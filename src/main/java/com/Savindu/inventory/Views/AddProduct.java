@@ -428,6 +428,12 @@ public class AddProduct extends javax.swing.JFrame {
                 boolean    res = product.save(product);
                 if(res){
                     JOptionPane.showMessageDialog(null, "New Product has Inserted Successfully!");
+                    this.barcode.setText(null);
+                    this.name.setText(null);
+                    this.setCategoriesDropDown();
+                    this.desc.setText(null);
+                    this.imgLbl.setIcon(null);
+                    this.setVisible(false);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(AddProduct.class.getName()).log(Level.SEVERE, null, ex);
@@ -435,12 +441,6 @@ public class AddProduct extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Please Insert Product Details");
         }
-
-        this.barcode.setText(null);
-        this.name.setText(null);
-        this.setCategoriesDropDown();
-        this.desc.setText(null);
-        this.imgLbl.setIcon(null);
 
         //app.dispose();
     }//GEN-LAST:event_btn_saveActionPerformed

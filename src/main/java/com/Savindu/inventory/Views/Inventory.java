@@ -20,7 +20,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -35,13 +39,29 @@ public class Inventory extends javax.swing.JPanel {
 
     //AppInterface ap = new AppInterface();
     Products product = new Products();
-     ArrayList<String> filePathList = new ArrayList<>();
+    ArrayList<String> filePathList = new ArrayList<>();
      
     public Inventory() {
         initComponents();
         customJTable(tbl_Products);
         addProductsToTable();
         //product_search.setVisible(false);
+        
+        
+        DocumentListener documentListener = new DocumentListener() {
+            public void changedUpdate(DocumentEvent documentEvent) {
+                search(product_search.getText());
+            }
+            public void insertUpdate(DocumentEvent documentEvent) {
+                search(product_search.getText());
+            }
+            public void removeUpdate(DocumentEvent documentEvent) {
+                search(product_search.getText());
+            }
+          };
+        
+      product_search.getDocument().addDocumentListener(documentListener);
+      
     }
     
     public void customJTable(JTable table){
@@ -64,6 +84,9 @@ public class Inventory extends javax.swing.JPanel {
         ArrayList<Products> list = new ArrayList<>();
         list = product.getProducts();
         
+        if(filePathList.size() > 0){
+            filePathList.clear();
+        }
         
         Object rowData[] = new Object[7];
         Object columns[] = new Object[7];
@@ -116,6 +139,14 @@ public class Inventory extends javax.swing.JPanel {
         }
         return imageIcon;
     }
+ 
+      public void search(String str){
+        DefaultTableModel md = ((DefaultTableModel)tbl_Products.getModel());
+        TableRowSorter sorter = new TableRowSorter<>(md);
+        tbl_Products.setRowSorter(sorter);
+        sorter.setRowFilter(RowFilter.regexFilter("(?i)" + str));
+      }
+      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -133,7 +164,6 @@ public class Inventory extends javax.swing.JPanel {
         btn_product_delete = new javax.swing.JLabel();
         search = new javax.swing.JPanel();
         product_search = new javax.swing.JTextField();
-        btn_product_search = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_Products = new javax.swing.JTable();
 
@@ -232,11 +262,12 @@ public class Inventory extends javax.swing.JPanel {
 
         search.setBackground(new java.awt.Color(55, 71, 79));
 
-        product_search.setBackground(new java.awt.Color(55, 71, 79));
-        product_search.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        product_search.setBackground(new java.awt.Color(28, 35, 51));
+        product_search.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
         product_search.setForeground(new java.awt.Color(244, 244, 244));
         product_search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         product_search.setText("Search");
+        product_search.setBorder(null);
         product_search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 product_searchMouseClicked(evt);
@@ -247,9 +278,16 @@ public class Inventory extends javax.swing.JPanel {
                 product_searchActionPerformed(evt);
             }
         });
-
-        btn_product_search.setBackground(new java.awt.Color(55, 71, 79));
-        btn_product_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-search-36.png"))); // NOI18N
+        product_search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                product_searchKeyTyped(evt);
+            }
+        });
+        product_search.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
+            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
+                product_searchVetoableChange(evt);
+            }
+        });
 
         javax.swing.GroupLayout searchLayout = new javax.swing.GroupLayout(search);
         search.setLayout(searchLayout);
@@ -258,20 +296,14 @@ public class Inventory extends javax.swing.JPanel {
             .addGroup(searchLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_product_search)
-                .addContainerGap())
+                .addGap(50, 50, 50))
         );
         searchLayout.setVerticalGroup(
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_product_search, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(searchLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(product_search, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(product_search, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jPanel1.add(search);
@@ -318,7 +350,8 @@ public class Inventory extends javax.swing.JPanel {
 
     private void product_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_product_searchActionPerformed
         // TODO add your handling code here:
-        product_search.setText(null);
+        //product_search.setText(null);
+        
     }//GEN-LAST:event_product_searchActionPerformed
 
     private void btn_product_addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_addMouseEntered
@@ -399,7 +432,12 @@ public class Inventory extends javax.swing.JPanel {
 
     private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
         // TODO add your handling code here:
-        this.addProductsToTable();
+        DefaultTableModel md = ((DefaultTableModel)tbl_Products.getModel());
+        md.setRowCount(0);
+        if(md.getRowCount() == 0){ 
+            this.addProductsToTable();
+        }
+        
     }//GEN-LAST:event_refreshMouseClicked
 
     private void btn_product_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_deleteMouseClicked
@@ -425,6 +463,10 @@ public class Inventory extends javax.swing.JPanel {
                 }  
                 System.out.println(Arrays.toString(rowData.toArray()));
                 product.remove(rowData);
+                md.setRowCount(0);
+                if(md.getRowCount() == 0){ 
+                    this.addProductsToTable();
+                }
             }else{
                 JOptionPane.showMessageDialog(null, "Please select products to Delete");
             }
@@ -432,12 +474,19 @@ public class Inventory extends javax.swing.JPanel {
             
     }//GEN-LAST:event_btn_product_deleteMouseClicked
 
+    private void product_searchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_product_searchKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_product_searchKeyTyped
+
+    private void product_searchVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_product_searchVetoableChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_product_searchVetoableChange
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btn_product_add;
     private javax.swing.JLabel btn_product_delete;
     private javax.swing.JLabel btn_product_edit;
-    private javax.swing.JLabel btn_product_search;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
