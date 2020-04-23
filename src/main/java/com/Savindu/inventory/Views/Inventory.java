@@ -70,6 +70,7 @@ public class Inventory extends javax.swing.JPanel {
         table.getTableHeader().setBackground(new Color(55,71,79));
         table.getTableHeader().setForeground(new Color(0,51,51));
         table.setRowHeight(100);
+        table.setAutoCreateRowSorter(true);
     }
     
      public void addProductsToTable() {
