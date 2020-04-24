@@ -46,7 +46,6 @@ public class AppInterface extends javax.swing.JFrame {
     InventoryPanel interface_Inventory = new InventoryPanel();
     UserHome int_user = new UserHome();
     Maintenance int_maintenance = new Maintenance();
-    LogIn int_login = new LogIn();
      
     public AppInterface() {
         initComponents();
