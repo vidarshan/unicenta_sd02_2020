@@ -1985,14 +1985,14 @@ public class Sales extends javax.swing.JPanel {
         
          try{
             Statement smt = con.createStatement();
-            ResultSet valueResult = smt.executeQuery("SELECT * FROM items");
+            ResultSet valueResult = smt.executeQuery("SELECT * FROM products");
            
             while(valueResult.next()){
                 product_name_dd.addItem(valueResult.getString("name"));
                
             }
         }catch(Exception e){
-             
+             JOptionPane.showMessageDialog(this, "Cannot fetch product data", "Database Error",JOptionPane.ERROR_MESSAGE);
         }
          
          AutoCompleteDecorator.decorate(product_name_dd);
@@ -2000,16 +2000,16 @@ public class Sales extends javax.swing.JPanel {
     private void product_name_ddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_product_name_ddActionPerformed
   
       try{
-          String sql = "SELECT * FROM items WHERE name=?";
+          String sql = "SELECT * FROM products WHERE name=?";
           PreparedStatement statement = con.prepareStatement(sql);
           statement.setString(1, (String)product_name_dd.getSelectedItem());
           ResultSet set = statement.executeQuery();
           
           while(set.next()){
               product_name.setText(set.getString("name"));
-              product_price.setText(set.getString("unit_price"));
+              product_price.setText(set.getString("product_price"));
               product_tax.setText(set.getString("tax"));
-              product_commision.setText(set.getString("commision"));
+              product_commision.setText(set.getString("commission"));
           }
       }catch(Exception e){
          JOptionPane.showMessageDialog(this, "Cannot fetch product data", "Database Error",JOptionPane.ERROR_MESSAGE);

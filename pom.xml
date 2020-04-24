@@ -19,7 +19,7 @@
             <version>SNAPSHOT</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-<<<<<<< HEAD
+
 <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
@@ -30,7 +30,7 @@
     <artifactId>swingx-core</artifactId>
     <version>1.6.4</version>
 </dependency>
-=======
+
         
         <dependency>
             <groupId>mysql</groupId>
@@ -43,8 +43,7 @@
             <artifactId>mybatis</artifactId>
             <version>3.4.5</version>
          </dependency>
-         
->>>>>>> master
+
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
