@@ -12,7 +12,7 @@ import com.Miyuru.attendance.AttendenceInterfave;
 import com.Vidarshan.sales.Sales;
 import com.Miyuru.login.LogIn;
 import com.Miyuru.login.SignIn;
-import com.Savindu.inventory.InventoryPanel;
+import com.Savindu.inventory.Views.InventoryPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -58,10 +58,10 @@ public class AppInterface extends javax.swing.JFrame {
         sideNavBtnEvents(this.jLabel1);
         
         try {
-//            URL resource = this.getClass().getResource("/appIcon.png");
-//            BufferedImage image = ImageIO.read(resource);
-//            this.setIconImage(image);
-            this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/appIcon.png")));
+            URL resource = this.getClass().getResource("/appIcon.png");
+            BufferedImage image = ImageIO.read(resource);
+            this.setIconImage(image);
+           // this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/appIcon.png")));
             this.setTitle("Unicenta");
         } catch (Exception ex) {
             Logger.getLogger(AppInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -122,7 +122,6 @@ public class AppInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
         setMinimumSize(new java.awt.Dimension(1280, 960));
-        setPreferredSize(new java.awt.Dimension(1280, 960));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
