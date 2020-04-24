@@ -65,16 +65,16 @@ public class DatabaseConnection {
     }
     
     private void createTables() throws SQLException {
-        boolean st = true;
+        int st = 0;
         try{
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("Show tables");
             System.out.println("Tables in the current database: ");
             while(rs.next()) {
                if( this.tbls.contains(rs.getString(1).toLowerCase()) ){
-                   st = st && true;
+                   st++;
                }else{
-                   st = st && false;
+                   st--;
                }
                System.out.print(rs.getString(1));
                System.out.println();
@@ -83,16 +83,16 @@ public class DatabaseConnection {
             
         }
         
-        if(st == false){
+        if(st < tbls.size()){
              
           ScriptRunner sr = new ScriptRunner(this.con); 
           
-          File tmpDir = new File(this.SQLSCRIPT);
+          File tmpDir = new File(SQLSCRIPT);
             boolean exists = tmpDir.exists();
             if(exists){
            
               try {
-               Reader   reader = new BufferedReader(new FileReader(this.SQLSCRIPT));
+               Reader   reader = new BufferedReader(new FileReader(SQLSCRIPT));
                sr.runScript(reader);
                System.out.println("DATABASE CREATED");
               } catch (FileNotFoundException ex) {
