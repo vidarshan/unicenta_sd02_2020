@@ -65,7 +65,7 @@ public class Sales extends javax.swing.JPanel {
         product_tax.setEditable(false);
         product_commision.setEditable(false);
         product_price.setEditable(false);
-
+        jTextPane1.setEditable(false);
         productNameDD();
         disable();
     }
