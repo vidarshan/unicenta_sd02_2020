@@ -27,6 +27,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -113,6 +114,7 @@ public class AddProduct extends javax.swing.JFrame {
             System.out.println("Failed to move the file"); 
         } 
     }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
