@@ -64,6 +64,10 @@ CREATE TABLE IF NOT EXISTS `products` (
   `description` text DEFAULT NULL,
   `img` text DEFAULT NULL,
   `uploadedOn` datetime NOT NULL DEFAULT current_timestamp(),
+    `quantity` int(255) NOT NULL,
+  `product_price` varchar(10) NOT NULL,
+  `tax` int(10) NOT NULL,
+  `commission` varchar(50) NOT NULL,
   PRIMARY KEY (`productID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -73,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- --------------------------------------------------------
 
 
-INSERT INTO `products` (`productID`, `name`, `barcode`, `category`, `description`, `img`, `uploadedOn`) VALUES
+INSERT INTO `products` (`productID`, `name`, `barcode`, `category`, `description`, `img`, `uploadedOn`, `quantity`, `product_price`, `tax`, `commission`) VALUES
 (1, 'Asus Computer', '#001', 'ASUS Notebooks', 'Latest Intel® Pentium® processor Up to 10 hours battery life Light: 1.20kg 1 TB HDD storage. ', 'Products\\15875851737541587584747127P_setting_F5F5F5_1_90_end_765.jpg', '2020-04-23 01:15:54'),
 (2, 'MacBook Pro 2019', '#002', 'Apple Macbooks', '2.3GHz Intel Core i9 processor, Turbo Boost ...', 'Products\\1587586889344mbp16touch-space-select-201911.jpg', '2020-04-23 01:51:33'),
 (3, 'Microsoft Surface Pro 7', '#003', 'Microsoft Notebooks', 'Microsoft Surface Pro 12.3 2-in-1 Touchscreen (2736 x 1824) Laptop/Tablet, Intel Dual-Core M3-3Y70 4G DDR4 128G SSD ', 'Products\\158758795320751SchZDsCwL._AC_SL1000_.jpg', '2020-04-23 02:09:16'),
@@ -81,7 +85,7 @@ INSERT INTO `products` (`productID`, `name`, `barcode`, `category`, `description
 (5, 'HUAWEI MateBook X Pro', '#005', 'Huawei Notebooks', '1.8 GHz Intel Core i7-8550U quad-core processor, 16GB of 2133 MHz LPDDR3 RAM, a 512GB NVMe PCIe M. 2 SSD, and an NVIDIA GeForce MX150 graphics card. ', 'Products\\1587632596053gsmarena_005.jpg', '2020-04-23 14:33:17'),
 (6, 'HP Spectre x360 15', '#006', 'HP Notebooks', ' Intel Core i7-8565U and 512GB of PCIe SSD storage ', 'Products\\1587633003541spectre_x360_q4fy19_ksp7_pdt1.png', '2020-04-23 14:40:05'),
 (7, 'Razer Blade 15', '#007', 'Razer Notebooks', '10th Gen Intel i7-10750H processor (base clock speed of 2.6GHz and turbo boost clock speed of 5GHz), starts with Nvidia', 'Products\\1587633816717razer-blade-new-comet-lake-h-gaming-laptops-and-300hz-screen_godgetreview.com_.jpg', '2020-04-23 14:53:38');
-
+(17, 'Soap', 'smkaseweermsd', 'Soap', 'Soap 1bar', NULL, '2020-04-24 11:09:12', 0, '100', 10, '10');
 -- --------------------------------------------------------
 
 
