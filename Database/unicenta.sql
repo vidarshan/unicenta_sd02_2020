@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `description` text DEFAULT NULL,
   `img` text DEFAULT NULL,
   `uploadedOn` datetime NOT NULL DEFAULT current_timestamp(),
-    `quantity` int(255) NOT NULL,
+  `quantity` int(255) NOT NULL,
   `product_price` varchar(10) NOT NULL,
   `tax` int(10) NOT NULL,
   `commission` varchar(50) NOT NULL,

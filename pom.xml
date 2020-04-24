@@ -43,6 +43,10 @@
             <artifactId>mybatis</artifactId>
             <version>3.4.5</version>
          </dependency>
+<<<<<<< Updated upstream
+=======
+         
+>>>>>>> Stashed changes
 
     </dependencies>
     <properties>
