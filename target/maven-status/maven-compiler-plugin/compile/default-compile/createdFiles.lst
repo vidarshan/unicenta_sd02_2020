@@ -1,7 +1,6 @@
 com\Vidarshan\sales\Calculator$17.class
 com\Vidarshan\sales\Calculator$4.class
 com\Savindu\inventory\Views\AddCat$3.class
-com\Vidarshan\sales\SalesNew$1.class
 com\Savindu\inventory\Views\Inventory$3.class
 Interface\AppInterface$5.class
 com\Kethaki\Users\UserHome$1.class
@@ -11,7 +10,6 @@ com\Amasha\Maintenance\Users$1.class
 com\Miyuru\attendance\BreaksInterface$6.class
 com\Vidarshan\sales\Calculator$11.class
 com\Amasha\Maintenance\Roles$3.class
-com\Vidarshan\sales\SalesNew.class
 com\Savindu\inventory\Views\Categories$6.class
 com\Vidarshan\sales\Sales$27.class
 com\Kethaki\Users\UserHome.class
@@ -28,6 +26,7 @@ com\Savindu\inventory\Entity\Category.class
 com\Savindu\inventory\Views\InventoryPanel$2.class
 com\Vidarshan\sales\Sales$28.class
 com\Amasha\Maintenance\Users$6.class
+com\Vidarshan\sales\Sales$35.class
 com\Savindu\inventory\Views\Inventory$8.class
 com\Savindu\inventory\Views\AddProduct$2.class
 com\Vidarshan\sales\Sales$22.class
