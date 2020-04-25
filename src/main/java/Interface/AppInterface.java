@@ -67,7 +67,7 @@ public class AppInterface extends javax.swing.JFrame {
         }
         
       this.setExtendedState(this.MAXIMIZED_BOTH);
-      
+   
     }
 
 
@@ -77,6 +77,8 @@ public class AppInterface extends javax.swing.JFrame {
         contentLayout.repaint();
         contentLayout.revalidate();
         this.navbar.setText(name);
+          
+      
     }
     
       public void sideNavBtnEvents(JLabel btn){

@@ -95,6 +95,7 @@ com\Savindu\inventory\Views\Categories$3.class
 Interface\AppInterface$8.class
 com\Amasha\Maintenance\Users$4.class
 com\Miyuru\attendance\AttendenceInterfave$2.class
+com\Savindu\inventory\Views\Inventory$11.class
 com\Miyuru\attendance\AttendenceInterfave.class
 com\Savindu\inventory\Views\Categories$8.class
 com\Kethaki\Users\AddSupplier$5.class

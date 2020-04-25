@@ -26,19 +26,7 @@ public class Category {
     private String name;
     private String img;
     private String upload;
-    private static ArrayList<String> categoriesList = new ArrayList<>();
-    
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        if(img != null){
-            this.img = img; 
-        }else{
-            this.img = "Categories\\image-not-found.png";
-        }
-    }
+    private static ArrayList<Category> categories = new ArrayList<>();
     
     private Connection con;
     private String INSERT_SQL = "INSERT INTO `categories`(`cat_ID`, `cat_Name`, `cat_img`) VALUES (?, ?, ?)";
@@ -83,6 +71,18 @@ public class Category {
         this.upload = upload;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        if(img != null){
+            this.img = img; 
+        }else{
+            this.img = "Categories\\image-not-found.png";
+        }
+    }
+    
     @Override
     public String toString() {
         return "Category{" + "id=" + id + ", catID=" + catID + ", name=" + name + ", img=" + img + ", upload=" + upload + ", con=" + con + ", INSERT_SQL=" + INSERT_SQL + ", SELCT_QUERY=" + SELCT_QUERY + '}';
@@ -119,12 +119,11 @@ public class Category {
     }
    
    public ArrayList<Category> getCategories(){
-        ArrayList<Category> categories = new ArrayList<>();
         Category category;
         ResultSet rs = null;
         
-        if(categoriesList.size() > 0){
-            categoriesList.clear();
+        if(categories.size() > 0){
+            categories.clear();
         }
         
         try {
@@ -136,7 +135,9 @@ public class Category {
                 category.setId(rs.getString(1));
                 category.setCatID(rs.getString(2));
                 category.setName(rs.getString(3));
-                this.setCategories(rs.getString(3));
+                category.setImg(rs.getString(4));
+                category.setUpload(rs.getString(5));
+                //System.out.println(category.toString());
                 category.setImg(rs.getString(4));
                 category.setUpload(rs.getString(5));
                 //System.out.println(category.toString());
@@ -178,13 +179,13 @@ public class Category {
         
        return state;
     }
-
-    public void setCategories(String name){
-        this.categoriesList.add(name);
-    } 
+//
+//    public void setCategories(Category cat){
+//        this.categoriesList.add(cat);
+//    } 
     
-    public ArrayList<String> getCategoriesList(){
-        return this.categoriesList;
+    public ArrayList<Category> getCategoriesList(){
+        return this.categories;
     }
     
     public boolean remove(ArrayList<String> category) {

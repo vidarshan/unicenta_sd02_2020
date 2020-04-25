@@ -29,40 +29,6 @@ public class DatabaseConnection {
     private ArrayList<String> tbls = new ArrayList<>();
     
     private String SQLSCRIPT = "Database\\unicenta.sql";
-//    private String CATEGORIES_CREATE = " CREATE TABLE IF NOT EXISTS `categories` (" +
-//                                    "  `id` int(11) NOT NULL," +
-//                                    "  `cat_ID` varchar(255) DEFAULT NULL," +
-//                                    "  `cat_Name` varchar(255) NOT NULL," +
-//                                    "  `cat_img` text DEFAULT NULL," +
-//                                    "  `uploadedOn` datetime NOT NULL DEFAULT current_timestamp()" +
-//                                    ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-//    
-//    private String PRODUCTS_CREATE = "CREATE TABLE IF NOT EXISTS `products` (" +
-//                                    "  `productID` int(11) NOT NULL," +
-//                                    "  `name` varchar(255) DEFAULT NULL," +
-//                                    "  `barcode` varchar(255) DEFAULT NULL," +
-//                                    "  `category` varchar(255) DEFAULT NULL," +
-//                                    "  `description` text DEFAULT NULL," +
-//                                    "  `img` text DEFAULT NULL," +
-//                                    "  `uploadedOn` datetime NOT NULL DEFAULT current_timestamp()" +
-//                                    ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-//                                    
-//     private String SALES_CREATE = "CREATE TABLE IF NOT EXISTS `sales` (" +
-//                                    "  `id` int(11) NOT NULL," +
-//                                    "  `product_name` varchar(255) NOT NULL," +
-//                                    "  `product_price` varchar(10) NOT NULL," +
-//                                    "  `product_quantity` int(255) NOT NULL," +
-//                                    "  `sales_value` varchar(255) NOT NULL," +
-//                                    "  `tax` int(10) NOT NULL," +
-//                                    "  `commision` varchar(50) NOT NULL" +
-//                                    ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
-//     
-//    private String SALES_CREATE = "CREATE TABLE IF NOT EXISTS `salesbucket` (" +
-//                                    "  `id` int(11) NOT NULL," +
-//                                    "  `date` varchar(15) NOT NULL," +
-//                                    "  `time` varchar(15) NOT NULL," +
-//                                    "  `grand_total` longtext NOT NULL" +
-//                                    ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
     
     private DatabaseConnection() throws SQLException{
         tbls.add("categories");
@@ -99,16 +65,16 @@ public class DatabaseConnection {
     }
     
     private void createTables() throws SQLException {
-        boolean st = false;
+        int st = 0;
         try{
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("Show tables");
             System.out.println("Tables in the current database: ");
             while(rs.next()) {
                if( this.tbls.contains(rs.getString(1).toLowerCase()) ){
-                   st = true;
+                   st++;
                }else{
-                   st = false;
+                   st--;
                }
                System.out.print(rs.getString(1));
                System.out.println();
@@ -117,16 +83,16 @@ public class DatabaseConnection {
             
         }
         
-        if(st == false){
+        if(st < tbls.size()){
              
           ScriptRunner sr = new ScriptRunner(this.con); 
           
-          File tmpDir = new File(this.SQLSCRIPT);
+          File tmpDir = new File(SQLSCRIPT);
             boolean exists = tmpDir.exists();
             if(exists){
            
               try {
-               Reader   reader = new BufferedReader(new FileReader(this.SQLSCRIPT));
+               Reader   reader = new BufferedReader(new FileReader(SQLSCRIPT));
                sr.runScript(reader);
                System.out.println("DATABASE CREATED");
               } catch (FileNotFoundException ex) {

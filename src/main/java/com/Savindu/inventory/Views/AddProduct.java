@@ -20,12 +20,14 @@ import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -41,7 +43,9 @@ public class AddProduct extends javax.swing.JFrame {
     Products product = new Products();
     ArrayList<Products> productArr = new ArrayList<>();
     Category catList = new Category();
-    
+
+    ArrayList<Category> list = catList.getCategoriesList();
+
     String filePath = null;
     
     public AddProduct() {
@@ -50,14 +54,13 @@ public class AddProduct extends javax.swing.JFrame {
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         this.setResizable(false);
         this.setCategoriesDropDown();
+        System.out.println(Arrays.toString(list.toArray()));
        // imgBrowse.setVisible(false);
     }
 
     public void setCategoriesDropDown(){
-        
-        ArrayList<String> list = catList.getCategoriesList();
         for(int i=0; i<list.size(); i++){
-          this.categories.addItem(list.get(i)); 
+          this.categories.addItem(list.get(i).getName());
             System.out.println("catList["+i+"] = "+list.get(i));
         }
         
@@ -111,6 +114,7 @@ public class AddProduct extends javax.swing.JFrame {
             System.out.println("Failed to move the file"); 
         } 
     }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -419,13 +423,21 @@ public class AddProduct extends javax.swing.JFrame {
         // TODO add your handling code here:
         product.setName(this.name.getText());
         product.setBarcode(this.barcode.getText());
-        product.setCategory(String.valueOf(this.categories.getSelectedItem()));
+
+        String id = null;
+        for(Category cat : list){
+            if(cat.getName().equals(String.valueOf(this.categories.getSelectedItem()))){
+                id = cat.getId();
+                System.out.println("ID: "+cat.getId()+", Name: "+cat.getName());
+            }
+        }
+        product.setCategory(id);
         product.setDesc(this.desc.getText());
         product.setImg(this.filePath);
 
         if(this.name.getText() != null && this.barcode.getText() != null && String.valueOf(this.categories.getSelectedItem()) != null && this.desc.getText() != null){
             try {
-                boolean    res = product.save(product);
+                boolean  res = product.save(product);
                 if(res){
                     JOptionPane.showMessageDialog(null, "New Product has Inserted Successfully!");
                     this.barcode.setText(null);

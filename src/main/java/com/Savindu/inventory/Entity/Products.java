@@ -32,7 +32,8 @@ public class Products {
     private Connection con;
     
     private String INSERT_PRODUCTS_SQL = "INSERT INTO `products` (`name`, `barcode`, `category`, `description`, `img`) VALUES (?, ?, ?, ?, ?)";
-    private String SELECT_PRODUCTS_SQL = "SELECT `productID`, `name`, `barcode`, `category`, `description`, `img`, `uploadedOn` FROM `products`";  
+    //private String SELECT_PRODUCTS_SQL = "SELECT `productID`, `name`, `barcode`, `category`, `description`, `img`, `uploadedOn` FROM `products`";  
+    private String SELECT_PRODUCTS_SQL = "SELECT p.`productID`, p.`name`, p.`barcode`, c.`cat_Name`, p.`description`, p.`img`, p.`uploadedOn`, p.`quantity`, p.`product_price`, p.`tax`, p.`commission` FROM `products` p LEFT JOIN `categories` c ON c.`id` = p.`category`";
     private String UPDATE_PRODUCTS_SQL = "UPDATE `products` SET `name`= ?,`barcode`= ?,`category`= ?,`description`= ?,`img`= ? WHERE `productID`= ?";
     private String DELETE_PRODUCTS_SQL = "DELETE FROM `products` WHERE `productID` = ?";
     

@@ -12,11 +12,19 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
@@ -24,7 +32,13 @@ import javax.swing.RowFilter;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -148,6 +162,42 @@ public class Inventory extends javax.swing.JPanel {
         sorter.setRowFilter(RowFilter.regexFilter("(?i)" + str));
       }
       
+       private void writeToExcell(JTable table, String path) throws FileNotFoundException, IOException {
+            new WorkbookFactory();
+            Workbook wb = new XSSFWorkbook(); //Excell workbook
+            Sheet sheet = wb.createSheet(); //WorkSheet
+            Row row = sheet.createRow(2); //Row created at line 3
+            TableModel model = table.getModel(); //Table model
+
+
+            Row headerRow = sheet.createRow(0); //Create row at line 0
+            for(int headings = 0; headings < model.getColumnCount(); headings++){ //For each column
+                headerRow.createCell(headings).setCellValue(model.getColumnName(headings));//Write column name
+            }
+
+            for(int rows = 0; rows < model.getRowCount(); rows++){ //For each table row
+                for(int cols = 0; cols < table.getColumnCount(); cols++){ //For each table column
+                    row.createCell(cols).setCellValue(model.getValueAt(rows, cols).toString()); //Write value
+                }
+
+                //Set the row to the next one in the sequence 
+                row = sheet.createRow((rows + 3)); 
+            }
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            String fileName = path+"\\"+"Inventory_Products_"+timestamp.getTime()+".xlsx";
+            File newFile = new File(fileName);
+            System.out.println(fileName);
+            newFile.createNewFile(); // if file already exists will do nothing 
+            FileOutputStream out = new FileOutputStream(newFile);
+            wb.write(out);//Save the file
+            
+            if(newFile.exists()){
+                JOptionPane.showMessageDialog(null, "Excel File has successfully Exported to "+fileName);
+            }
+             
+            out.close();
+        }
+      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -167,6 +217,7 @@ public class Inventory extends javax.swing.JPanel {
         product_search = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_Products = new javax.swing.JTable();
+        btn_export = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(28, 35, 51));
 
@@ -328,6 +379,17 @@ public class Inventory extends javax.swing.JPanel {
         tbl_Products.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbl_Products);
 
+        btn_export.setBackground(new java.awt.Color(55, 71, 79));
+        btn_export.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        btn_export.setForeground(new java.awt.Color(244, 244, 244));
+        btn_export.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-export-excel-36 (1).png"))); // NOI18N
+        btn_export.setText("Export to Excel");
+        btn_export.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_exportActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -336,7 +398,10 @@ public class Inventory extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                    .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_export)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -345,7 +410,10 @@ public class Inventory extends javax.swing.JPanel {
                 .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_export)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -483,8 +551,34 @@ public class Inventory extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_product_searchVetoableChange
 
+    private void btn_exportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exportActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+        chooser.setDialogTitle("Export Wizard");
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        chooser.setAcceptAllFileFilterUsed(false);
+        String pathStr = null;
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+          System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
+          System.out.println("getSelectedFile() : " + chooser.getSelectedFile());
+          pathStr = chooser.getSelectedFile().getAbsolutePath();
+        } else {
+          System.out.println("No Selection ");
+        }
+        
+        Path path = Paths.get(pathStr);
+        try {
+            this.writeToExcell(tbl_Products, pathStr);
+        } catch (IOException ex) {
+            Logger.getLogger(Inventory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btn_exportActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_export;
     private javax.swing.JLabel btn_product_add;
     private javax.swing.JLabel btn_product_delete;
     private javax.swing.JLabel btn_product_edit;

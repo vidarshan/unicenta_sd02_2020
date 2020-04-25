@@ -42,6 +42,7 @@ public class EditProduct extends javax.swing.JFrame {
     String filePath = null;
     private String imgpath;
     Category catList = new Category();
+    ArrayList<Category> list = catList.getCategoriesList();
     
     public EditProduct() {
         initComponents();
@@ -53,13 +54,12 @@ public class EditProduct extends javax.swing.JFrame {
 
       public void setCategoriesDropDown(String cat){
         
-        ArrayList<String> list = catList.getCategoriesList();
         for(int i=0; i<list.size(); i++){
-          this.categories.addItem(list.get(i)); 
+          this.categories.addItem(list.get(i).getName());
             System.out.println("catList["+i+"] = "+list.get(i));
         }
         
-        this.categories.getModel().setSelectedItem(cat);
+        this.categories.setSelectedItem(cat);
     }
       
     public void createFileChooser(){
@@ -438,6 +438,14 @@ public class EditProduct extends javax.swing.JFrame {
         product.setName(this.name.getText());
         product.setBarcode(this.barcode.getText());
         product.setCategory(String.valueOf(this.categories.getSelectedItem()));
+        String id = null;
+        for(Category cat : list){
+            if(cat.getName().equals(String.valueOf(this.categories.getSelectedItem()))){
+                id = cat.getId();
+                System.out.println("ID: "+cat.getId()+", Name: "+cat.getName());
+            }
+        }
+        product.setCategory(id);
         product.setDesc(this.desc.getText());
         if(filePath != null){
          product.setImg(this.filePath);   
