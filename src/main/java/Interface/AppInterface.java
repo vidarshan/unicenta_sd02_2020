@@ -80,8 +80,7 @@ public class AppInterface extends javax.swing.JFrame {
                  for(;;){
                      Calendar c1 = new GregorianCalendar();
                      int day = c1.get(Calendar.DAY_OF_MONTH);
-                     //temporary fix
-                     int month = c1.get(Calendar.MONTH) + 1;
+                     int month = c1.get(Calendar.MONTH);
                      int year = c1.get(Calendar.YEAR);
                      
                      int second = c1.get(Calendar.SECOND);
