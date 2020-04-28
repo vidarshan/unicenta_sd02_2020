@@ -76,6 +76,7 @@ com/Amasha/Maintenance/Roles$6.class
 com/Vidarshan/sales/Sales$30.class
 com/Vidarshan/sales/Calculator$9.class
 com/Vidarshan/sales/Sales$24.class
+com/Miyuru/attendance/BreaksInterface$9.class
 Interface/AppInterface$2.class
 com/Miyuru/login/LogIn$2.class
 com/Vidarshan/sales/Sales$31.class
@@ -89,6 +90,7 @@ com/Vidarshan/sales/Calculator$8.class
 com/Amasha/Maintenance/Users$6.class
 com/Vidarshan/sales/Sales$8.class
 com/Miyuru/login/SignIn$3.class
+com/Miyuru/attendance/BreaksInterface$11.class
 com/Miyuru/attendance/BreaksInterface$7.class
 com/Kethaki/Users/AddCustomer$6.class
 Interface/AppInterface.class
@@ -158,6 +160,7 @@ com/Savindu/inventory/Views/EditCategory$3.class
 com/Amasha/Maintenance/Roles$2.class
 com/Miyuru/attendance/AttendenceInterfave.class
 com/Amasha/Maintenance/Users$1.class
+com/Miyuru/attendance/BreaksInterface$12.class
 com/Miyuru/attendance/BreaksInterface$5.class
 com/Miyuru/login/SignIn$1.class
 com/Kethaki/Users/AddCustomer.class
@@ -175,6 +178,7 @@ com/Savindu/inventory/Views/EditCategory$1.class
 com/Vidarshan/sales/Sales$13.class
 com/Miyuru/login/SignIn$2.class
 Interface/AppInterface$9.class
+com/Miyuru/attendance/BreaksInterface$10.class
 com/Savindu/inventory/Views/InventoryPanel$1.class
 com/Miyuru/attendance/BreaksInterface$4.class
 com/Savindu/inventory/Entity/Category.class

@@ -50,19 +50,22 @@ public class BreaksInterface extends javax.swing.JPanel {
         jSeparator3 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         note_Table = new javax.swing.JTable();
-        btn_Add = new javax.swing.JButton();
-        btn = new javax.swing.JButton();
         btn_back = new javax.swing.JButton();
-        btn_edit = new javax.swing.JButton();
-        btn_delete = new javax.swing.JButton();
+        editBtn = new javax.swing.JButton();
+        newBtn = new javax.swing.JButton();
+        addBtn = new javax.swing.JButton();
+        deleteBtn3 = new javax.swing.JButton();
 
         breaksLayer.setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(28, 35, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Attendance > Breaks");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 343, 53));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 65, 1020, 10));
 
         jPanel2.setBackground(new java.awt.Color(28, 35, 51));
 
@@ -110,20 +113,9 @@ public class BreaksInterface extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(note_Table);
 
-        btn_Add.setText("Add");
-        btn_Add.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_AddActionPerformed(evt);
-            }
-        });
-
-        btn.setText("new");
-        btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
-            }
-        });
-
+        btn_back.setBackground(new java.awt.Color(102, 102, 255));
+        btn_back.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        btn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         btn_back.setText("Back");
         btn_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -131,17 +123,63 @@ public class BreaksInterface extends javax.swing.JPanel {
             }
         });
 
-        btn_edit.setText("Edit");
-        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+        editBtn.setBackground(new java.awt.Color(102, 102, 255));
+        editBtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        editBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        editBtn.setText("Edit");
+        editBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editBtnMouseClicked(evt);
+            }
+        });
+        editBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editActionPerformed(evt);
+                editBtnActionPerformed(evt);
             }
         });
 
-        btn_delete.setText("Delete");
-        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+        newBtn.setBackground(new java.awt.Color(102, 102, 255));
+        newBtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        newBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        newBtn.setText("New");
+        newBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                newBtnMouseClicked(evt);
+            }
+        });
+        newBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_deleteActionPerformed(evt);
+                newBtnActionPerformed(evt);
+            }
+        });
+
+        addBtn.setBackground(new java.awt.Color(102, 102, 255));
+        addBtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        addBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        addBtn.setText("Add");
+        addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addBtnMouseClicked(evt);
+            }
+        });
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
+
+        deleteBtn3.setBackground(new java.awt.Color(102, 102, 255));
+        deleteBtn3.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        deleteBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        deleteBtn3.setText("Delete");
+        deleteBtn3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteBtn3MouseClicked(evt);
+            }
+        });
+        deleteBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtn3ActionPerformed(evt);
             }
         });
 
@@ -153,89 +191,59 @@ public class BreaksInterface extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(JLabel_e, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(eName, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(64, 64, 64)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btn_delete)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btn_edit)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btn)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btn_Add))
-                                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(421, 421, 421)))
-                        .addGap(92, 92, 92))
+                        .addGap(35, 35, 35)
+                        .addComponent(deleteBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(newBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btn_back)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(JLabel_e, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eName, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(btn_back)
-                .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(eName, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JLabel_e, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 37, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Add)
-                    .addComponent(btn)
-                    .addComponent(btn_edit)
-                    .addComponent(btn_delete))
-                .addGap(45, 45, 45))
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(eName, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLabel_e, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(104, 104, 104))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
-        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 93, 1080, -1));
 
         breaksLayer.add(jPanel1, "card2");
 
@@ -243,13 +251,13 @@ public class BreaksInterface extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 942, Short.MAX_VALUE)
+            .addGap(0, 1121, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(breaksLayer, javax.swing.GroupLayout.Alignment.TRAILING))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 605, Short.MAX_VALUE)
+            .addGap(0, 687, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(breaksLayer))
         );
@@ -271,9 +279,59 @@ public class BreaksInterface extends javax.swing.JPanel {
         breaksLayer.revalidate();
         //this.navbar.setText(name);
     }
-    private void btn_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AddActionPerformed
+    private void btn_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_backMouseClicked
+        AttendenceInterfave a = new AttendenceInterfave();
 
-        emp_name = eName.getText();
+        panelNavigator(a);
+
+    }//GEN-LAST:event_btn_backMouseClicked
+
+    private void editBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editBtnMouseClicked
+        DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+        
+        if(note_Table.getSelectedRow()== -1){
+          if(note_Table.getRowCount()== 0){
+              JOptionPane.showMessageDialog(this, "Table is empty !");
+          }else{
+              JOptionPane.showMessageDialog(this, "Please select a row !");
+          }
+      }else{
+          model.setValueAt(eName.getText(), note_Table.getSelectedRow(), 0);
+           model.setValueAt(txt_Note.getText(), note_Table.getSelectedRow(), 1);
+            JOptionPane.showMessageDialog(this, "Data Edited Successfully !");
+      }
+    }//GEN-LAST:event_editBtnMouseClicked
+
+    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
+//               DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+//       
+//        if (note_Table.getSelectedRow() == -1) {
+//            if(note_Table.getRowCount()== 0){
+//              JOptionPane.showMessageDialog(this, "Table is empty !");
+//          }else{
+//              JOptionPane.showMessageDialog(this, "Please select a row!");
+//          }
+//        }
+//        else{
+//            model.removeRow(note_Table.getSelectedRow());
+////            model.setValueAt(null, note_Table.getSelectedRow(), 0);
+////            model.setValueAt(null, note_Table.getSelectedRow(), 1);
+//        }
+    }//GEN-LAST:event_editBtnActionPerformed
+
+    private void newBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newBtnMouseClicked
+        // TODO add your handling code here:
+        eName.setText(null);
+        txt_Note.setText(null);
+    }//GEN-LAST:event_newBtnMouseClicked
+
+    private void newBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newBtnActionPerformed
+
+    private void addBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseClicked
+        // TODO add your handling code here:
+         emp_name = eName.getText();
         note = txt_Note.getText();
 
         try{
@@ -301,40 +359,18 @@ public class BreaksInterface extends javax.swing.JPanel {
           DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
 
          model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
-    }//GEN-LAST:event_btn_AddActionPerformed
+    }//GEN-LAST:event_addBtnMouseClicked
 
-    private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
-        // clear data to db
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addBtnActionPerformed
 
-        eName.setText(null);
-        txt_Note.setText(null);
-    }//GEN-LAST:event_btnActionPerformed
+    private void deleteBtn3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteBtn3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteBtn3MouseClicked
 
-    private void btn_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_backMouseClicked
-        AttendenceInterfave a = new AttendenceInterfave();
-
-        panelNavigator(a);
-
-    }//GEN-LAST:event_btn_backMouseClicked
-
-    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
-        DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
-        
-        if(note_Table.getSelectedRow()== -1){
-          if(note_Table.getRowCount()== 0){
-              JOptionPane.showMessageDialog(this, "Table is empty !");
-          }else{
-              JOptionPane.showMessageDialog(this, "Please select a row !");
-          }
-      }else{
-          model.setValueAt(eName.getText(), note_Table.getSelectedRow(), 0);
-           model.setValueAt(txt_Note.getText(), note_Table.getSelectedRow(), 1);
-            JOptionPane.showMessageDialog(this, "Data Edited Successfully !");
-      }
-    }//GEN-LAST:event_btn_editActionPerformed
-
-    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
-       DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+    private void deleteBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtn3ActionPerformed
+              DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
        
         if (note_Table.getSelectedRow() == -1) {
             if(note_Table.getRowCount()== 0){
@@ -348,18 +384,17 @@ public class BreaksInterface extends javax.swing.JPanel {
 //            model.setValueAt(null, note_Table.getSelectedRow(), 0);
 //            model.setValueAt(null, note_Table.getSelectedRow(), 1);
         }
-    }//GEN-LAST:event_btn_deleteActionPerformed
+    }//GEN-LAST:event_deleteBtn3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabel_e;
+    private javax.swing.JButton addBtn;
     private javax.swing.JLayeredPane breaksLayer;
-    private javax.swing.JButton btn;
-    private javax.swing.JButton btn_Add;
     private javax.swing.JButton btn_back;
-    private javax.swing.JButton btn_delete;
-    private javax.swing.JButton btn_edit;
+    private javax.swing.JButton deleteBtn3;
     private javax.swing.JTextField eName;
+    private javax.swing.JButton editBtn;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
@@ -369,6 +404,7 @@ public class BreaksInterface extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JButton newBtn;
     private javax.swing.JTable note_Table;
     private javax.swing.JTextArea txt_Note;
     // End of variables declaration//GEN-END:variables
