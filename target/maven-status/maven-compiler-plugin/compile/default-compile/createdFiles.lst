@@ -177,6 +177,7 @@ com\Savindu\inventory\Views\EditProduct$2.class
 com\Vidarshan\sales\Sales$14.class
 com\Miyuru\login\SignIn$3.class
 com\Amasha\Maintenance\Maintenance.class
+Interface\AppInterface$10.class
 com\Amasha\Maintenance\Maintenance$1.class
 com\Miyuru\attendance\BreaksInterface$5.class
 com\Amasha\Maintenance\Roles$2.class
