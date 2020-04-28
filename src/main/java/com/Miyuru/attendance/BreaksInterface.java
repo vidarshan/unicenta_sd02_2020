@@ -56,6 +56,8 @@ public class BreaksInterface extends javax.swing.JPanel {
         addBtn = new javax.swing.JButton();
         deleteBtn3 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(28, 35, 51));
+
         breaksLayer.setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(28, 35, 51));
@@ -65,7 +67,7 @@ public class BreaksInterface extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Attendance > Breaks");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 343, 53));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 65, 1020, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 65, 1270, 10));
 
         jPanel2.setBackground(new java.awt.Color(28, 35, 51));
 
@@ -251,15 +253,19 @@ public class BreaksInterface extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1121, Short.MAX_VALUE)
+            .addGap(0, 1438, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(breaksLayer, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(breaksLayer, javax.swing.GroupLayout.PREFERRED_SIZE, 1438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
+            .addGap(0, 764, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(breaksLayer))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(breaksLayer, javax.swing.GroupLayout.PREFERRED_SIZE, 764, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
