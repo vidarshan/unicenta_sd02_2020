@@ -2074,9 +2074,9 @@ public void exportTable(JTable table, File file) throws IOException {
         try {
             // TODO add your handling code here:
             //http://sandeepsharma11.blogspot.com/2011/02/how-to-export-jtable-data-to-excel-file.html
-            exportTable(salesTable, new File("D:\\sales.xls"));
-            exportTable(salesbucket, new File("D:\\salesbucket.xls"));
-               JOptionPane.showMessageDialog(this, "Table data exported to D:/", "Export",JOptionPane.INFORMATION_MESSAGE);
+            exportTable(salesTable, new File("Reports\\sales.xls"));
+            exportTable(salesbucket, new File("Reports\\salesbucket.xls"));
+               JOptionPane.showMessageDialog(this, "Table data exported to Reports", "Export",JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
             
             Logger.getLogger(Sales.class.getName()).log(Level.SEVERE, null, ex);
