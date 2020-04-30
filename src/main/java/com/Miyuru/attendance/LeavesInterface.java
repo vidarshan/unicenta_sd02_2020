@@ -9,6 +9,7 @@ import com.DB.Sales.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -51,6 +52,7 @@ public class LeavesInterface extends javax.swing.JPanel {
     private void initComponents() {
 
         breaksLayer = new javax.swing.JLayeredPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -61,18 +63,26 @@ public class LeavesInterface extends javax.swing.JPanel {
         start_txt = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         end_txt = new javax.swing.JTextField();
-        btn_add = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         note_txt = new javax.swing.JTextArea();
-        btn_new = new javax.swing.JButton();
+        addBtn = new javax.swing.JButton();
+        newBtn = new javax.swing.JButton();
+        editBtn = new javax.swing.JButton();
+        deleteBtn3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        back_btn = new javax.swing.JLabel();
+        btn_back = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(28, 35, 51));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         breaksLayer.setLayout(new java.awt.CardLayout());
 
+        jScrollPane2.setBackground(new java.awt.Color(28, 35, 51));
+
         jPanel1.setBackground(new java.awt.Color(28, 35, 51));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,15 +102,6 @@ public class LeavesInterface extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("End Date :");
 
-        btn_add.setBackground(new java.awt.Color(28, 35, 51));
-        btn_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add-45.png"))); // NOI18N
-        btn_add.setBorder(null);
-        btn_add.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_addActionPerformed(evt);
-            }
-        });
-
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Note :");
@@ -109,10 +110,63 @@ public class LeavesInterface extends javax.swing.JPanel {
         note_txt.setRows(5);
         jScrollPane1.setViewportView(note_txt);
 
-        btn_new.setText("New");
-        btn_new.addActionListener(new java.awt.event.ActionListener() {
+        addBtn.setBackground(new java.awt.Color(102, 102, 255));
+        addBtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        addBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        addBtn.setText("Add");
+        addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addBtnMouseClicked(evt);
+            }
+        });
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_newActionPerformed(evt);
+                addBtnActionPerformed(evt);
+            }
+        });
+
+        newBtn.setBackground(new java.awt.Color(102, 102, 255));
+        newBtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        newBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        newBtn.setText("New");
+        newBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                newBtnMouseClicked(evt);
+            }
+        });
+        newBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newBtnActionPerformed(evt);
+            }
+        });
+
+        editBtn.setBackground(new java.awt.Color(102, 102, 255));
+        editBtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        editBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        editBtn.setText("Edit");
+        editBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editBtnMouseClicked(evt);
+            }
+        });
+        editBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editBtnActionPerformed(evt);
+            }
+        });
+
+        deleteBtn3.setBackground(new java.awt.Color(102, 102, 255));
+        deleteBtn3.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        deleteBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        deleteBtn3.setText("Delete");
+        deleteBtn3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteBtn3MouseClicked(evt);
+            }
+        });
+        deleteBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtn3ActionPerformed(evt);
             }
         });
 
@@ -121,31 +175,37 @@ public class LeavesInterface extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(78, 78, 78)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel3))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(start_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(emp_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(113, 113, 113))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel4))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(end_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(90, 90, 90)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(start_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emp_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(68, 68, 68))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(end_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45)))
-                .addComponent(btn_add)
+                        .addComponent(deleteBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(newBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_new)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,13 +231,15 @@ public class LeavesInterface extends javax.swing.JPanel {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(79, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btn_new, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(25, 25, 25))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(newBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deleteBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(76, 76, 76))))
         );
 
         jTable2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
@@ -201,10 +263,18 @@ public class LeavesInterface extends javax.swing.JPanel {
         jScrollPane3.setViewportView(jTable2);
         jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        back_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/go_back32.png"))); // NOI18N
-        back_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_back.setBackground(new java.awt.Color(102, 102, 255));
+        btn_back.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        btn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        btn_back.setText("Back");
+        btn_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                back_btnMouseClicked(evt);
+                btn_backMouseClicked(evt);
+            }
+        });
+        btn_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_backActionPerformed(evt);
             }
         });
 
@@ -216,16 +286,16 @@ public class LeavesInterface extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(back_btn))
-                .addContainerGap(688, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(6, 6, 6)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 803, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 673, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(1731, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,36 +305,35 @@ public class LeavesInterface extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(back_btn)
-                .addContainerGap(415, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(114, 114, 114)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addContainerGap(9, Short.MAX_VALUE)))
+                .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(295, 295, 295))
         );
 
-        breaksLayer.add(jPanel1, "card2");
+        jScrollPane2.setViewportView(jPanel1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1465, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(breaksLayer, javax.swing.GroupLayout.Alignment.TRAILING))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(breaksLayer))
-        );
+        breaksLayer.add(jScrollPane2, "card2");
+
+        add(breaksLayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1621, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
+    private void btn_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_backMouseClicked
+        AttendenceInterfave a = new AttendenceInterfave();
+
+        panelNavigator(a);
+    }//GEN-LAST:event_btn_backMouseClicked
+
+    private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
+        // TODO add your handling code here:
+        AttendenceInterfave a = new AttendenceInterfave();
+
+        panelNavigator(a);
+    }//GEN-LAST:event_btn_backActionPerformed
+
+    private void addBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseClicked
         // TODO add your handling code here:
 
         String start =start_txt.getText();
@@ -292,7 +361,7 @@ public class LeavesInterface extends javax.swing.JPanel {
                }
                setLeavesTableData();
             //}
-        }catch(Exception e){
+        }catch(SQLException e){
             System.out.println(e);
         }
 //        try{
@@ -317,33 +386,143 @@ public class LeavesInterface extends javax.swing.JPanel {
 //            JOptionPane.showMessageDialog(this, " error adding data >>> "+e);
 //        }
         
+        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+
+        model.addRow(new Object[]{emp_txt.getText(),start_txt.getText(),end_txt.getText(),note_txt.getText()});
+    }//GEN-LAST:event_addBtnMouseClicked
+
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+//        // TODO add your handling code here:
+//               String start =start_txt.getText();
+//        String end = end_txt.getText();
+//        String empName = emp_txt.getText();
+//        String note = note_txt.getText();
+//        
+//        try{
+//           // for(Products product : products){
+//               PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO emp_leaves (emp_name,startDate,endDate,note) values(?,?,?,?)");
+//        
+//               preparedStatement.setString(1, empName);          
+//               preparedStatement.setString(2, start);
+//               preparedStatement.setString(3, end);
+//               preparedStatement.setString(3, note);
+//               
+//               System.out.println(preparedStatement);
+//               
+//               int result = preparedStatement.executeUpdate();
+//               
+//               if(result > 0){
+//                   state = true;
+//               }else{
+//                   state = false;
+//               }
+//               setLeavesTableData();
+//            //}
+//        }catch(SQLException e){
+//            System.out.println(e);
+//        }
+////        try{
+////            Statement smt = con.createStatement();
+////            smt.execute("INSERT INTO emp_leaves (emp_name,startDate,endDate,note) values('"+empName+"','"+start+"','"+end+"','"+note+"')");
+////            JOptionPane.showMessageDialog(this, "Record Submitted");
+////            setLeavesTableData();
+////            smt.close();
+////
+////            /*
+////
+////            Statement smt = con.createStatement();
+////            smt.execute("INSERT INTO sales(product_name,product_price,product_quantity,sales_value,tax,commision) values('"+productName+"','"+productPrice+"','"+productQuantity+"','"+salesValue+"','"+tax+"','"+commision+"')");
+////            JOptionPane.showMessageDialog(this, "Record Submitted");
+////            setSalesTableData();
+////            getGrandTotal();
+////            smt.close();
+////
+////            */
+////
+////        }catch(Exception e){
+////            JOptionPane.showMessageDialog(this, " error adding data >>> "+e);
+////        }
+//        
 //        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
 //
 //        model.addRow(new Object[]{emp_txt.getText(),start_txt.getText(),end_txt.getText(),note_txt.getTabSize()});
-    }//GEN-LAST:event_btn_addActionPerformed
+    }//GEN-LAST:event_addBtnActionPerformed
 
-    private void btn_newActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newActionPerformed
-        // TODO add your handling code here:
+    private void newBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newBtnMouseClicked
         emp_txt.setText(null);
         start_txt.setText(null);
         end_txt.setText(null);
         note_txt.setText(null);
-    }//GEN-LAST:event_btn_newActionPerformed
+    }//GEN-LAST:event_newBtnMouseClicked
 
-    private void back_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_btnMouseClicked
+    private void newBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBtnActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_newBtnActionPerformed
 
-        AttendenceInterfave a = new AttendenceInterfave();
-        panelNavigator(a);
+    private void editBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editBtnMouseClicked
+        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
 
-    }//GEN-LAST:event_back_btnMouseClicked
+        if(jTable2.getSelectedRow()== -1){
+            if(jTable2.getRowCount()== 0){
+                JOptionPane.showMessageDialog(this, "Table is empty !");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a row !");
+            }
+        }else{
+            model.setValueAt(emp_txt.getText(), jTable2.getSelectedRow(), 0);
+            model.setValueAt(start_txt.getText(), jTable2.getSelectedRow(), 1);
+            model.setValueAt(end_txt.getText(), jTable2.getSelectedRow(), 1);
+            model.setValueAt(note_txt.getText(), jTable2.getSelectedRow(), 1);
+
+            JOptionPane.showMessageDialog(this, "Data Edited Successfully !");
+        }
+    }//GEN-LAST:event_editBtnMouseClicked
+
+    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
+        //               DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+        //
+        //        if (note_Table.getSelectedRow() == -1) {
+            //            if(note_Table.getRowCount()== 0){
+                //              JOptionPane.showMessageDialog(this, "Table is empty !");
+                //          }else{
+                //              JOptionPane.showMessageDialog(this, "Please select a row!");
+                //          }
+            //        }
+        //        else{
+            //            model.removeRow(note_Table.getSelectedRow());
+            ////            model.setValueAt(null, note_Table.getSelectedRow(), 0);
+            ////            model.setValueAt(null, note_Table.getSelectedRow(), 1);
+            //        }
+    }//GEN-LAST:event_editBtnActionPerformed
+
+    private void deleteBtn3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteBtn3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteBtn3MouseClicked
+
+    private void deleteBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtn3ActionPerformed
+        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+
+        if (jTable2.getSelectedRow() == -1) {
+            if(jTable2.getRowCount()== 0){
+                JOptionPane.showMessageDialog(this, "Table is empty !");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a row!");
+            }
+        }
+        else{
+            model.removeRow(jTable2.getSelectedRow());
+            //            model.setValueAt(null, note_Table.getSelectedRow(), 0);
+            //            model.setValueAt(null, note_Table.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_deleteBtn3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel back_btn;
+    private javax.swing.JButton addBtn;
     private javax.swing.JLayeredPane breaksLayer;
-    private javax.swing.JButton btn_add;
-    private javax.swing.JButton btn_new;
+    private javax.swing.JButton btn_back;
+    private javax.swing.JButton deleteBtn3;
+    private javax.swing.JButton editBtn;
     private javax.swing.JTextField emp_txt;
     private javax.swing.JTextField end_txt;
     private javax.swing.JLabel jLabel1;
@@ -354,9 +533,11 @@ public class LeavesInterface extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JButton newBtn;
     private javax.swing.JTextArea note_txt;
     private javax.swing.JTextField start_txt;
     // End of variables declaration//GEN-END:variables
@@ -365,28 +546,26 @@ public class LeavesInterface extends javax.swing.JPanel {
         try{
             int rows = 0;
             int rowIndex = 0;
-            Statement smt = con.createStatement();
-            ResultSet rs = smt.executeQuery("SELECT * FROM emp_leaves");
-            if(rs.next()){
-                rs.last();
-                rows = rs.getRow();
-                rs.beforeFirst();
+            try (Statement smt = con.createStatement(); ResultSet rs = smt.executeQuery("SELECT * FROM emp_leaves")) {
+                if(rs.next()){
+                    rs.last();
+                    rows = rs.getRow();
+                    rs.beforeFirst();
+                }
+                String[][] data = new String[rows][4];
+                while(rs.next()){
+                    data[rowIndex][0]=rs.getString(1)+"";
+                    data[rowIndex][1]=rs.getString(2);
+                    data[rowIndex][2]=rs.getString(3);
+                    data[rowIndex][3]=rs.getString(4)+"";
+                    
+                    rowIndex++;
+                }
+                String[] cols={"Employee","Start Date","End Date","Notes"};
+                DefaultTableModel model = new DefaultTableModel(data,cols);
+                jTable2.setModel(model);
             }
-            String[][] data = new String[rows][4];
-            while(rs.next()){
-                data[rowIndex][0]=rs.getString(1)+"";
-                data[rowIndex][1]=rs.getString(2);
-                data[rowIndex][2]=rs.getString(3);
-                data[rowIndex][3]=rs.getString(4)+"";
-                
-                rowIndex++;
-            }
-            String[] cols={"Employee","Start Date","End Date","Notes"};
-            DefaultTableModel model = new DefaultTableModel(data,cols);
-            jTable2.setModel(model);
-            rs.close();
-            smt.close();
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showMessageDialog(this, e +" Retreiving Failed");
         }
 
