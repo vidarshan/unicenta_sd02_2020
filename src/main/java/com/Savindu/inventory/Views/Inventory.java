@@ -5,7 +5,6 @@
  */
 package com.Savindu.inventory.Views;
 
-import Interface.AppInterface;
 import com.Savindu.inventory.Entity.Products;
 import java.awt.Color;
 import java.awt.Font;
@@ -560,14 +559,13 @@ public class Inventory extends javax.swing.JPanel {
         chooser.setAcceptAllFileFilterUsed(false);
         String pathStr = null;
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-          System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
-          System.out.println("getSelectedFile() : " + chooser.getSelectedFile());
+//          System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
+//          System.out.println("getSelectedFile() : " + chooser.getSelectedFile());
           pathStr = chooser.getSelectedFile().getAbsolutePath();
         } else {
           System.out.println("No Selection ");
         }
         
-        Path path = Paths.get(pathStr);
         try {
             this.writeToExcell(tbl_Products, pathStr);
         } catch (IOException ex) {
