@@ -505,6 +505,11 @@ public class AddCustomer extends javax.swing.JPanel {
         });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnRefresh.setText("Refresh");
 
@@ -650,12 +655,12 @@ public class AddCustomer extends javax.swing.JPanel {
         model.addRow(new Object[] {accId.getText(), name.getText(), cardID.getText(), cLimit.getText(),
                                     email.getText(), mobilePhone.getText(), 
                                     town.getText(), country.getText()});
-        JOptionPane.showMessageDialog(this, "Customer Data Added Successfully !");
-        //message.setText("Customer Data Added Successfully !");
+        //JOptionPane.showMessageDialog(this, "Customer Data Added Successfully !");
+        message.setText("Customer Data Added Successfully !");
         }
         else{
-             JOptionPane.showMessageDialog(this, "Please fill mandatory fields... !");
-              //message.setText("Please fill mandatory fields... !");
+             //JOptionPane.showMessageDialog(this, "Please fill mandatory fields... !");
+              message.setText("Please fill mandatory fields... !");
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -664,12 +669,13 @@ public class AddCustomer extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
       if(jTable1.getSelectedRow()== -1){
           if(jTable1.getRowCount()== 0){
-              JOptionPane.showMessageDialog(this, "Table is empty !");
-              //message.setText("Table is empty !");
+              //JOptionPane.showMessageDialog(this, "Table is empty !");
+              message.setText("Table is empty !");
               
           }else{
-              JOptionPane.showMessageDialog(this, "Please select a particular row to update!");
-               //message.setText("Please select a particular row to update!");
+            //JOptionPane.showMessageDialog(this, "Please select a particular row to update!");
+               message.setText("Please select a particular row to update!");
+               
           }
       }else{
           model.setValueAt(accId.getText(), jTable1.getSelectedRow(), 0);
@@ -681,7 +687,8 @@ public class AddCustomer extends javax.swing.JPanel {
           model.setValueAt(town.getText(), jTable1.getSelectedRow(), 6);
           model.setValueAt(country.getText(), jTable1.getSelectedRow(), 7);
           
-            JOptionPane.showMessageDialog(this, "Data Updated Successfully !");
+            //JOptionPane.showMessageDialog(this, "Data Updated Successfully !");
+            message.setText("Data updated Successfully !");
       }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
@@ -709,6 +716,24 @@ public class AddCustomer extends javax.swing.JPanel {
         town.setText(model.getValueAt(jTable1.getSelectedRow(), 6).toString());
         country.setText(model.getValueAt(jTable1.getSelectedRow(), 7).toString());
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+      if(jTable1.getSelectedRow()== -1){
+          if(jTable1.getRowCount()== 0){
+              // JOptionPane.showMessageDialog(this, "Table is empty !");
+              message.setText("Table is empty!");
+          }else{
+              // JOptionPane.showMessageDialog(this, "Please select a particular row to delete !");
+               message.setText("Please select a particular row to delete !");
+          }
+      }else{
+          model.removeRow(jTable1.getSelectedRow());
+           //JOptionPane.showMessageDialog(this, "Data deleted Successfully !");
+           message.setText("Data deleted Successfully !");
+      }
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
