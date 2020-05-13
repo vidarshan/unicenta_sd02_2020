@@ -23,6 +23,7 @@ public class SignIn extends javax.swing.JFrame {
     /**
      * Creates new form SignIn
      */
+    public String username = "";
     public SignIn() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -230,6 +231,7 @@ public class SignIn extends javax.swing.JFrame {
         String pwd = txt_pwd.getText();
 
         if (usName.equals("Admin") && pwd.equals("123")) {
+            username = usName; 
             msg.setText("Successfull");
 
             AppInterface app_int = new AppInterface();
@@ -237,6 +239,15 @@ public class SignIn extends javax.swing.JFrame {
             this.setVisible(false);
             app_int.setVisible(true);
 
+        }
+        else if(usName.equals("Emp") && pwd.equals("123")){
+            username = usName; 
+            msg.setText("Successfull");
+
+            AppInterface app_int = new AppInterface();
+
+            this.setVisible(false);
+            app_int.setVisible(true);
         }
         else{
             msg.setText("failed");
