@@ -219,8 +219,8 @@ public class LeavesInterface extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(AcceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(declineBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))
+                        .addComponent(declineBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(end_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -281,6 +281,11 @@ public class LeavesInterface extends javax.swing.JPanel {
             }
         });
         jTable2.setColumnSelectionAllowed(true);
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jTable2);
         jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
@@ -573,6 +578,27 @@ public class LeavesInterface extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Data Edited Successfully !");
         }
     }//GEN-LAST:event_declineBtnActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
+        
+        if(jTable2.getSelectedRow()== -1){
+            if(jTable2.getRowCount()== 0){
+                JOptionPane.showMessageDialog(this, "Table is empty !");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a row !");
+            }
+        }else{
+            emp_txt.setText((String) jTable2.getValueAt(jTable2.getSelectedRow(), 0));
+            start_txt.setText((String) jTable2.getValueAt(jTable2.getSelectedRow(), 1));
+            end_txt.setText((String) jTable2.getValueAt(jTable2.getSelectedRow(), 2));
+            note_txt.setText((String) jTable2.getValueAt(jTable2.getSelectedRow(), 3));
+
+
+        }
+
+    }//GEN-LAST:event_jTable2MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -48,12 +48,12 @@ public class BreaksInterface extends javax.swing.JPanel {
         jSeparator3 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         note_Table = new javax.swing.JTable();
-        editBtn = new javax.swing.JButton();
-        newBtn = new javax.swing.JButton();
-        addBtn = new javax.swing.JButton();
-        deleteBtn3 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
+        deleteBtn4 = new javax.swing.JButton();
+        editBtn1 = new javax.swing.JButton();
+        newBtn1 = new javax.swing.JButton();
+        addBtn1 = new javax.swing.JButton();
         btn_back = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(28, 35, 51));
@@ -109,69 +109,69 @@ public class BreaksInterface extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(note_Table);
 
-        editBtn.setBackground(new java.awt.Color(102, 102, 255));
-        editBtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
-        editBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
-        editBtn.setText("Edit");
-        editBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                editBtnMouseClicked(evt);
-            }
-        });
-        editBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editBtnActionPerformed(evt);
-            }
-        });
-
-        newBtn.setBackground(new java.awt.Color(102, 102, 255));
-        newBtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
-        newBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
-        newBtn.setText("New");
-        newBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                newBtnMouseClicked(evt);
-            }
-        });
-        newBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newBtnActionPerformed(evt);
-            }
-        });
-
-        addBtn.setBackground(new java.awt.Color(102, 102, 255));
-        addBtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
-        addBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
-        addBtn.setText("Add");
-        addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addBtnMouseClicked(evt);
-            }
-        });
-        addBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtnActionPerformed(evt);
-            }
-        });
-
-        deleteBtn3.setBackground(new java.awt.Color(102, 102, 255));
-        deleteBtn3.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
-        deleteBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
-        deleteBtn3.setText("Delete");
-        deleteBtn3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteBtn3MouseClicked(evt);
-            }
-        });
-        deleteBtn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteBtn3ActionPerformed(evt);
-            }
-        });
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Attendance > Breaks");
+
+        deleteBtn4.setBackground(new java.awt.Color(255, 51, 51));
+        deleteBtn4.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        deleteBtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/delete30.png"))); // NOI18N
+        deleteBtn4.setText("Delete");
+        deleteBtn4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteBtn4MouseClicked(evt);
+            }
+        });
+        deleteBtn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtn4ActionPerformed(evt);
+            }
+        });
+
+        editBtn1.setBackground(new java.awt.Color(102, 102, 255));
+        editBtn1.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        editBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-30.png"))); // NOI18N
+        editBtn1.setText("Edit");
+        editBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editBtn1MouseClicked(evt);
+            }
+        });
+        editBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editBtn1ActionPerformed(evt);
+            }
+        });
+
+        newBtn1.setBackground(new java.awt.Color(0, 153, 153));
+        newBtn1.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        newBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-new-contact-30.png"))); // NOI18N
+        newBtn1.setText("New");
+        newBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                newBtn1MouseClicked(evt);
+            }
+        });
+        newBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newBtn1ActionPerformed(evt);
+            }
+        });
+
+        addBtn1.setBackground(new java.awt.Color(0, 153, 51));
+        addBtn1.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        addBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/add30.png"))); // NOI18N
+        addBtn1.setText("Add");
+        addBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addBtn1MouseClicked(evt);
+            }
+        });
+        addBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtn1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -188,15 +188,6 @@ public class BreaksInterface extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(deleteBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(newBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,10 +197,19 @@ public class BreaksInterface extends javax.swing.JPanel {
                                 .addComponent(JLabel_e, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(eName, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(addBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(newBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(editBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(deleteBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96))))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,18 +233,17 @@ public class BreaksInterface extends javax.swing.JPanel {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
+                        .addGap(46, 46, 46)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(deleteBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(newBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(98, 98, 98))
+                            .addComponent(addBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(newBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deleteBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 93, 1080, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 93, 1210, -1));
 
         btn_back.setBackground(new java.awt.Color(0, 106, 78));
         btn_back.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
@@ -286,7 +285,21 @@ public class BreaksInterface extends javax.swing.JPanel {
 
     private void note_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_note_TableMouseClicked
         // TODO add your handling code here:
-        //jTable.getRow
+        
+        DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+        
+        if(note_Table.getSelectedRow()== -1){
+            if(note_Table.getRowCount()== 0){
+                JOptionPane.showMessageDialog(this, "Table is empty !");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a row !");
+            }
+        }else{
+            eName.setText((String) note_Table.getValueAt(note_Table.getSelectedRow(), 0));
+            txt_Note.setText((String) note_Table.getValueAt(note_Table.getSelectedRow(), 1));
+
+        }
+
     }//GEN-LAST:event_note_TableMouseClicked
 
   public void panelNavigator(JPanel panel){
@@ -303,52 +316,60 @@ public class BreaksInterface extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btn_backMouseClicked
 
-    private void editBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editBtnMouseClicked
+    private void deleteBtn4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteBtn4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteBtn4MouseClicked
+
+    private void deleteBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtn4ActionPerformed
+         DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+
+        if (note_Table.getSelectedRow() == -1) {
+            if(note_Table.getRowCount()== 0){
+                JOptionPane.showMessageDialog(this, "Table is empty !");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a row!");
+            }
+        }
+        else{
+            model.removeRow(note_Table.getSelectedRow());
+            //            model.setValueAt(null, note_Table.getSelectedRow(), 0);
+            //            model.setValueAt(null, note_Table.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_deleteBtn4ActionPerformed
+
+    private void editBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editBtn1MouseClicked
         DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
-        
+
         if(note_Table.getSelectedRow()== -1){
-          if(note_Table.getRowCount()== 0){
-              JOptionPane.showMessageDialog(this, "Table is empty !");
-          }else{
-              JOptionPane.showMessageDialog(this, "Please select a row !");
-          }
-      }else{
-          model.setValueAt(eName.getText(), note_Table.getSelectedRow(), 0);
-           model.setValueAt(txt_Note.getText(), note_Table.getSelectedRow(), 1);
+            if(note_Table.getRowCount()== 0){
+                JOptionPane.showMessageDialog(this, "Table is empty !");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a row !");
+            }
+        }else{
+            model.setValueAt(eName.getText(), note_Table.getSelectedRow(), 0);
+            model.setValueAt(txt_Note.getText(), note_Table.getSelectedRow(), 1);
             JOptionPane.showMessageDialog(this, "Data Edited Successfully !");
-      }
-    }//GEN-LAST:event_editBtnMouseClicked
+        }
+    }//GEN-LAST:event_editBtn1MouseClicked
 
-    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
-//               DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
-//       
-//        if (note_Table.getSelectedRow() == -1) {
-//            if(note_Table.getRowCount()== 0){
-//              JOptionPane.showMessageDialog(this, "Table is empty !");
-//          }else{
-//              JOptionPane.showMessageDialog(this, "Please select a row!");
-//          }
-//        }
-//        else{
-//            model.removeRow(note_Table.getSelectedRow());
-////            model.setValueAt(null, note_Table.getSelectedRow(), 0);
-////            model.setValueAt(null, note_Table.getSelectedRow(), 1);
-//        }
-    }//GEN-LAST:event_editBtnActionPerformed
+    private void editBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtn1ActionPerformed
 
-    private void newBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newBtnMouseClicked
+    }//GEN-LAST:event_editBtn1ActionPerformed
+
+    private void newBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newBtn1MouseClicked
         // TODO add your handling code here:
         eName.setText(null);
         txt_Note.setText(null);
-    }//GEN-LAST:event_newBtnMouseClicked
+    }//GEN-LAST:event_newBtn1MouseClicked
 
-    private void newBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBtnActionPerformed
+    private void newBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBtn1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_newBtnActionPerformed
+    }//GEN-LAST:event_newBtn1ActionPerformed
 
-    private void addBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseClicked
-        // TODO add your handling code here:
-         emp_name = eName.getText();
+    private void addBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtn1MouseClicked
+ // TODO add your handling code here:
+        emp_name = eName.getText();
         note = txt_Note.getText();
 
         try{
@@ -373,45 +394,24 @@ public class BreaksInterface extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, " error adding data >>> "+e);
         }
 
-          DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
+        DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
 
-         model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
-    }//GEN-LAST:event_addBtnMouseClicked
+        model.addRow(new Object[]{eName.getText(),txt_Note.getText()});
+    }//GEN-LAST:event_addBtn1MouseClicked
 
-    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addBtnActionPerformed
+    private void addBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn1ActionPerformed
 
-    private void deleteBtn3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteBtn3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deleteBtn3MouseClicked
-
-    private void deleteBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtn3ActionPerformed
-              DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
-       
-        if (note_Table.getSelectedRow() == -1) {
-            if(note_Table.getRowCount()== 0){
-              JOptionPane.showMessageDialog(this, "Table is empty !");
-          }else{
-              JOptionPane.showMessageDialog(this, "Please select a row!");
-          }
-        }
-        else{
-            model.removeRow(note_Table.getSelectedRow());
-//            model.setValueAt(null, note_Table.getSelectedRow(), 0);
-//            model.setValueAt(null, note_Table.getSelectedRow(), 1);
-        }
-    }//GEN-LAST:event_deleteBtn3ActionPerformed
+    }//GEN-LAST:event_addBtn1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabel_e;
-    private javax.swing.JButton addBtn;
+    private javax.swing.JButton addBtn1;
     private javax.swing.JLayeredPane breaksLayer;
     private javax.swing.JButton btn_back;
-    private javax.swing.JButton deleteBtn3;
+    private javax.swing.JButton deleteBtn4;
     private javax.swing.JTextField eName;
-    private javax.swing.JButton editBtn;
+    private javax.swing.JButton editBtn1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
@@ -421,7 +421,7 @@ public class BreaksInterface extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JButton newBtn;
+    private javax.swing.JButton newBtn1;
     private javax.swing.JTable note_Table;
     private javax.swing.JTextArea txt_Note;
     // End of variables declaration//GEN-END:variables
