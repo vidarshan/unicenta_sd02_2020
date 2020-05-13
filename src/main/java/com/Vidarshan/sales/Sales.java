@@ -73,6 +73,7 @@ public class Sales extends javax.swing.JPanel {
         product_commision.setEditable(false);
         product_price.setEditable(false);
         jTextPane1.setEditable(false);
+        jTextPane1.setText("Add items to sale and click Generate Receipt to view the receipt");
         productNameDD();
         disable();
     }
