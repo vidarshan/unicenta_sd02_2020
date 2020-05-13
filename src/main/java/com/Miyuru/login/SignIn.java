@@ -23,7 +23,8 @@ public class SignIn extends javax.swing.JFrame {
     /**
      * Creates new form SignIn
      */
-    public String username = "";
+    
+    public int val;
     public SignIn() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -225,13 +226,16 @@ public class SignIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:
         String usName = txt_usr.getText();
         String pwd = txt_pwd.getText();
+        
 
         if (usName.equals("Admin") && pwd.equals("123")) {
-            username = usName; 
+            username = "Admin"; 
+            
             msg.setText("Successfull");
 
             AppInterface app_int = new AppInterface();
@@ -241,7 +245,8 @@ public class SignIn extends javax.swing.JFrame {
 
         }
         else if(usName.equals("Emp") && pwd.equals("123")){
-            username = usName; 
+            username = "Emp"; 
+            
             msg.setText("Successfull");
 
             AppInterface app_int = new AppInterface();
@@ -311,4 +316,5 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JPasswordField txt_pwd;
     private javax.swing.JTextField txt_usr;
     // End of variables declaration//GEN-END:variables
+    public static String username = "null";
 }

@@ -14,6 +14,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import com.Miyuru.login.SignIn;
 
 /**
  *
@@ -25,12 +26,26 @@ public class LeavesInterface extends javax.swing.JPanel {
     private Connection con;
     private String INSERT_SQL = "";
     boolean state = false;
+    String[] val;
+    
+        
+    
     
     /**
      * Creates new form LeavesInterface
      */
     public LeavesInterface() {
         initComponents();
+        String[] value;
+        
+        if(SignIn.username.equals("Admin")){
+            AcceptBtn.setEnabled(true);
+            declineBtn.setEnabled(true);
+        }else{
+            AcceptBtn.setEnabled(false);
+            declineBtn.setEnabled(false);
+        }
+        
         DatabaseConnection dbc = DatabaseConnection.getDatabaseConnection();
         con = dbc.getConnection();
     }
@@ -219,8 +234,8 @@ public class LeavesInterface extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(AcceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(declineBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51))
+                        .addComponent(declineBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(end_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -504,20 +519,7 @@ public class LeavesInterface extends javax.swing.JPanel {
     }//GEN-LAST:event_editBtnMouseClicked
 
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
-        //               DefaultTableModel model = (DefaultTableModel)note_Table.getModel();
-        //
-        //        if (note_Table.getSelectedRow() == -1) {
-            //            if(note_Table.getRowCount()== 0){
-                //              JOptionPane.showMessageDialog(this, "Table is empty !");
-                //          }else{
-                //              JOptionPane.showMessageDialog(this, "Please select a row!");
-                //          }
-            //        }
-        //        else{
-            //            model.removeRow(note_Table.getSelectedRow());
-            ////            model.setValueAt(null, note_Table.getSelectedRow(), 0);
-            ////            model.setValueAt(null, note_Table.getSelectedRow(), 1);
-            //        }
+
     }//GEN-LAST:event_editBtnActionPerformed
 
     private void deleteBtn3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteBtn3MouseClicked
@@ -536,8 +538,7 @@ public class LeavesInterface extends javax.swing.JPanel {
         }
         else{
             model.removeRow(jTable2.getSelectedRow());
-            //            model.setValueAt(null, note_Table.getSelectedRow(), 0);
-            //            model.setValueAt(null, note_Table.getSelectedRow(), 1);
+
         }
     }//GEN-LAST:event_deleteBtn3ActionPerformed
 
