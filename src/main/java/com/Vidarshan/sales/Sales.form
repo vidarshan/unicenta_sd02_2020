@@ -122,7 +122,7 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="31" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="141" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="168" max="-2" attributes="0"/>
                   </Group>
