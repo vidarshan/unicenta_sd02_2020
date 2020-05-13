@@ -354,6 +354,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="AcceptBtn">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="3d" green="bc" red="0" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/com/pos/images/icons8-approval-30.png"/>
                         </Property>
@@ -365,6 +368,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="declineBtn">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="60" green="60" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/com/pos/images/icons8-unavailable-30.png"/>
                         </Property>

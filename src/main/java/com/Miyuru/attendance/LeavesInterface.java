@@ -187,6 +187,7 @@ public class LeavesInterface extends javax.swing.JPanel {
             }
         });
 
+        AcceptBtn.setBackground(new java.awt.Color(0, 188, 61));
         AcceptBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-approval-30.png"))); // NOI18N
         AcceptBtn.setText("Accept");
         AcceptBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -195,6 +196,7 @@ public class LeavesInterface extends javax.swing.JPanel {
             }
         });
 
+        declineBtn.setBackground(new java.awt.Color(255, 96, 96));
         declineBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-unavailable-30.png"))); // NOI18N
         declineBtn.setText("Decline");
         declineBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -557,7 +559,7 @@ public class LeavesInterface extends javax.swing.JPanel {
 
             model.setValueAt("Accept", jTable2.getSelectedRow(), 4);
 
-            JOptionPane.showMessageDialog(this, "Data Edited Successfully !");
+            JOptionPane.showMessageDialog(this, "Accepted");
         }
         
     }//GEN-LAST:event_AcceptBtnActionPerformed
@@ -576,7 +578,7 @@ public class LeavesInterface extends javax.swing.JPanel {
 
             model.setValueAt("Decline", jTable2.getSelectedRow(), 4);
 
-            JOptionPane.showMessageDialog(this, "Data Edited Successfully !");
+            JOptionPane.showMessageDialog(this, "Declined");
         }
     }//GEN-LAST:event_declineBtnActionPerformed
 
