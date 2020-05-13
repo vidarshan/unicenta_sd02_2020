@@ -68,9 +68,6 @@ public class AddCustomer extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -95,6 +92,9 @@ public class AddCustomer extends javax.swing.JPanel {
         btnRefresh = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         message = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        notes = new javax.swing.JTextArea();
+        jLabel14 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(28, 35, 51));
         setPreferredSize(new java.awt.Dimension(1200, 800));
@@ -302,38 +302,18 @@ public class AddCustomer extends javax.swing.JPanel {
 
         jPanel5.setBackground(new java.awt.Color(28, 35, 51));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Notes");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
-                .addContainerGap())
+            .addGap(0, 254, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2)
-                .addContainerGap())
+            .addGap(0, 21, Short.MAX_VALUE)
         );
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/back_button_u.png"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/BtnBack.png"))); // NOI18N
         jLabel19.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel19MouseClicked(evt);
@@ -383,7 +363,7 @@ public class AddCustomer extends javax.swing.JPanel {
                         .addComponent(currebtDebt))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel15)
-                        .addGap(22, 22, 22)
+                        .addGap(28, 28, 28)
                         .addComponent(debtDate)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -497,18 +477,45 @@ public class AddCustomer extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(28, 35, 51));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnAdd.setText("Add");
+        btnAdd.setBackground(new java.awt.Color(0, 153, 102));
+        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Add_M.png"))); // NOI18N
+        btnAdd.setText("Add ");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
+        btnDelete.setBackground(new java.awt.Color(255, 0, 0));
+        btnDelete.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Delete_m.png"))); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
-        btnRefresh.setText("Refresh");
+        btnRefresh.setBackground(new java.awt.Color(153, 153, 255));
+        btnRefresh.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Add_M.png"))); // NOI18N
+        btnRefresh.setText("New");
+        btnRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRefreshMouseClicked(evt);
+            }
+        });
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
 
-        btnUpdate.setText("Update");
+        btnUpdate.setBackground(new java.awt.Color(204, 204, 0));
+        btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Edit_m.png"))); // NOI18N
+        btnUpdate.setText("Update ");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -518,37 +525,43 @@ public class AddCustomer extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(btnDelete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnRefresh))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(btnAdd)
-                        .addGap(29, 29, 29)
-                        .addComponent(btnUpdate)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
                     .addComponent(btnUpdate))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
-                    .addComponent(btnRefresh))
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         message.setBackground(new java.awt.Color(0, 51, 51));
         message.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         message.setForeground(new java.awt.Color(255, 204, 204));
+
+        notes.setColumns(20);
+        notes.setRows(5);
+        jScrollPane2.setViewportView(notes);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Notes");
 
         javax.swing.GroupLayout addDetailsLayout = new javax.swing.GroupLayout(addDetails);
         addDetails.setLayout(addDetailsLayout);
@@ -563,23 +576,31 @@ public class AddCustomer extends javax.swing.JPanel {
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(97, 97, 97))
             .addGroup(addDetailsLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1083, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(addDetailsLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(addDetailsLayout.createSequentialGroup()
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1083, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(addDetailsLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(addDetailsLayout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(addDetailsLayout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addDetailsLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane2))
+                                .addGap(53, 53, 53)))))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         addDetailsLayout.setVerticalGroup(
             addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -591,16 +612,25 @@ public class AddCustomer extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addDetailsLayout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addDetailsLayout.createSequentialGroup()
+                        .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(addDetailsLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel14)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTabbedPane2)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(25, 25, 25)
-                .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))
+                    .addGroup(addDetailsLayout.createSequentialGroup()
+                        .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTabbedPane2)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(25, 25, 25)
+                        .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -650,12 +680,12 @@ public class AddCustomer extends javax.swing.JPanel {
         model.addRow(new Object[] {accId.getText(), name.getText(), cardID.getText(), cLimit.getText(),
                                     email.getText(), mobilePhone.getText(), 
                                     town.getText(), country.getText()});
-        JOptionPane.showMessageDialog(this, "Customer Data Added Successfully !");
-        //message.setText("Customer Data Added Successfully !");
+        //JOptionPane.showMessageDialog(this, "Customer Data Added Successfully !");
+        message.setText("Customer Data Added Successfully !");
         }
         else{
-             JOptionPane.showMessageDialog(this, "Please fill mandatory fields... !");
-              //message.setText("Please fill mandatory fields... !");
+             //JOptionPane.showMessageDialog(this, "Please fill mandatory fields... !");
+              message.setText("Please fill mandatory fields... !");
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -664,12 +694,13 @@ public class AddCustomer extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
       if(jTable1.getSelectedRow()== -1){
           if(jTable1.getRowCount()== 0){
-              JOptionPane.showMessageDialog(this, "Table is empty !");
-              //message.setText("Table is empty !");
+              //JOptionPane.showMessageDialog(this, "Table is empty !");
+              message.setText("Table is empty !");
               
           }else{
-              JOptionPane.showMessageDialog(this, "Please select a particular row to update!");
-               //message.setText("Please select a particular row to update!");
+            //JOptionPane.showMessageDialog(this, "Please select a particular row to update!");
+               message.setText("Please select a particular row to update!");
+               
           }
       }else{
           model.setValueAt(accId.getText(), jTable1.getSelectedRow(), 0);
@@ -681,7 +712,8 @@ public class AddCustomer extends javax.swing.JPanel {
           model.setValueAt(town.getText(), jTable1.getSelectedRow(), 6);
           model.setValueAt(country.getText(), jTable1.getSelectedRow(), 7);
           
-            JOptionPane.showMessageDialog(this, "Data Updated Successfully !");
+            //JOptionPane.showMessageDialog(this, "Data Updated Successfully !");
+            message.setText("Data updated Successfully !");
       }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
@@ -709,6 +741,52 @@ public class AddCustomer extends javax.swing.JPanel {
         town.setText(model.getValueAt(jTable1.getSelectedRow(), 6).toString());
         country.setText(model.getValueAt(jTable1.getSelectedRow(), 7).toString());
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+      if(jTable1.getSelectedRow()== -1){
+          if(jTable1.getRowCount()== 0){
+              // JOptionPane.showMessageDialog(this, "Table is empty !");
+              message.setText("Table is empty!");
+          }else{
+              // JOptionPane.showMessageDialog(this, "Please select a particular row to delete !");
+               message.setText("Please select a particular row to delete !");
+          }
+      }else{
+          model.removeRow(jTable1.getSelectedRow());
+           //JOptionPane.showMessageDialog(this, "Data deleted Successfully !");
+           message.setText("Data deleted Successfully !");
+      }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnRefreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshMouseClicked
+        // TODO add your handling code here:
+        accId.setText(null);
+        name.setText(null);
+        key.setText(null);
+        cardID.setText(null);
+        cLimit.setText(null);
+        currebtDebt.setText(null);
+        debtDate.setText(null);
+        fName.setText(null);
+        sName.setText(null);
+        email.setText(null);
+        telephone.setText(null);
+        mobilePhone.setText(null);
+        address1.setText(null);
+        address2.setText(null);
+        town.setText(null);
+        state.setText(null);
+        country.setText(null);
+        notes.setText(null);
+
+        
+    }//GEN-LAST:event_btnRefreshMouseClicked
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -759,11 +837,11 @@ public class AddCustomer extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField key;
     private javax.swing.JLabel message;
     private javax.swing.JTextField mobilePhone;
     private javax.swing.JTextField name;
+    private javax.swing.JTextArea notes;
     private javax.swing.JTextField sName;
     private javax.swing.JTextField state;
     private javax.swing.JTextField telephone;
