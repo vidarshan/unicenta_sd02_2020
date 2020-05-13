@@ -1,28 +1,10 @@
-<<<<<<< Updated upstream
-com\Miyuru\attendance\LeavesInterface$11.class
-com\Miyuru\attendance\LeavesInterface$9.class
-com\Kethaki\Users\AddCustomer$9.class
-com\Miyuru\attendance\LeavesInterface$5.class
-com\Miyuru\attendance\LeavesInterface$10.class
-com\Miyuru\attendance\LeavesInterface$8.class
-com\Kethaki\Users\AddCustomer$12.class
-com\Miyuru\attendance\LeavesInterface$6.class
-com\Miyuru\attendance\LeavesInterface$7.class
-com\Kethaki\Users\AddCustomer$11.class
-com\Miyuru\attendance\BreaksInterface$12.class
-com\Miyuru\attendance\BreaksInterface$9.class
-com\Kethaki\Users\AddCustomer$10.class
-com\Miyuru\attendance\BreaksInterface$10.class
-com\Vidarshan\sales\Sales$36.class
-com\Miyuru\attendance\BreaksInterface$11.class
-Interface\AppInterface$10.class
-=======
 com\Vidarshan\sales\Calculator$17.class
 com\Vidarshan\sales\Calculator$4.class
 com\Savindu\inventory\Views\AddCat$3.class
 com\Savindu\inventory\Views\Inventory$3.class
 Interface\AppInterface$5.class
 com\Kethaki\Users\UserHome$1.class
+com\Kethaki\Users\AddCustomer$14.class
 com\Miyuru\attendance\LeavesInterface$4.class
 com\Vidarshan\sales\Sales$1.class
 com\Amasha\Maintenance\Users$1.class
@@ -80,6 +62,7 @@ com\Miyuru\attendance\LeavesInterface$5.class
 com\Vidarshan\sales\Calculator$18.class
 com\Kethaki\Users\UserHome$2.class
 Interface\AppInterface$1.class
+com\Kethaki\Users\AddCustomer$15.class
 com\Savindu\inventory\Views\EditCategory$3.class
 com\Vidarshan\sales\Calculator$3.class
 com\Miyuru\attendance\LeavesInterface$10.class
@@ -193,6 +176,7 @@ com\Miyuru\attendance\BreaksInterface$4.class
 com\Savindu\inventory\Views\Inventory$1.class
 com\Miyuru\attendance\LeavesInterface$2.class
 com\Vidarshan\sales\Sales$16.class
+com\Vidarshan\sales\Sales$36.class
 com\Savindu\inventory\Views\EditProduct.class
 Interface\AppInterface$4.class
 com\Miyuru\login\SignIn$2.class
@@ -217,4 +201,3 @@ com\Amasha\Maintenance\Maintenance$1.class
 com\Miyuru\attendance\BreaksInterface$5.class
 com\Amasha\Maintenance\Roles$2.class
 com\Kethaki\Users\AddCustomer$5.class
->>>>>>> Stashed changes
