@@ -432,7 +432,7 @@ public class AddSupplier extends javax.swing.JPanel {
         btn_back.setBackground(new java.awt.Color(0, 106, 78));
         btn_back.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         btn_back.setForeground(new java.awt.Color(255, 255, 255));
-        btn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/back_m.png"))); // NOI18N
+        btn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/backW_32.png"))); // NOI18N
         btn_back.setText("Back");
         btn_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
