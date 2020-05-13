@@ -4,10 +4,17 @@ com\Savindu\inventory\Views\AddCat$3.class
 com\Savindu\inventory\Views\Inventory$3.class
 Interface\AppInterface$5.class
 com\Kethaki\Users\UserHome$1.class
+<<<<<<< HEAD
 com\Kethaki\Users\AddCustomer$14.class
 com\Miyuru\attendance\LeavesInterface$4.class
 com\Vidarshan\sales\Sales$1.class
 com\Amasha\Maintenance\Users$1.class
+=======
+com\Miyuru\attendance\LeavesInterface$4.class
+com\Vidarshan\sales\Sales$1.class
+com\Amasha\Maintenance\Users$1.class
+com\Amasha\Maintenance\Users$7.class
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 com\Miyuru\attendance\BreaksInterface$6.class
 com\Vidarshan\sales\Calculator$11.class
 com\Amasha\Maintenance\Roles$3.class
@@ -47,7 +54,10 @@ com\Savindu\inventory\Views\AddCat.class
 com\Vidarshan\sales\Sales$33.class
 com\Vidarshan\sales\Sales$23.class
 com\Vidarshan\sales\Sales$10.class
+<<<<<<< HEAD
 com\Kethaki\Users\AddCustomer$9.class
+=======
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 com\Vidarshan\sales\Sales$30.class
 com\Savindu\inventory\Views\EditCategory.class
 com\Kethaki\Users\AddSupplier$6.class
@@ -62,15 +72,23 @@ com\Miyuru\attendance\LeavesInterface$5.class
 com\Vidarshan\sales\Calculator$18.class
 com\Kethaki\Users\UserHome$2.class
 Interface\AppInterface$1.class
+<<<<<<< HEAD
 com\Kethaki\Users\AddCustomer$15.class
+=======
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 com\Savindu\inventory\Views\EditCategory$3.class
 com\Vidarshan\sales\Calculator$3.class
 com\Miyuru\attendance\LeavesInterface$10.class
 com\Miyuru\attendance\LeavesInterface$8.class
 com\Savindu\inventory\Views\Inventory$7.class
 com\DB\Sales\DatabaseConnection.class
+<<<<<<< HEAD
 com\Kethaki\Users\AddCustomer$12.class
 com\Savindu\inventory\Views\Inventory$10.class
+=======
+com\Savindu\inventory\Views\Inventory$10.class
+com\Amasha\Maintenance\Roles$7.class
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 com\Amasha\Maintenance\Users.class
 com\Savindu\inventory\Views\Inventory$5.class
 com\Vidarshan\sales\Sales$6.class
@@ -80,7 +98,10 @@ com\Vidarshan\sales\Calculator$15.class
 com\Miyuru\login\SignIn.class
 com\Savindu\inventory\Views\Categories$5.class
 com\Savindu\inventory\Views\EditCategory$1.class
+<<<<<<< HEAD
 com\Kethaki\Users\AddCustomer$13.class
+=======
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 com\Kethaki\Users\AddCustomer.class
 com\Miyuru\attendance\LeavesInterface$6.class
 com\Vidarshan\sales\Calculator$22.class
@@ -94,10 +115,17 @@ com\Savindu\inventory\Views\Inventory$6.class
 com\Vidarshan\sales\Sales$26.class
 com\Savindu\inventory\Views\Categories$4.class
 com\Miyuru\attendance\LeavesInterface$7.class
+<<<<<<< HEAD
 com\Savindu\inventory\Views\EditCategory$2.class
 com\Vidarshan\sales\Sales$31.class
 com\Vidarshan\sales\Sales$4.class
 com\Kethaki\Users\AddCustomer$11.class
+=======
+com\Amasha\Maintenance\Users$8.class
+com\Savindu\inventory\Views\EditCategory$2.class
+com\Vidarshan\sales\Sales$31.class
+com\Vidarshan\sales\Sales$4.class
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 com\Miyuru\attendance\BreaksInterface$3.class
 Interface\AppInterface$2.class
 Interface\AppInterface.class
@@ -124,6 +152,10 @@ com\Miyuru\login\SignIn$4.class
 com\Miyuru\login\LogIn.class
 com\Miyuru\attendance\BreaksInterface$8.class
 com\Savindu\inventory\Views\Categories$2.class
+<<<<<<< HEAD
+=======
+com\Kethaki\Users\AddCustomer$16.class
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 com\Vidarshan\sales\Calculator$6.class
 com\Kethaki\Users\AddCustomer$7.class
 com\Vidarshan\sales\Calculator$19.class
@@ -147,7 +179,10 @@ com\Miyuru\attendance\BreaksInterface$9.class
 com\Amasha\Maintenance\Roles$5.class
 com\Vidarshan\sales\Calculator$7.class
 com\Kethaki\Users\AddCustomer$8.class
+<<<<<<< HEAD
 com\Kethaki\Users\AddCustomer$10.class
+=======
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 Interface\AppInterface$9.class
 com\Savindu\inventory\Views\EditProduct$5.class
 com\Kethaki\Users\AddCustomer$2.class
@@ -165,6 +200,10 @@ com\Amasha\Maintenance\Roles$1.class
 com\Vidarshan\sales\Sales$20.class
 com\Vidarshan\sales\Calculator$8.class
 com\Savindu\inventory\Views\EditProduct$4.class
+<<<<<<< HEAD
+=======
+com\Kethaki\Users\AddSupplier$14.class
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 com\Savindu\inventory\Views\EditProduct$1.class
 com\Savindu\inventory\Views\AddCat$4.class
 com\Kethaki\Users\AddCustomer$6.class
@@ -176,7 +215,10 @@ com\Miyuru\attendance\BreaksInterface$4.class
 com\Savindu\inventory\Views\Inventory$1.class
 com\Miyuru\attendance\LeavesInterface$2.class
 com\Vidarshan\sales\Sales$16.class
+<<<<<<< HEAD
 com\Vidarshan\sales\Sales$36.class
+=======
+>>>>>>> parent of b82afe9... Auto stash before merge of "master" and "origin/master"
 com\Savindu\inventory\Views\EditProduct.class
 Interface\AppInterface$4.class
 com\Miyuru\login\SignIn$2.class
