@@ -28,7 +28,7 @@ public class DatabaseConnection {
     private static DatabaseConnection dbc;
     private ArrayList<String> tbls = new ArrayList<>();
     
-    private String SQLSCRIPT = "Database\\unicenta-SQLite.sql";
+    private String SQLSCRIPT = "Database\\unicenta.sql";
     
     private DatabaseConnection() throws SQLException{
         tbls.add("categories");
@@ -36,7 +36,6 @@ public class DatabaseConnection {
         tbls.add("sales");
         tbls.add("salesbucket");
         tbls.add("salesrecords");
-        tbls.add("sqlite_sequence");
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -48,15 +47,8 @@ public class DatabaseConnection {
 
             
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "");
-
-            //con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "");
-<<<<<<< HEAD
             //con = DriverManager.getConnection("jdbc:sqlite:Database\\unicenta.db");
-=======
 
-
->>>>>>> master
         } catch (Exception ex) {
             System.out.println(ex);
         }finally{
@@ -82,7 +74,7 @@ public class DatabaseConnection {
         int st = 0;
         try{
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name");
+            ResultSet rs = stmt.executeQuery("SHOW TABLES");
             System.out.println("Tables in the current database: ");
             while(rs.next()) {
                if( this.tbls.contains(rs.getString(1).toLowerCase()) ){
@@ -99,8 +91,7 @@ public class DatabaseConnection {
         
         if(st < tbls.size()){
              
-          ScriptRunner sr = new ScriptRunner(this.con); 
-          sr.setEscapeProcessing(false);
+          ScriptRunner sr = new ScriptRunner(this.con);
           File tmpDir = new File(SQLSCRIPT);
             boolean exists = tmpDir.exists();
             if(exists){
