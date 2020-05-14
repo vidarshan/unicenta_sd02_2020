@@ -192,7 +192,7 @@ public class Categories extends javax.swing.JPanel {
         refresh.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refresh.setForeground(new java.awt.Color(244, 244, 244));
         refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-32.png"))); // NOI18N
-        refresh.setText("Reload");
+        refresh.setText("Refresh");
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 refreshMouseClicked(evt);
