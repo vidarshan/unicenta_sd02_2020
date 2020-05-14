@@ -153,6 +153,7 @@ public class SignIn extends javax.swing.JFrame {
 
         msg.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         msg.setForeground(new java.awt.Color(204, 0, 51));
+        msg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         msg.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
