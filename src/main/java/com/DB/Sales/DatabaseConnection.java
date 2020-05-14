@@ -42,8 +42,13 @@ public class DatabaseConnection {
             System.out.println("Driver Loaded");
             System.out.println("***************************************************************************************************************************************");
             //***********************************************Do not change this database name. Exceptions handled
+<<<<<<< Updated upstream
             
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "trinity2431");
+=======
+            //con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "");
+>>>>>>> Stashed changes
 
         } catch (Exception ex) {
             System.out.println(ex);
