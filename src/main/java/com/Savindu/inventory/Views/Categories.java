@@ -425,7 +425,7 @@ public class Categories extends javax.swing.JPanel {
         DefaultTableModel md = ((DefaultTableModel)tbl_Cat.getModel());
         System.out.println(row.length);
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete "+row.length+" Category?","Warning",dialogButton);
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete "+row.length+" Categories?","Warning",dialogButton);
         if(dialogResult == JOptionPane.YES_OPTION){
             if(row.length > 0){
                 int j = 1;
@@ -446,7 +446,7 @@ public class Categories extends javax.swing.JPanel {
                     this.addCategoriesToTable();
                 }
             }else{
-                JOptionPane.showMessageDialog(null, "Please select products to Delete");
+                JOptionPane.showMessageDialog(null, "Please select Categories to Delete");
             }
         }
     }//GEN-LAST:event_btn_cat_deleteMouseClicked

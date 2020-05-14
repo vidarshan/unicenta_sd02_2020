@@ -435,7 +435,7 @@ public class AddProduct extends javax.swing.JFrame {
         product.setDesc(this.desc.getText());
         product.setImg(this.filePath);
 
-        if(this.name.getText() != null && this.barcode.getText() != null && String.valueOf(this.categories.getSelectedItem()) != null && this.desc.getText() != null){
+        if(!this.name.getText().isEmpty() && !this.barcode.getText().isEmpty() && !String.valueOf(this.categories.getSelectedItem()).isEmpty() && !this.desc.getText().isEmpty()){
             try {
                 boolean  res = product.save(product);
                 if(res){
