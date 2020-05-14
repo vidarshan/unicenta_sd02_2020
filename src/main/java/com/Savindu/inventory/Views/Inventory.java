@@ -230,7 +230,7 @@ public class Inventory extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 172, Short.MAX_VALUE)
+            .addGap(0, 187, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,10 +240,10 @@ public class Inventory extends javax.swing.JPanel {
         jPanel1.add(jPanel2);
 
         refresh.setBackground(new java.awt.Color(55, 71, 79));
-        refresh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        refresh.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refresh.setForeground(new java.awt.Color(244, 244, 244));
-        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-36.png"))); // NOI18N
-        refresh.setText("Reload");
+        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-32.png"))); // NOI18N
+        refresh.setText("Refresh ");
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 refreshMouseClicked(evt);
@@ -258,9 +258,9 @@ public class Inventory extends javax.swing.JPanel {
         jPanel1.add(refresh);
 
         btn_product_add.setBackground(new java.awt.Color(55, 71, 79));
-        btn_product_add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_product_add.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_product_add.setForeground(new java.awt.Color(244, 244, 244));
-        btn_product_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-36.png"))); // NOI18N
+        btn_product_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-32.png"))); // NOI18N
         btn_product_add.setText("New Product");
         btn_product_add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -276,9 +276,9 @@ public class Inventory extends javax.swing.JPanel {
         jPanel1.add(btn_product_add);
 
         btn_product_edit.setBackground(new java.awt.Color(55, 71, 79));
-        btn_product_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_product_edit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_product_edit.setForeground(new java.awt.Color(244, 244, 244));
-        btn_product_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-36.png"))); // NOI18N
+        btn_product_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-32.png"))); // NOI18N
         btn_product_edit.setText("Edit Product");
         btn_product_edit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -294,9 +294,9 @@ public class Inventory extends javax.swing.JPanel {
         jPanel1.add(btn_product_edit);
 
         btn_product_delete.setBackground(new java.awt.Color(55, 71, 79));
-        btn_product_delete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_product_delete.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_product_delete.setForeground(new java.awt.Color(244, 244, 244));
-        btn_product_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-bin-36.png"))); // NOI18N
+        btn_product_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-view-32.png"))); // NOI18N
         btn_product_delete.setText("Delete Product");
         btn_product_delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -346,7 +346,7 @@ public class Inventory extends javax.swing.JPanel {
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
                 .addGap(50, 50, 50))
         );
         searchLayout.setVerticalGroup(

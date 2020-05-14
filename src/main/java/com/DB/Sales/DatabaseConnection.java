@@ -28,7 +28,7 @@ public class DatabaseConnection {
     private static DatabaseConnection dbc;
     private ArrayList<String> tbls = new ArrayList<>();
     
-    private String SQLSCRIPT = "Database\\unicenta.sql";
+    private String SQLSCRIPT = "Database\\unicenta-SQLite.sql";
     
     private DatabaseConnection() throws SQLException{
         tbls.add("categories");
@@ -36,17 +36,21 @@ public class DatabaseConnection {
         tbls.add("sales");
         tbls.add("salesbucket");
         tbls.add("salesrecords");
+        tbls.add("sqlite_sequence");
+        
         try {
             Class.forName("com.mysql.jdbc.Driver");
+            //Class.forName("org.sqlite.JDBC");
             System.out.println("***************************************************************************************************************************************");
             System.out.println("Driver Loaded");
             System.out.println("***************************************************************************************************************************************");
             //***********************************************Do not change this database name. Exceptions handled
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "");
+            //con = DriverManager.getConnection("jdbc:sqlite:Database\\unicenta.db");
         } catch (Exception ex) {
             System.out.println(ex);
         }finally{
-            createTables();
+           createTables();
         }
  }
     public static DatabaseConnection getDatabaseConnection(){
@@ -68,7 +72,7 @@ public class DatabaseConnection {
         int st = 0;
         try{
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("Show tables");
+            ResultSet rs = stmt.executeQuery("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name");
             System.out.println("Tables in the current database: ");
             while(rs.next()) {
                if( this.tbls.contains(rs.getString(1).toLowerCase()) ){
@@ -86,13 +90,13 @@ public class DatabaseConnection {
         if(st < tbls.size()){
              
           ScriptRunner sr = new ScriptRunner(this.con); 
-          
+          sr.setEscapeProcessing(false);
           File tmpDir = new File(SQLSCRIPT);
             boolean exists = tmpDir.exists();
             if(exists){
            
               try {
-               Reader   reader = new BufferedReader(new FileReader(SQLSCRIPT));
+               Reader reader = new BufferedReader(new FileReader(SQLSCRIPT));
                sr.runScript(reader);
                System.out.println("DATABASE CREATED");
               } catch (FileNotFoundException ex) {

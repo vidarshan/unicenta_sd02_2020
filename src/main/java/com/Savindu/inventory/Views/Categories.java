@@ -179,7 +179,7 @@ public class Categories extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 167, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,9 +189,9 @@ public class Categories extends javax.swing.JPanel {
         jPanel1.add(jPanel2);
 
         refresh.setBackground(new java.awt.Color(55, 71, 79));
-        refresh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        refresh.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refresh.setForeground(new java.awt.Color(244, 244, 244));
-        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-36.png"))); // NOI18N
+        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-32.png"))); // NOI18N
         refresh.setText("Reload");
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -207,9 +207,9 @@ public class Categories extends javax.swing.JPanel {
         jPanel1.add(refresh);
 
         btn_add_category.setBackground(new java.awt.Color(55, 71, 79));
-        btn_add_category.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_add_category.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_add_category.setForeground(new java.awt.Color(244, 244, 244));
-        btn_add_category.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-list-36.png"))); // NOI18N
+        btn_add_category.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-32.png"))); // NOI18N
         btn_add_category.setText("New Category");
         btn_add_category.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -230,9 +230,9 @@ public class Categories extends javax.swing.JPanel {
         jPanel1.add(btn_add_category);
 
         btn_cat_edit.setBackground(new java.awt.Color(55, 71, 79));
-        btn_cat_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_cat_edit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_cat_edit.setForeground(new java.awt.Color(244, 244, 244));
-        btn_cat_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-36.png"))); // NOI18N
+        btn_cat_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-32.png"))); // NOI18N
         btn_cat_edit.setText("Edit Category");
         btn_cat_edit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -248,9 +248,9 @@ public class Categories extends javax.swing.JPanel {
         jPanel1.add(btn_cat_edit);
 
         btn_cat_delete.setBackground(new java.awt.Color(55, 71, 79));
-        btn_cat_delete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_cat_delete.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_cat_delete.setForeground(new java.awt.Color(244, 244, 244));
-        btn_cat_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-bin-36.png"))); // NOI18N
+        btn_cat_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-view-32.png"))); // NOI18N
         btn_cat_delete.setText("Remove Category");
         btn_cat_delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -290,7 +290,7 @@ public class Categories extends javax.swing.JPanel {
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                 .addGap(50, 50, 50))
         );
         searchLayout.setVerticalGroup(
@@ -333,7 +333,7 @@ public class Categories extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1002, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
