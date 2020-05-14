@@ -48,19 +48,19 @@ public class Inventory extends javax.swing.JPanel {
     /**
      * Creates new form Inventory
      */
-    
+
 
     //AppInterface ap = new AppInterface();
     Products product = new Products();
     ArrayList<String> filePathList = new ArrayList<>();
-     
+
     public Inventory() {
         initComponents();
         customJTable(tbl_Products);
         addProductsToTable();
         //product_search.setVisible(false);
-        
-        
+
+
         DocumentListener documentListener = new DocumentListener() {
             public void changedUpdate(DocumentEvent documentEvent) {
                 search(product_search.getText());
@@ -72,11 +72,11 @@ public class Inventory extends javax.swing.JPanel {
                 search(product_search.getText());
             }
           };
-        
+
       product_search.getDocument().addDocumentListener(documentListener);
-      
+
     }
-    
+
     public void customJTable(JTable table){
         table.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 20));
         table.getTableHeader().setOpaque(false);
@@ -85,7 +85,7 @@ public class Inventory extends javax.swing.JPanel {
         table.setRowHeight(100);
         table.setAutoCreateRowSorter(true);
     }
-    
+
      public void addProductsToTable() {
         DefaultTableModel model = new DefaultTableModel(){
             @Override
@@ -94,14 +94,14 @@ public class Inventory extends javax.swing.JPanel {
                 return Object.class;
             }
         };
-        
+
         ArrayList<Products> list = new ArrayList<>();
         list = product.getProducts();
-        
+
         if(filePathList.size() > 0){
             filePathList.clear();
         }
-        
+
         Object rowData[] = new Object[7];
         Object columns[] = new Object[7];
         columns[0] = " ID";
@@ -111,9 +111,9 @@ public class Inventory extends javax.swing.JPanel {
         columns[4] = " Category";
         columns[5] = " Description";
         columns[6] = " Uploaded On";
-        
+
         model.setColumnIdentifiers(columns);
-        
+
         for(int i = 0; i < list.size(); i++)
         {
             rowData[0] = list.get(i).getId();
@@ -131,7 +131,7 @@ public class Inventory extends javax.swing.JPanel {
         System.out.println("filePathList: "+Arrays.toString(filePathList.toArray()));
         tbl_Products.setModel(model);
     }
-    
+
       public ImageIcon resizeImg(String filePath){
           ImageIcon imageIcon = null;
         if(filePath != null){
@@ -139,28 +139,28 @@ public class Inventory extends javax.swing.JPanel {
             File tmpDir = new File(filePath);
             boolean exists = tmpDir.exists();
             if(!exists){
-             filePath = "Products\\\\image-not-found.png";   
+             filePath = "Products\\\\image-not-found.png";
             }
             try {
                 img = ImageIO.read(new File(filePath));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            
+
             Image dimg = img.getScaledInstance(75, 75, Image.SCALE_SMOOTH);
             imageIcon = new ImageIcon(dimg);
-            
+
         }
         return imageIcon;
     }
- 
+
       public void search(String str){
         DefaultTableModel md = ((DefaultTableModel)tbl_Products.getModel());
         TableRowSorter sorter = new TableRowSorter<>(md);
         tbl_Products.setRowSorter(sorter);
         sorter.setRowFilter(RowFilter.regexFilter("(?i)" + str));
       }
-      
+
        private void writeToExcell(JTable table, String path) throws FileNotFoundException, IOException {
             new WorkbookFactory();
             Workbook wb = new XSSFWorkbook(); //Excell workbook
@@ -179,24 +179,24 @@ public class Inventory extends javax.swing.JPanel {
                     row.createCell(cols).setCellValue(model.getValueAt(rows, cols).toString()); //Write value
                 }
 
-                //Set the row to the next one in the sequence 
-                row = sheet.createRow((rows + 3)); 
+                //Set the row to the next one in the sequence
+                row = sheet.createRow((rows + 3));
             }
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             String fileName = path+"\\"+"Inventory_Products_"+timestamp.getTime()+".xlsx";
             File newFile = new File(fileName);
             System.out.println(fileName);
-            newFile.createNewFile(); // if file already exists will do nothing 
+            newFile.createNewFile(); // if file already exists will do nothing
             FileOutputStream out = new FileOutputStream(newFile);
             wb.write(out);//Save the file
-            
+
             if(newFile.exists()){
                 JOptionPane.showMessageDialog(null, "Excel File has successfully Exported to "+fileName);
             }
-             
+
             out.close();
         }
-      
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -230,7 +230,7 @@ public class Inventory extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 172, Short.MAX_VALUE)
+            .addGap(0, 187, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,10 +240,10 @@ public class Inventory extends javax.swing.JPanel {
         jPanel1.add(jPanel2);
 
         refresh.setBackground(new java.awt.Color(55, 71, 79));
-        refresh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        refresh.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refresh.setForeground(new java.awt.Color(244, 244, 244));
-        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-36.png"))); // NOI18N
-        refresh.setText("Reload");
+        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-32.png"))); // NOI18N
+        refresh.setText("Refresh ");
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 refreshMouseClicked(evt);
@@ -258,9 +258,9 @@ public class Inventory extends javax.swing.JPanel {
         jPanel1.add(refresh);
 
         btn_product_add.setBackground(new java.awt.Color(55, 71, 79));
-        btn_product_add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_product_add.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_product_add.setForeground(new java.awt.Color(244, 244, 244));
-        btn_product_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-36.png"))); // NOI18N
+        btn_product_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-32.png"))); // NOI18N
         btn_product_add.setText("New Product");
         btn_product_add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -276,9 +276,9 @@ public class Inventory extends javax.swing.JPanel {
         jPanel1.add(btn_product_add);
 
         btn_product_edit.setBackground(new java.awt.Color(55, 71, 79));
-        btn_product_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_product_edit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_product_edit.setForeground(new java.awt.Color(244, 244, 244));
-        btn_product_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-36.png"))); // NOI18N
+        btn_product_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-32.png"))); // NOI18N
         btn_product_edit.setText("Edit Product");
         btn_product_edit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -294,9 +294,9 @@ public class Inventory extends javax.swing.JPanel {
         jPanel1.add(btn_product_edit);
 
         btn_product_delete.setBackground(new java.awt.Color(55, 71, 79));
-        btn_product_delete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_product_delete.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_product_delete.setForeground(new java.awt.Color(244, 244, 244));
-        btn_product_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-bin-36.png"))); // NOI18N
+        btn_product_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-view-32.png"))); // NOI18N
         btn_product_delete.setText("Delete Product");
         btn_product_delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -346,7 +346,7 @@ public class Inventory extends javax.swing.JPanel {
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
                 .addGap(50, 50, 50))
         );
         searchLayout.setVerticalGroup(
@@ -419,7 +419,7 @@ public class Inventory extends javax.swing.JPanel {
     private void product_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_product_searchActionPerformed
         // TODO add your handling code here:
         //product_search.setText(null);
-        
+
     }//GEN-LAST:event_product_searchActionPerformed
 
     private void btn_product_addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_addMouseEntered
@@ -455,7 +455,7 @@ public class Inventory extends javax.swing.JPanel {
     private void product_searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_product_searchMouseClicked
         // TODO add your handling code here:
         product_search.setText(null);
-        
+
     }//GEN-LAST:event_product_searchMouseClicked
 
     private void btn_product_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_addMouseClicked
@@ -470,22 +470,22 @@ public class Inventory extends javax.swing.JPanel {
          int row[] = tbl_Products.getSelectedRows();
          String rowData[] = new String[7];
             if(row.length == 1){
-                for(int i=0; i<7; i++){  
+                for(int i=0; i<7; i++){
                 rowData[i] = tbl_Products.getModel().getValueAt(row[0], i).toString();
-                System.out.println("getSelectedRow = "+rowData[i]); 
-                }  
+                System.out.println("getSelectedRow = "+rowData[i]);
+                }
             }else{
                 JOptionPane.showMessageDialog(null, "Please select a single row to Edit");
             }
           EditProduct edit_prdt = new EditProduct();
           //setData(String p_bar, String p_cat, String p_name, String img, String p_desc)
           System.out.println("Arrays.toString(rowData): "+Arrays.toString(rowData));
-                  
+
           edit_prdt.setData(rowData[0], rowData[2], rowData[4], rowData[3], filePathList.get(row[0]), rowData[5]);
-          edit_prdt.setVisible(true); 
-           
-        
-        
+          edit_prdt.setVisible(true);
+
+
+
     }//GEN-LAST:event_btn_product_editMouseClicked
 
     private void refreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseEntered
@@ -502,10 +502,10 @@ public class Inventory extends javax.swing.JPanel {
         // TODO add your handling code here:
         DefaultTableModel md = ((DefaultTableModel)tbl_Products.getModel());
         md.setRowCount(0);
-        if(md.getRowCount() == 0){ 
+        if(md.getRowCount() == 0){
             this.addProductsToTable();
         }
-        
+
     }//GEN-LAST:event_refreshMouseClicked
 
     private void btn_product_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_product_deleteMouseClicked
@@ -519,27 +519,27 @@ public class Inventory extends javax.swing.JPanel {
         if(dialogResult == JOptionPane.YES_OPTION){
             if(row.length > 0){
                 int j = 1;
-                for(int i=0; i < row.length; i++){    
+                for(int i=0; i < row.length; i++){
                 rowData.add(tbl_Products.getModel().getValueAt(row[i], 0).toString());
                         md.removeRow(row[i]);
                         if(i < row.length-1){
-                          row[i+1] = row[i+1]-j; 
+                          row[i+1] = row[i+1]-j;
                           j++;
                         }
                 System.out.println("SelectedRow = "+row[i]);
                 System.out.println("getSelectedRow = "+rowData.get(i).toString());
-                }  
+                }
                 System.out.println(Arrays.toString(rowData.toArray()));
                 product.remove(rowData);
                 md.setRowCount(0);
-                if(md.getRowCount() == 0){ 
+                if(md.getRowCount() == 0){
                     this.addProductsToTable();
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "Please select products to Delete");
             }
         }
-            
+
     }//GEN-LAST:event_btn_product_deleteMouseClicked
 
     private void product_searchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_product_searchKeyTyped
@@ -565,13 +565,13 @@ public class Inventory extends javax.swing.JPanel {
         } else {
           System.out.println("No Selection ");
         }
-        
+
         try {
             this.writeToExcell(tbl_Products, pathStr);
         } catch (IOException ex) {
             Logger.getLogger(Inventory.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_btn_exportActionPerformed
 
 

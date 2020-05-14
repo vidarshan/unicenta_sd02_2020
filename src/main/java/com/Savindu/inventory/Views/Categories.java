@@ -38,15 +38,15 @@ public class Categories extends javax.swing.JPanel {
     /**
      * Creates new form Categories
      */
-    
+
     Category cat = new Category();
     ArrayList<String> filePathList = new ArrayList<>();
-    
+
     public Categories() {
         initComponents();
         customJTable(tbl_Cat);
         addCategoriesToTable();
-        
+
         DocumentListener documentListener = new DocumentListener() {
             public void changedUpdate(DocumentEvent documentEvent) {
                 search(product_search.getText());
@@ -58,15 +58,15 @@ public class Categories extends javax.swing.JPanel {
                 search(product_search.getText());
             }
         };
-        
+
       product_search.getDocument().addDocumentListener(documentListener);
-      
+
       if(product_search.getText() == null){
           product_search.setText("Search");
       }
-      
+
     }
-    
+
      public void customJTable(JTable table){
         table.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 20));
         table.getTableHeader().setOpaque(false);
@@ -86,11 +86,11 @@ public class Categories extends javax.swing.JPanel {
         model.setRowCount(0);
         ArrayList<Category> list = new ArrayList<>();
         list = cat.getCategories();
-        
+
          if(filePathList.size() > 0){
             filePathList.clear();
         }
-        
+
         Object rowData[] = new Object[5];
         Object columns[] = new Object[5];
         columns[0] = " ID";
@@ -98,9 +98,9 @@ public class Categories extends javax.swing.JPanel {
         columns[2] = " Img";
         columns[3] = " Name";
         columns[4] = " Uploaded On";
-        
+
         model.setColumnIdentifiers(columns);
-        
+
         for(int i = 0; i < list.size(); i++)
         {
             rowData[0] = list.get(i).getId();
@@ -116,7 +116,7 @@ public class Categories extends javax.swing.JPanel {
          System.out.println("filePathList: "+Arrays.toString(filePathList.toArray()));
         tbl_Cat.setModel(model);
     }
-     
+
     public ImageIcon resizeImg(String filePath){
           ImageIcon imageIcon = null;
         if(filePath != null){
@@ -124,28 +124,28 @@ public class Categories extends javax.swing.JPanel {
             File tmpDir = new File(filePath);
             boolean exists = tmpDir.exists();
             if(!exists){
-             filePath = "Products\\\\image-not-found.png";   
+             filePath = "Products\\\\image-not-found.png";
             }
             try {
                 img = ImageIO.read(new File(filePath));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            
+
             Image dimg = img.getScaledInstance(75, 75, Image.SCALE_SMOOTH);
             imageIcon = new ImageIcon(dimg);
-            
+
         }
         return imageIcon;
     }
-    
+
     public void search(String str){
         DefaultTableModel md = ((DefaultTableModel)tbl_Cat.getModel());
         TableRowSorter sorter = new TableRowSorter<>(md);
         tbl_Cat.setRowSorter(sorter);
         sorter.setRowFilter(RowFilter.regexFilter("(?i)" + str));
       }
-     
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -179,7 +179,7 @@ public class Categories extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 167, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,10 +189,10 @@ public class Categories extends javax.swing.JPanel {
         jPanel1.add(jPanel2);
 
         refresh.setBackground(new java.awt.Color(55, 71, 79));
-        refresh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        refresh.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refresh.setForeground(new java.awt.Color(244, 244, 244));
-        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-36.png"))); // NOI18N
-        refresh.setText("Reload");
+        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-refresh-32.png"))); // NOI18N
+        refresh.setText("Refresh");
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 refreshMouseClicked(evt);
@@ -207,9 +207,9 @@ public class Categories extends javax.swing.JPanel {
         jPanel1.add(refresh);
 
         btn_add_category.setBackground(new java.awt.Color(55, 71, 79));
-        btn_add_category.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_add_category.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_add_category.setForeground(new java.awt.Color(244, 244, 244));
-        btn_add_category.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-list-36.png"))); // NOI18N
+        btn_add_category.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-add-32.png"))); // NOI18N
         btn_add_category.setText("New Category");
         btn_add_category.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -230,9 +230,9 @@ public class Categories extends javax.swing.JPanel {
         jPanel1.add(btn_add_category);
 
         btn_cat_edit.setBackground(new java.awt.Color(55, 71, 79));
-        btn_cat_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_cat_edit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_cat_edit.setForeground(new java.awt.Color(244, 244, 244));
-        btn_cat_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-36.png"))); // NOI18N
+        btn_cat_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-edit-32.png"))); // NOI18N
         btn_cat_edit.setText("Edit Category");
         btn_cat_edit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -248,9 +248,9 @@ public class Categories extends javax.swing.JPanel {
         jPanel1.add(btn_cat_edit);
 
         btn_cat_delete.setBackground(new java.awt.Color(55, 71, 79));
-        btn_cat_delete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_cat_delete.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_cat_delete.setForeground(new java.awt.Color(244, 244, 244));
-        btn_cat_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-bin-36.png"))); // NOI18N
+        btn_cat_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/icons8-delete-view-32.png"))); // NOI18N
         btn_cat_delete.setText("Remove Category");
         btn_cat_delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -290,7 +290,7 @@ public class Categories extends javax.swing.JPanel {
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                .addComponent(product_search, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                 .addGap(50, 50, 50))
         );
         searchLayout.setVerticalGroup(
@@ -333,7 +333,7 @@ public class Categories extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1002, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -397,7 +397,7 @@ public class Categories extends javax.swing.JPanel {
         // TODO add your handling code here:
         AddCat addCat = new AddCat();
         addCat.setVisible(true);
-        
+
     }//GEN-LAST:event_btn_add_categoryMouseClicked
 
     private void btn_cat_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cat_editMouseClicked
@@ -406,10 +406,10 @@ public class Categories extends javax.swing.JPanel {
         String rowData[] = new String[5];
         ArrayList<String> itemData = new ArrayList<>();
             if(row.length == 1){
-                for(int i=0; i<5; i++){  
+                for(int i=0; i<5; i++){
                 rowData[i] = tbl_Cat.getModel().getValueAt(row[0], i).toString();
-                System.out.println("getSelectedRow = "+rowData[i]); 
-                }  
+                System.out.println("getSelectedRow = "+rowData[i]);
+                }
             }else{
                 JOptionPane.showMessageDialog(null, "Please select a single row to Edit");
             }
@@ -429,20 +429,20 @@ public class Categories extends javax.swing.JPanel {
         if(dialogResult == JOptionPane.YES_OPTION){
             if(row.length > 0){
                 int j = 1;
-                for(int i=0; i < row.length; i++){    
+                for(int i=0; i < row.length; i++){
                 rowData.add(tbl_Cat.getModel().getValueAt(row[i], 0).toString());
                         md.removeRow(row[i]);
                         if(i < row.length-1){
-                          row[i+1] = row[i+1]-j; 
+                          row[i+1] = row[i+1]-j;
                           j++;
                         }
                 System.out.println("SelectedRow = "+row[i]);
                 System.out.println("getSelectedRow = "+rowData.get(i).toString());
-                }  
+                }
                 System.out.println(Arrays.toString(rowData.toArray()));
                 cat.remove(rowData);
                 md.setRowCount(0);
-                if(md.getRowCount() == 0){ 
+                if(md.getRowCount() == 0){
                     this.addCategoriesToTable();
                 }
             }else{
@@ -455,7 +455,7 @@ public class Categories extends javax.swing.JPanel {
         // TODO add your handling code here:
         DefaultTableModel md = ((DefaultTableModel)tbl_Cat.getModel());
         md.setRowCount(0);
-        if(md.getRowCount() == 0){ 
+        if(md.getRowCount() == 0){
             this.addCategoriesToTable();
         }
     }//GEN-LAST:event_refreshMouseClicked

@@ -11,8 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import com.DB.Sales.DatabaseConnection;
 import java.sql.ResultSet;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static jdk.nashorn.internal.objects.NativeMath.round;
 /**
  *
  * @author Savindu
@@ -31,7 +33,7 @@ public class Products {
     
     private Connection con;
     
-    private String INSERT_PRODUCTS_SQL = "INSERT INTO `products` (`name`, `barcode`, `category`, `description`, `img`) VALUES (?, ?, ?, ?, ?)";
+    private String INSERT_PRODUCTS_SQL = "INSERT INTO `products` (`name`, `barcode`, `category`, `description`, `img`, `quantity`, `product_price`, `tax`, `commission`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     //private String SELECT_PRODUCTS_SQL = "SELECT `productID`, `name`, `barcode`, `category`, `description`, `img`, `uploadedOn` FROM `products`";  
     private String SELECT_PRODUCTS_SQL = "SELECT p.`productID`, p.`name`, p.`barcode`, c.`cat_Name`, p.`description`, p.`img`, p.`uploadedOn`, p.`quantity`, p.`product_price`, p.`tax`, p.`commission` FROM `products` p LEFT JOIN `categories` c ON c.`id` = p.`category`";
     private String UPDATE_PRODUCTS_SQL = "UPDATE `products` SET `name`= ?,`barcode`= ?,`category`= ?,`description`= ?,`img`= ? WHERE `productID`= ?";
@@ -110,6 +112,12 @@ public class Products {
     
     public boolean save(Products product) throws SQLException{
             boolean state = false;
+            Random rand = new Random(); 
+            double price = 100000 + (500000 - 100000) * rand.nextDouble();
+            price = round(price, 2);
+            int quantity = rand.nextInt(1000);
+            double tax = price * 0.1;
+            double commision = price * 0.4;
          
         try{
            // for(Products product : products){
@@ -119,7 +127,12 @@ public class Products {
                preparedStatement.setString(2, product.getBarcode()); 
                preparedStatement.setString(3, product.getCategory()); 
                preparedStatement.setString(4, product.getDesc()); 
-               preparedStatement.setString(5, product.getImg()); 
+               preparedStatement.setString(5, product.getImg());
+               preparedStatement.setInt(6, quantity);
+               preparedStatement.setDouble(7, price);
+               preparedStatement.setDouble(8, tax);
+               preparedStatement.setDouble(9, commision);
+               
             
                System.out.println(preparedStatement);
                
