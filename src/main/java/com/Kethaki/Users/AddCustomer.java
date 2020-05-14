@@ -179,21 +179,24 @@ public class AddCustomer extends javax.swing.JPanel {
                         .addGap(36, 36, 36)
                         .addComponent(jLabel9)))
                 .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(sName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(telephone, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(mobilePhone, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mobilePhone, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
                 .addGap(34, 34, 34))
         );
 
@@ -250,21 +253,24 @@ public class AddCustomer extends javax.swing.JPanel {
                     .addComponent(jLabel23))
                 .addGap(62, 62, 62)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(address1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
-                    .addComponent(address2)
+                    .addComponent(address2, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
                     .addComponent(town)
                     .addComponent(state)
-                    .addComponent(country))
+                    .addComponent(country)
+                    .addComponent(address1))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8)
-                    .addComponent(address1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(address1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel20)
                     .addComponent(address2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -276,15 +282,11 @@ public class AddCustomer extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(state, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                        .addComponent(jLabel23)
-                        .addGap(49, 49, 49))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(country, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(country, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab(">", jPanel2);
@@ -294,11 +296,11 @@ public class AddCustomer extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Account ID", "Search Key", " Name", "Card ID", "Email", "Mobile Number", "Town", "Country"
+                "Account ID", "Search Key", " Name", "Card ID", "Email", "Mobile Number", "Town", "Country", "Notes"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, false, true, true, true, true
+                false, true, true, false, true, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -410,11 +412,11 @@ public class AddCustomer extends javax.swing.JPanel {
                             .addComponent(jLabel3))
                         .addGap(40, 40, 40)
                         .addComponent(key, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33)
+                .addGap(50, 50, 50)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(cardID, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71))
+                    .addComponent(cardID, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(54, 54, 54))
         );
 
         jPanel6.setBackground(new java.awt.Color(28, 35, 51));
@@ -471,14 +473,14 @@ public class AddCustomer extends javax.swing.JPanel {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
-                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79)
+                .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -531,24 +533,6 @@ public class AddCustomer extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(addDetailsLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(addDetailsLayout.createSequentialGroup()
-                                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(addDetailsLayout.createSequentialGroup()
-                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(addDetailsLayout.createSequentialGroup()
-                                                .addGap(92, 92, 92)
-                                                .addComponent(jLabel14))
-                                            .addGroup(addDetailsLayout.createSequentialGroup()
-                                                .addGap(77, 77, 77)
-                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(addDetailsLayout.createSequentialGroup()
                                 .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1317, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(addDetailsLayout.createSequentialGroup()
@@ -557,7 +541,25 @@ public class AddCustomer extends javax.swing.JPanel {
                                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(108, 108, 108)))
+                                .addGap(108, 108, 108))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addDetailsLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(addDetailsLayout.createSequentialGroup()
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(addDetailsLayout.createSequentialGroup()
+                                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)))
+                                .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(addDetailsLayout.createSequentialGroup()
+                                        .addGap(92, 92, 92)
+                                        .addComponent(jLabel14))
+                                    .addGroup(addDetailsLayout.createSequentialGroup()
+                                        .addGap(77, 77, 77)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
@@ -638,13 +640,13 @@ public class AddCustomer extends javax.swing.JPanel {
         if(!accId.getText().trim().equals("") && (!key.getText().trim().equals(""))){
         model.addRow(new Object[] {accId.getText(),  key.getText(), name.getText(), cardID.getText(),
                                     email.getText(), mobilePhone.getText(), 
-                                    town.getText(), country.getText()});
-        //JOptionPane.showMessageDialog(this, "Customer Data Added Successfully !");
-        message.setText("Customer Data Added Successfully !");
+                                    town.getText(), country.getText(), notes.getText()});
+        JOptionPane.showMessageDialog(this, "Customer Data Added Successfully !");
+        //message.setText("Customer Data Added Successfully !");
         }
         else{
-             //JOptionPane.showMessageDialog(this, "Please fill mandatory fields... !");
-              message.setText("Please fill mandatory fields... !");
+             JOptionPane.showMessageDialog(this, "Please fill mandatory fields... !");
+             // message.setText("Please fill mandatory fields... !");
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -653,12 +655,12 @@ public class AddCustomer extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
       if(jTable1.getSelectedRow()== -1){
           if(jTable1.getRowCount()== 0){
-              //JOptionPane.showMessageDialog(this, "Table is empty !");
-              message.setText("Table is empty !");
+              JOptionPane.showMessageDialog(this, "Table is empty !");
+              //message.setText("Table is empty !");
               
           }else{
-            //JOptionPane.showMessageDialog(this, "Please select a particular row to update!");
-               message.setText("Please select a particular row to update!");
+            JOptionPane.showMessageDialog(this, "Please select a particular row to update!");
+               //message.setText("Please select a particular row to update!");
                
           }
       }else{
@@ -670,9 +672,10 @@ public class AddCustomer extends javax.swing.JPanel {
           model.setValueAt(mobilePhone.getText(), jTable1.getSelectedRow(), 5);
           model.setValueAt(town.getText(), jTable1.getSelectedRow(), 6);
           model.setValueAt(country.getText(), jTable1.getSelectedRow(), 7);
+          model.setValueAt(notes.getText(), jTable1.getSelectedRow(), 8);
           
-            //JOptionPane.showMessageDialog(this, "Data Updated Successfully !");
-            message.setText("Data updated Successfully...!");
+            JOptionPane.showMessageDialog(this, "Data Updated Successfully !");
+            //message.setText("Data updated Successfully...!");
       }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
@@ -695,6 +698,7 @@ public class AddCustomer extends javax.swing.JPanel {
         mobilePhone.setText(model.getValueAt(jTable1.getSelectedRow(), 5).toString());
         town.setText(model.getValueAt(jTable1.getSelectedRow(), 6).toString());
         country.setText(model.getValueAt(jTable1.getSelectedRow(), 7).toString());
+        notes.setText(model.getValueAt(jTable1.getSelectedRow(), 8).toString());
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
