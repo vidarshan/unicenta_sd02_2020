@@ -78,6 +78,7 @@ com/Miyuru/attendance/LeavesInterface$7.class
 com/Miyuru/attendance/LeavesInterface$4.class
 com/DB/Sales/DatabaseConnection.class
 Interface/Home.class
+com/Miyuru/attendance/BreaksInterface$15.class
 com/Vidarshan/sales/Calculator$20.class
 com/Miyuru/attendance/BreaksInterface$8.class
 com/Savindu/inventory/Views/Categories$9.class
@@ -168,6 +169,7 @@ com/Vidarshan/sales/Sales$29.class
 com/Vidarshan/sales/Calculator$4.class
 com/Vidarshan/sales/Calculator$1.class
 com/Savindu/inventory/Views/Categories$1.class
+com/Miyuru/attendance/LeavesInterface$15.class
 com/Vidarshan/sales/Calculator$10.class
 com/Miyuru/attendance/BreaksInterface$3.class
 com/Kethaki/Users/AddCustomer$13.class

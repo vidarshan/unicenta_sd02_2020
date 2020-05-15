@@ -335,7 +335,7 @@ public class AddSupplier extends javax.swing.JPanel {
 
         jPanel5.setBackground(new java.awt.Color(28, 35, 51));
 
-        add.setBackground(new java.awt.Color(0, 153, 51));
+        add.setBackground(new java.awt.Color(96, 168, 48));
         add.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Add_M.png"))); // NOI18N
         add.setText("Add");
@@ -345,7 +345,7 @@ public class AddSupplier extends javax.swing.JPanel {
             }
         });
 
-        update.setBackground(new java.awt.Color(102, 102, 255));
+        update.setBackground(new java.awt.Color(81, 160, 213));
         update.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Edit_m.png"))); // NOI18N
         update.setText("Update");
@@ -370,7 +370,7 @@ public class AddSupplier extends javax.swing.JPanel {
             }
         });
 
-        delete.setBackground(new java.awt.Color(255, 0, 0));
+        delete.setBackground(new java.awt.Color(211, 0, 0));
         delete.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Delete_m.png"))); // NOI18N
         delete.setText("Delete");

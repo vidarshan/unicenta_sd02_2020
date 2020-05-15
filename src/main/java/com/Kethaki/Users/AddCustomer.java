@@ -416,7 +416,7 @@ public class AddCustomer extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(28, 35, 51));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnAdd.setBackground(new java.awt.Color(0, 153, 51));
+        btnAdd.setBackground(new java.awt.Color(96, 168, 48));
         btnAdd.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Add_M.png"))); // NOI18N
         btnAdd.setText("Add ");
@@ -426,7 +426,7 @@ public class AddCustomer extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(255, 0, 0));
+        btnDelete.setBackground(new java.awt.Color(211, 0, 0));
         btnDelete.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Delete_m.png"))); // NOI18N
         btnDelete.setText("Delete");
@@ -451,7 +451,7 @@ public class AddCustomer extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(102, 102, 255));
+        btnUpdate.setBackground(new java.awt.Color(81, 160, 213));
         btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Edit_m.png"))); // NOI18N
         btnUpdate.setText("Update ");

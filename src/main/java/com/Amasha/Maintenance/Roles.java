@@ -86,7 +86,7 @@ public class Roles extends javax.swing.JPanel {
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 51));
+        jButton1.setBackground(new java.awt.Color(96, 168, 48));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Add_M.png"))); // NOI18N
         jButton1.setText("Add Role");
@@ -135,7 +135,7 @@ public class Roles extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(55, 71, 79));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 255));
+        jButton2.setBackground(new java.awt.Color(81, 160, 213));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Edit_m.png"))); // NOI18N
         jButton2.setText("Edit Role");
@@ -145,7 +145,7 @@ public class Roles extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(214, 49, 24));
+        jButton3.setBackground(new java.awt.Color(211, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Delete_m.png"))); // NOI18N
         jButton3.setText("Delete ");
@@ -331,7 +331,7 @@ public class Roles extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 855, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE))
+                .addComponent(jLayeredPane1))
         );
     }// </editor-fold>//GEN-END:initComponents
 //Add New Role Button
