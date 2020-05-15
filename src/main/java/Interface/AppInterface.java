@@ -31,6 +31,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import com.Miyuru.login.SignIn;
 
 /**
  *
@@ -58,6 +59,11 @@ public class AppInterface extends javax.swing.JFrame {
         //Load home panel
         panelNavigator(interface_home, "Home");
         sideNavBtnEvents(this.jLabel1);
+        
+        if(SignIn.username != "Admin")
+        {
+            btn_Maintenance.setVisible(false);
+        }
         
         try {
             URL resource = this.getClass().getResource("/appIcon.png");
