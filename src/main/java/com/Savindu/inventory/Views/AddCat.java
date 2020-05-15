@@ -348,7 +348,7 @@ public class AddCat extends javax.swing.JFrame {
         category.setName(this.cat_name.getText());
         category.setImg(this.filePath);
         
-        if(this.cat_ID.getText() != null && this.cat_name.getText() != null){
+        if(!this.cat_ID.getText().isEmpty() && !this.cat_name.getText().isEmpty()){
          boolean    res;
         try {
             res = category.save(category);
