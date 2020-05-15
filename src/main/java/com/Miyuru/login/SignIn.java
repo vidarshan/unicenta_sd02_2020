@@ -255,6 +255,16 @@ public class SignIn extends javax.swing.JFrame {
             this.setVisible(false);
             app_int.setVisible(true);
         }
+        else if(usName.equals("Man") && pwd.equals("123")){
+            username = "Man"; 
+            
+            msg.setText("Successfull");
+
+            AppInterface app_int = new AppInterface();
+
+            this.setVisible(false);
+            app_int.setVisible(true);
+        }
         else{
             msg.setText("failed");
         }

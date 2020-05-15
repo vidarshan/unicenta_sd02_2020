@@ -46,7 +46,7 @@ public class DatabaseConnection {
             //***********************************************Do not change this database name. Exceptions handled
 
             
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "trinity2431");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unicenta", "root", "");
             //con = DriverManager.getConnection("jdbc:sqlite:Database\\unicenta.db");
 
         } catch (Exception ex) {

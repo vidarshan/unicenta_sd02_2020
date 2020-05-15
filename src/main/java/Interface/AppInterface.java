@@ -60,9 +60,19 @@ public class AppInterface extends javax.swing.JFrame {
         panelNavigator(interface_home, "Home");
         sideNavBtnEvents(this.jLabel1);
         
-        if(SignIn.username != "Admin")
+        if(SignIn.username == "Emp" )
         {
             btn_Maintenance.setVisible(false);
+            btn_Users.setVisible(false);
+            
+        }else if(SignIn.username == "Admin"){
+            btn_Maintenance.setVisible(true);
+            btn_Users.setVisible(true);
+
+        }else if(SignIn.username == "Man"){
+            btn_Maintenance.setVisible(true);
+            btn_Users.setVisible(true);
+
         }
         
         try {
