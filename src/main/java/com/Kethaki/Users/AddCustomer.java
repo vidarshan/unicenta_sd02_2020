@@ -159,7 +159,7 @@ public class AddCustomer extends javax.swing.JPanel {
                     .addComponent(jLabel12)
                     .addComponent(jLabel13)
                     .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(sName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -416,7 +416,7 @@ public class AddCustomer extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(28, 35, 51));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnAdd.setBackground(new java.awt.Color(0, 102, 0));
+        btnAdd.setBackground(new java.awt.Color(0, 153, 51));
         btnAdd.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Add_M.png"))); // NOI18N
         btnAdd.setText("Add ");
@@ -451,7 +451,7 @@ public class AddCustomer extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(204, 204, 0));
+        btnUpdate.setBackground(new java.awt.Color(102, 102, 255));
         btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pos/images/Edit_m.png"))); // NOI18N
         btnUpdate.setText("Update ");
@@ -536,15 +536,12 @@ public class AddCustomer extends javax.swing.JPanel {
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(addDetailsLayout.createSequentialGroup()
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
+                                .addGap(42, 42, 42)
                                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46)
                                 .addGroup(addDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(addDetailsLayout.createSequentialGroup()
-                                        .addGap(28, 28, 28)
-                                        .addComponent(jLabel14))
-                                    .addGroup(addDetailsLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel14))))))
                 .addGap(329, 329, 329)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(56, Short.MAX_VALUE))
@@ -596,7 +593,7 @@ public class AddCustomer extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1395, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
