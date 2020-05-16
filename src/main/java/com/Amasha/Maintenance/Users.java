@@ -395,7 +395,7 @@ public class Users extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Data Added Successfully !");
         }else{
             
-            JOptionPane.showMessageDialog(this, "Password should not be blank !");
+            JOptionPane.showMessageDialog(this, "Password should not be blank !","Warning", JOptionPane.WARNING_MESSAGE);
         }
       
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -405,10 +405,10 @@ public class Users extends javax.swing.JPanel {
         if(jTable1.getSelectedRow()== -1){
             if(jTable1.getRowCount()==0){
                 
-                 JOptionPane.showMessageDialog(this, "Table is empty !");
+                 JOptionPane.showMessageDialog(this, "Table is empty !","Warning", JOptionPane.WARNING_MESSAGE);
             }else{
                
-                 JOptionPane.showMessageDialog(this, "Please select a user !");
+                 JOptionPane.showMessageDialog(this, "Please select a user !","Warning", JOptionPane.WARNING_MESSAGE);
             }
         }else{
             model2.setValueAt(jTextField1.getText(), jTable1.getSelectedRow(),0);
@@ -430,9 +430,9 @@ public class Users extends javax.swing.JPanel {
       if(jTable1.getSelectedRow()== -1){
           if(jTable1.getRowCount()== 0){
               
-               JOptionPane.showMessageDialog(this, "Table is empty !");
+               JOptionPane.showMessageDialog(this, "Table is empty !","Warning", JOptionPane.WARNING_MESSAGE);
           }else{
-              JOptionPane.showMessageDialog(this, "Please select a role !");
+              JOptionPane.showMessageDialog(this, "Please select a role !","Warning", JOptionPane.WARNING_MESSAGE);
           }
       }else{
           model2.removeRow(jTable1.getSelectedRow());
